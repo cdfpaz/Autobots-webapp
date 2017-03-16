@@ -32,6 +32,12 @@ def trading():
     return current_app.send_static_file('trading.html')
 
 
+@main.route('/terms')
+@cache.cached(timeout=1000)
+def terms():
+    return current_app.send_static_file('terms.html')
+
+
 @main.route('/<path:url>')
 def root_cmd(url=None):
     if url == '_ping':
