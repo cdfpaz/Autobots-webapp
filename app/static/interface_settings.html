@@ -1,0 +1,540 @@
+<h5 class="title">Interface Settings</h5>
+<div class="divider" style="margin-bottom:15px;"></div>
+<!--filled via ajax-->
+<div class="body">
+
+
+<ul id="collapsible-fancy" class="collapsible solid-title" data-collapsible="accordion">
+
+  <!--Order Books-->
+  <li class="item">
+    <div class="collapsible-header">
+      <p class="collapse-title">Charts</p>
+      <p class="collapsible-header-description">
+        Interface settings for Charts
+      </p>
+      <i class="chevy"></i>
+    </div>
+    <div class="collapsible-body pad-for-content">
+
+<h6 style="position:relative;top:10px;">Orders</h6>
+<p style="margin-bottom:0;">Show your orders on the chart. For example, when viewing the BTCUSD chart, if you have any active BTCUSD orders in the chart&#39;s current visible price range you will see a horizontal line indicating where you BTCUSD orders are. When enabled, you can also modify orders (by click or dragging) or cancel them directly from the chart.</p>
+
+<div class="row">
+
+  <div class="s12 m12 l12 col">
+    <table class="compact">
+      <tbody>
+        <tr>
+          <td>
+            <input checked="checked" id="chart_orders_0" name="chart_orders" type="radio" value="0" />
+            <label for="chart_orders_0" onclick="BFX.chart.setShowOrders(1)">
+              Show (default)
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="chart_orders_1" name="chart_orders" type="radio" value="1" />
+            <label for="chart_orders_1" onclick="BFX.chart.setShowOrders(0)">
+              Hide
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!--.row-->
+
+<div class="divider" style="clear:left;margin-bottom:10px;margin-top:20px;"></div>
+
+<h6 style="position:relative;top:10px;">Positions</h6>
+<p style="margin-bottom:0;">Show your margin position on the chart for the current page. For example, when viewing the BTCUSD chart, if you have a open BTCUSD position in the chart&#39;s current visible price range you will see a horizontal line indicating your position&#39;s base price. You can also close a position directly from the chart.</p>
+
+<div class="row">
+
+  <div class="s12 m12 l12 col">
+    <table class="compact">
+      <tbody>
+        <tr>
+          <td>
+            <input checked="checked" id="chart_pos_0" name="chart_pos" type="radio" value="0" />
+            <label for="chart_pos_0" onclick="BFX.chart.setShowPositions(1)">
+              Show (default)
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="chart_pos_1" name="chart_pos" type="radio" value="1" />
+            <label for="chart_pos_1" onclick="BFX.chart.setShowPositions(0)">
+              Hide
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!--.row-->
+
+<div class="divider" style="clear:left;margin-bottom:10px;margin-top:20px;"></div>
+
+<h6 style="position:relative;top:10px;">Price Alerts</h6>
+<p style="margin-bottom:0;">Show your price alerts on the chart. When enabled, you can also modify price alerts (by dragging) or remove them directly from the chart.</p>
+
+<div class="row">
+
+  <div class="s12 m12 l12 col">
+    <table class="compact">
+      <tbody>
+        <tr>
+          <td>
+            <input checked="checked" id="chart_alerts_0" name="chart_alerts" type="radio" value="0" />
+            <label for="chart_alerts_0" onclick="BFX.chart.setShowPriceAlerts(1)">
+              Show (default)
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="chart_alerts_1" name="chart_alerts" type="radio" value="1" />
+            <label for="chart_alerts_1" onclick="BFX.chart.setShowPriceAlerts(0)">
+              Hide
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!--.row-->
+
+<div class="divider" style="clear:left;margin-bottom:10px;margin-top:20px;"></div>
+
+<h6 style="position:relative;top:10px;">Interval</h6>
+
+<div class="row no-margin-bottom">
+  <div class="col s9">
+    <p>Default interval for chart candles. Note that also the chart will remember your last selected interval.<p>
+  </div>
+  <div class=" col s3">
+    <div class="nice-select-wrap" style="margin-top:0;">
+      <select name="settings[default-interval][interval]" id="default-interval-interval" class="browser-default" onchange="BFX.chart.setDefaultInterval(this)">
+            <option
+              value="1"
+>
+              1
+            </option>
+            <option
+              value="5"
+>
+              5
+            </option>
+            <option
+              value="15"
+>
+              15
+            </option>
+            <option
+              value="30"
+                selected
+              >
+              30
+            </option>
+            <option
+              value="60"
+>
+              60
+            </option>
+            <option
+              value="D"
+>
+              D
+            </option>
+            <option
+              value="W"
+>
+              W
+            </option>
+            <option
+              value="M"
+>
+              M
+            </option>
+      </select>
+    </div>
+  </div>
+</div><!--row-->
+
+
+    </div><!--collapsible-body-->
+  </li>
+
+  <!--Layout-->
+  <li class="item hide-on-med-and-down">
+    <div class="collapsible-header">
+      <p class="collapse-title">Layout</p>
+      <p class="collapsible-header-description">
+        Interface settings for layout
+      </p>
+      <i class="chevy"></i>
+    </div>
+    <div class="collapsible-body pad-for-content">
+      <div class="row">
+
+  <div class="s12 m6 col">
+    <p style="margin-bottom:0;margin-top: 15px"><strong>Trading sidebar location:</strong><br/></p>
+    <table class="compact">
+      <tbody>
+        <tr>
+          <td>
+            <input checked="checked" id="int_sidebar_side_0" name="int_sidebar_side" type="radio" value="0" />
+            <label for="int_sidebar_side_0" onclick="BFX.sidebar.setTo('left');">
+              Left
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="int_sidebar_side_1" name="int_sidebar_side" type="radio" value="1" />
+            <label for="int_sidebar_side_1" onclick="BFX.sidebar.setTo('right');">
+              Right
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="s12 m6 col">
+    <p style="margin-bottom:0;margin-top: 15px"><strong>Order form location:</strong><br/></p>
+    <table class="compact">
+      <tbody>
+        <tr>
+          <td>
+            <input checked="checked" id="int_sidebar_form_1" name="int_sidebar_form" type="radio" value="1" />
+            <label for="int_sidebar_form_1" onclick="BFX.orderForm.setTo('sidebar');">
+              Sidebar
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="int_sidebar_form_0" name="int_sidebar_form" type="radio" value="0" />
+            <label for="int_sidebar_form_0" onclick="BFX.orderForm.setTo('main');">
+              Main content area
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="s12 m6 col">
+    <p style="margin-bottom:0;margin-top: 15px"><strong>Ticker and navigation style:</strong></p>
+    <table class="compact">
+      <tbody>
+        <tr>
+          <td>
+            <input checked="checked" id="ticker_style_0" name="ticker_style" type="radio" value="0" />
+            <label for="ticker_style_0" onclick="BFX.ticker.setStyle('side');showLoading();window.location.reload();">
+              Sidebar
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="ticker_style_1" name="ticker_style" type="radio" value="1" />
+            <label for="ticker_style_1" onclick="$('#ticker-sidebar').empty();BFX.ticker.setStyle('top');showLoading();window.location.reload();">
+              Header
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!--.row-->
+
+
+    </div><!--collapsible-body-->
+  </li>
+
+  <!--Order Books-->
+  <li class="item">
+    <div class="collapsible-header">
+      <p class="collapse-title">Order Book</p>
+      <p class="collapsible-header-description">
+        Interface settings for order book
+      </p>
+      <i class="chevy"></i>
+    </div>
+    <div class="collapsible-body pad-for-content">
+
+<div class="row no-margin-bottom">
+
+  <div class="s12 m6 col">
+
+    <p style="margin-bottom:0;margin-top: 15px">
+      <strong>Book Depth Visualization:</strong><br/>
+    </p>
+
+    <table class="compact">
+      <tbody>
+        <tr>
+          <td>
+            <input checked="checked" id="modal_book_viz_0" name="modal_book_viz" type="radio" value="0" />
+            <label for="modal_book_viz_0" onclick="BFX.util.saveUi('book', 'viz', 'cml');BFX.data.user_settings.book_viz = 'cml';BFX.notify.settingsSaved();BFX.book.setNewPrecision(0);bookViz();">
+              Cumulative (default)
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="modal_book_viz_1" name="modal_book_viz" type="radio" value="1" />
+            <label for="modal_book_viz_1" onclick="BFX.util.saveUi('book', 'viz', 'amt');BFX.data.user_settings.book_viz = 'amt';BFX.notify.settingsSaved();BFX.book.setNewPrecision(0);bookViz();">
+              Amount
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!--row-->
+
+<div class="row no-margin-bottom">
+
+  <div class="s12 m12 l12 col">
+
+    <p style="margin-bottom:0;margin-top: 15px">
+      <strong>Choose the order of the columns in the order book:</strong><br/>
+    </p>
+
+
+      <table class="compact">
+        <tbody>
+          <tr>
+            <td>
+              <input checked="checked" id="modal_book_layout_1" name="modal_book_layout" type="radio" value="1" />
+              <label for="modal_book_layout_1" onclick="BFX.book.setLayout(1)">
+                <span class="bfx-green-text">
+                  Count Price Amount Total
+                </span>
+                <span class="bfx-red-text">
+                  Total Amount Price Count
+                </span>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table class="compact">
+        <tbody>
+          <tr>
+            <td>
+              <input id="modal_book_layout_2" name="modal_book_layout" type="radio" value="2" />
+              <label for="modal_book_layout_2" onclick="BFX.book.setLayout(2)">
+                <span class="bfx-green-text">
+                  Count Amount Total Price
+                </span>
+                <span class="bfx-red-text">
+                  Price Total Amount Count
+                </span>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table class="compact">
+        <tbody>
+          <tr>
+            <td>
+              <input id="modal_book_layout_3" name="modal_book_layout" type="radio" value="3" />
+              <label for="modal_book_layout_3" onclick="BFX.book.setLayout(3)">
+                <span class="bfx-green-text">
+                  Count Total Price Amount
+                </span>
+                <span class="bfx-red-text">
+                  Amount Price Total Count
+                </span>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+  </div>
+
+</div><!--.row-->
+
+    </div><!--collapsible-body-->
+  </li>
+
+  <!--Tables-->
+  <li class="item">
+    <div class="collapsible-header">
+      <p class="collapse-title">Tables</p>
+      <p class="collapsible-header-description">
+        Interface settings for tables
+      </p>
+      <i class="chevy"></i>
+    </div>
+    <div class="collapsible-body pad-for-content">
+
+      <form accept-charset="UTF-8" action="/users/update_settings" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7yXlTt6iTO0IlfM+ni0nRYO6Os0fi++AWgZk4bDU81g=" /></div>
+
+        <input name="return_to" type="hidden" value="/interface"/>
+
+        <div class="row">
+          <div class="s12 m12 l12 col">
+
+            <p><strong>Table Interface:</strong></p>
+
+
+              <p class="smaller-checkbox">
+                <input id="settings_filter-orders-by-pair" name="settings[filter-orders-by-pair]" type="hidden" value="0" />
+                <input class="filled-in" id="setting-filter-orders-by-pair" name="settings[filter-orders-by-pair]" type="checkbox" value="1" />
+                <label for="setting-filter-orders-by-pair">On the Exchange and Margin Trading pages in the &quot;Active Orders&quot; section, only show the orders for the currently active pair</label>
+              </p>
+
+
+              <p class="smaller-checkbox">
+                <input id="settings_filter-funding-by-currency" name="settings[filter-funding-by-currency]" type="hidden" value="0" />
+                <input class="filled-in" id="setting-filter-funding-by-currency" name="settings[filter-funding-by-currency]" type="checkbox" value="1" />
+                <label for="setting-filter-funding-by-currency">On the Margin Funding pages, only show my funding for the currently active currency</label>
+              </p>
+
+
+          </div>
+        </div><!--row-->
+
+        <div class="divider"></div>
+
+        <button class="btn security-btn" data-disable-with="<div class='hide-text'>Update</div><i class='fa fa-circle-o-notch fa-spin'>" name="button" type="submit">Update</button>
+
+</form>
+    </div><!--collapsible-body-->
+  </li>
+
+  <!--Theme-->
+  <li class="item">
+    <div class="collapsible-header">
+      <p class="collapse-title">Theme</p>
+      <p class="collapsible-header-description">Light or Dark Theme Options</p>
+      <i class="chevy"></i>
+    </div>
+    <div class="collapsible-body pad-for-content">
+
+      <p style="margin-bottom:0;">Color theme:<br/></p>
+
+      <div class="row">
+
+        <div class="s12 m12 l12 col">
+          <table class="compact">
+            <tbody>
+              <tr>
+                <td>
+                  <input id="theme_0" name="theme" type="radio" value="0" />
+                  <label for="theme_0" onclick="BFX.theme.switchTo('light-theme', 'dark-theme');">
+                    Dark
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input checked="checked" id="theme_1" name="theme" type="radio" value="1" />
+                  <label for="theme_1" onclick="BFX.theme.switchTo('dark-theme', 'light-theme');">
+                    Light
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div><!--.row-->
+
+
+
+    </div><!--collapsible-body-->
+  </li>
+
+  <!--Ticker-->
+  <li class="item">
+    <div class="collapsible-header">
+      <p class="collapse-title">Tickers</p>
+      <p class="collapsible-header-description">
+        Interface settings for Tickers
+      </p>
+      <i class="chevy"></i>
+    </div>
+    <div class="collapsible-body pad-for-content">
+
+      <p style="margin-bottom:0;">Trading volume units:<br/></p>
+
+      <div class="row">
+
+        <div class="s12 m12 l12 col">
+          <table class="compact">
+            <tbody>
+              <tr>
+                <td>
+                  <input checked="checked" id="tickervolccy_0" name="tickervolccy" type="radio" value="0" />
+                  <label for="tickervolccy_0" onclick="BFX.ticker.setVolUnit('firstccy');">
+                    Show volume in terms of the first currency in the pair (default)
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input id="tickervolccy_1" name="tickervolccy" type="radio" value="1" />
+                  <label for="tickervolccy_1" onclick="BFX.ticker.setVolUnit('btc');">
+                    Show volume in BTC equivalent
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="s12 m12 l12 col">
+          <p style="margin-bottom:0;margin-top: 15px"><strong>Ticker and navigation style:</strong></p>
+          <table class="compact">
+            <tbody>
+              <tr>
+                <td>
+                  <input checked="checked" id="ticker_style2_0" name="ticker_style2" type="radio" value="0" />
+                  <label for="ticker_style2_0" onclick="BFX.ticker.setStyle('side');showLoading();window.location.reload();">
+                    Sidebar (default)
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input id="ticker_style2_1" name="ticker_style2" type="radio" value="1" />
+                  <label for="ticker_style2_1" onclick="$('#ticker-sidebar').empty();BFX.ticker.setStyle('top');showLoading();window.location.reload();">
+                    Header
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div><!--.row-->
+
+
+
+    </div><!--collapsible-body-->
+  </li>
+
+</ul>
+</div>

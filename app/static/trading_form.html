@@ -1,0 +1,368 @@
+
+<form accept-charset="UTF-8" action="/orders" class="order" data-remote="true" id="trading-ticket-form" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <input type="hidden" id="direction" name="direction" value=""/>
+<input type="hidden" name="pair" value="BTCUSD"/>
+
+<div class="order-form-sidebar" id="order-form">
+
+  <ul class="collapsible solid-title" data-collapsible="accordion" data-identifier="form" data-on-open="BFX.sidebar.floatCheck" data-on-open-instant="BFX.gauge.fadeIn" data-on-close="BFX.gauge.hide">
+    <li>
+      <div class="collapsible-header active">
+
+        <div class="bfx-collapsible-header section-header">
+          <h5>Order Form</h5>
+          <div class="bfx-collapsible-options" style="display:none;">
+            <a class="dropdown-button"
+              data-alignment="right"
+              data-hover="true"
+              data-beloworigin="true"
+              onclick="BFX.util.doNothing(event);"
+              data-activates='order-form-opts-dropdown'>
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+            <!-- Dropdown Structure -->
+            <ul id='order-form-opts-dropdown' class='dropdown-content'>
+              <li>
+                <a href="javascript:;" onclick="BFX.orderForm.themeToggle(BFX.orderForm.update, event);">
+                  Switch to <span class="show-theme-0">Experimental</span><span class="show-theme-1">Classic</span> Form
+                </a>
+              </li>
+
+              <!--<li>
+                <a href="javascript:;" onclick="BFX.modal.load('trading_form_help', false, event);">
+                  Trading Help &amp; Guides
+                </a>
+              </li>-->
+            </ul>
+          </div><!--bfx-collapsible-options-->
+          <div class="sub-items">
+            <a href="javascript:;" onclick="BFX.orderForm.leverageSet(0, true, event);"
+              class="btn-flat center-align" id="form-choose-exchange">
+              Exchange
+            </a>
+            <a href="javascript:;" onclick="BFX.orderForm.leverageSet(3.3, true, event);"
+              class="btn-flat center-align" id="form-choose-margin">
+              Margin
+            </a>
+          </div><!--.sub-items-->
+          <i class="fa fa-chevron-right"></i>
+          <i class="fa fa-chevron-down"></i>
+        </div><!--bfx-collapsible-header-->
+
+      </div>
+
+      <div class="collapsible-body">
+
+        <div class="col s12 ordersize">
+
+          <div class="right order-type-table-wrap" style="width:40%;position:relative;z-index:13;">
+
+            <table class="compact" id="order-type-table">
+              <tbody>
+                <tr>
+                  <td>
+                    <input checked="checked" id="form_side_buy" name="page_book_viz" type="radio" value="buy">
+                    <label for="form_side_0" onclick="BFX.orderForm.setSide('buy');">
+                      Buy
+                    </label>
+                  </td>
+                  <td>
+                    <input id="form_side_sell" name="page_book_viz" type="radio" value="sell">
+                    <label for="page_book_viz_1" onclick="BFX.orderForm.setSide('sell');">
+                      Sell
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+          <div class="nice-select-wrap left o-type-select" style="margin-bottom:4px;margin-top:0;">
+            <select tabindex="1" name="buy_type" id="buy_type" class="browser-default" onfocus="$('input#direction').val('BUY');" onchange="BFX.orderForm.oTypeChange('buy', 'USD');">
+              <option value="LIMIT" id="buy_limit">Limit</option>
+              <option value="MARKET" id="buy_market">Market</option>
+              <option value="STOP" id="buy_stop">Stop</option>
+              <option value="STOP LIMIT" id="buy_stop_limit">Stop Limit</option>
+              <option value="TRAILING STOP" id="buy_trailing_stop">Trailing Stop</option>
+              <option value="FOK" id="buy_fok">Fill or Kill</option>
+              <option disabled="">── Advanced ──</option>
+              <option value="scaled">Scaled Orders</option>
+            </select>
+          </div>
+
+          <div style="position:relative;" class="o-amount-wrap">
+            <label style="padding-left:0;">Amount (BTC)</label>
+            <input tabindex="1" id="amount" name="amount" autocomplete="off" type="text" onkeyup="BFX.orderForm.quickSideSwitch();BFX.orderForm.updateOrderPriceEquiv('USD');">
+
+            <div id="amount-loading" style="display:none;position:absolute;left:5px;top:24px;"></div>
+
+            <div class="sidebar-field-helpers-wrap">
+              <a class="btn btn-tiny btn-grey sidebar-field-helper" id="buyall" style="display:none;" onclick="BFX.orderForm.toggleBuyAll('BTCUSD');">
+                <span class="show-theme-0">Buy</span> All
+              </a>
+              <a class="btn btn-tiny btn-grey sidebar-field-helper" id="sellall" style="display:none;" onclick="BFX.orderForm.toggleSellAll('BTCUSD');">
+                <span class="show-theme-0">Sell</span> All
+              </a>
+            </div>
+
+            <span id="max-avail-helper" style="display:none;" class="in-input-helper tooltip show-theme-1" title=''>
+              <span class="prefix">Max</span>
+              <span class="value" onclick='$("#amount").val($("#max-avail-helper").find(".value").text().replace(/[^\d|.]/g,"")).trigger("keyup");showChanging("#amount");'></span>
+            </span>
+
+          </div>
+
+          <div class="o-price-wrap" style="position:relative;">
+            <label style="padding-left:0;" id="buy_price_label">
+              Price (USD)
+            </label>
+            <input tabindex="1" id="buy_price" autocomplete="off" name="buy_price" class="order_price" type="text" value="1156.6" onfocus="$('input#direction').val('BUY');if($('option#buy_market')[0].selected){$('option#buy_limit').attr('selected', true);}" onkeydown="BFX.orderForm.recalcMaxAmount();" onkeyup="BFX.orderForm.updateOrderPriceEquiv('USD');">
+
+            <span id="price_equiv" class="in-input-helper tooltip" title="">
+              <span class="value"></span>
+            </span>
+
+            <div class="show-theme-1 sidebar-field-helpers-wrap">
+              <a class="btn btn-tiny btn-grey tooltip sidebar-field-helper" title="Current Buying Price" onclick="$('#buy_price').val(BFX.data.ticker[BFX.helpers.detectCurrentPair()].buying);showChanging('#buy_price');">
+                Bid
+              </a>
+              <a class="btn btn-tiny btn-grey tooltip sidebar-field-helper" title="Current Selling Price" onclick="$('#buy_price').val(BFX.data.ticker[BFX.helpers.detectCurrentPair()].selling);showChanging('#buy_price');">
+                Ask
+              </a>
+            </div>
+
+          </div>
+
+          <div id="stoplimitform_buy" style="display:none;;position:relative;padding-bottom:16px;">
+            <label style="padding-left:0;" for="buy_stoplimit_price">
+              Limit Price (USD)
+            </label>
+
+            <input id="buy_stoplimit_price" tabindex="1" name="buy_stoplimit_price" autocomplete="off" class="order_price" type="text" value="1156.6" onkeyup="BFX.orderForm.updateOrderPriceEquiv('USD');">
+
+            <span id="buy_stoplimit_price_equiv" class="in-input-helper tooltip" title="">
+              <span class="value"></span>
+            </span>
+          </div>
+
+          <div id="ocoform_buy" style="display:none;position:relative;padding-bottom:16px;">
+            <label style="padding-left:0;" for="buy_price_oco">
+              OCO Stop Price
+            </label>
+
+            <input id="buy_price_oco" tabindex="1" name="buy_price_oco" autocomplete="off" class="order_price" type="text" value="1156.6" onkeyup="BFX.orderForm.updateOrderPriceEquiv('USD');">
+
+            <span id="oco_price_equiv" class="in-input-helper tooltip" title="">
+              <span class="value"></span>
+            </span>
+
+          </div>
+
+          <div class="o-checkbox-wrap">
+
+              <p class="smaller-checkbox">
+                <input type="checkbox" id="ocoOrder" tabindex="1" name="ocoorder" style="display: none;"
+                  class="filled-in" onchange="BFX.orderForm.updateUi();">
+                <label for="ocoOrder">
+                  <a class="tooltip" title="This option allows you to place a pair of orders stipulating that if one order is executed fully or partially, then the other order is automatically canceled. A one-cancels-the-other order combines a stop order with a limit order. This option allows you to place both take profit and stop loss targets for your position (only for limit orders).">
+                    OCO
+                  </a>
+                </label>
+              </p>
+
+              <p class="smaller-checkbox">
+                <input type="checkbox" tabindex="1" id="hideOrder" name="hiddenorder" style="display: none;" class="filled-in">
+                <label for="hideOrder">
+                  <a class="tooltip" title="This option allows you to place an order into the book, but not to display it to other traders.  Price/time priority is the same as displayed order, but the hidden order will always pay the &quot;taker&quot; rate while those trading against a hidden order will pay the &quot;maker&quot; rate.">
+                    Hidden
+                  </a>
+                </label>
+              </p>
+
+              <p class="smaller-checkbox">
+                <input type="checkbox" id="postonly" tabindex="1" name="postonly" style="display: none;" class="filled-in">
+                <label for="postonly">
+                  <a class="tooltip" title="&quot;Post Only&quot; limit orders are orders that allow you to be sure to always pay the maker fee. When placed, a &quot;Post Only&quot; limit order is either inserted into the orderbook or cancelled (only for limit orders).">
+                    Post Only
+                  </a>
+                </label>
+              </p>
+
+              <p class="smaller-checkbox">
+                <input type="checkbox" id="adv-opts-toggle" tabindex="1" style="display: none;"
+                  class="filled-in" onchange="$('#trading-form-advanced').slideToggle();">
+                <label for="adv-opts-toggle" onclick="BFX.sidebar.fluidSidebarHeight();BFX.orderForm.informFundingOpts()">
+                  <a class="tooltip" title="Advanced Funding Options (optional)">
+                    Funding Opts
+                  </a>
+                </label>
+              </p>
+
+          </div><!--checkboxes-wrap-->
+
+        </div>
+
+        <div class="col s12">
+
+          <div class="ticket-action buy">
+
+            <a id="buy-button"
+              href="javascript:;"
+              tabindex="1"
+              class="btn btn-green buy-button"
+              onclick="BFX.orderForm.submitBuy()">
+              <span class="trading-form-context-word"></span>
+              <span class="word">Buy</span>
+              <!--<span class="order-size-indicator">
+                <span class="order-size-amount"></span>
+              </span>-->
+            </a>
+          </div>
+
+          <div class="ticket-action sell">
+
+            <span class="value exchange_rate hide-on-small-and-down" id="buying-btcusd" style="display:none;">
+              Bid=1156.30<span class="gray">00<span class="superscript">0</span></span>
+            </span>
+
+            <a id="sell-button"
+              href="javascript:;"
+              tabindex="1"
+              class="btn btn-red sell-button"
+              onclick="BFX.orderForm.submitSell()">
+              <span class="trading-form-context-word"></span>
+              <span class="word">Sell</span>
+              <!--<span class="order-size-indicator">
+                <span class="order-size-amount"></span>
+              </span>-->
+            </a>
+          </div>
+
+          <div class="ticket-action helps" style="display:none;width:40%;float:right;">
+
+            <a id="buy-button"
+              href="javascript:;"
+              tabindex="1"
+              class="btn btn-grey buy-button btn-muted"
+              onclick="BFX.modal.load('trading_form_help');">
+              Help &amp; Guides
+            </a>
+          </div>
+
+          <div id="container-gauge" class="show-theme-1" style="display:none;width:100%; height:100px;"></div>
+
+        </div><!--col-->
+
+      </div><!--.collapsible-body-->
+    </li>
+  </ul>
+</div>
+  <div class="form-sidebar-wrap" id="trading-form-advanced" style="display:none;">
+
+  <table class="compact highlight pinch">
+    <tbody>
+
+      <tr>
+        <td colspan="2" style="text-align: center">
+          <span class="small-emph">FUNDING OPTIONS</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="col-info" style="width:70px;">
+          <p class="smaller-checkbox" style="margin:0 auto;float:none;display:block;width:18px;">
+            <input type="checkbox" id="variableRate" name="includevir" style="display: none;" class="filled-in" checked="checked" onchange="update_creditbook();">
+            <label for="variableRate">&nbsp;</label>
+          </p>
+        </td>
+        <td>
+          Include variable rates?
+        </td>
+      </tr>
+
+      <tr>
+        <td class="col-info" style="width:70px;">
+          <p class="smaller-checkbox" style="margin:0 auto;float:none;display:block;width:18px;">
+            <input type="checkbox" id="maximumMargin" name="incmaxrate" checked="checked" style="display: none;" class="filled-in">
+            <label for="maximumMargin">&nbsp;</label>
+          </p>
+        </td>
+        <td>
+          Maximum margin rate?
+        </td>
+      </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <div style="width:120px;position:relative;padding-right:50px;">
+            <label for="maxrate" style="position:absolute;right:0;top:4px;">
+              (%/day)
+            </label>
+            <input name="maxrate" type="text" placeholder="1" value="0.75" class="valign" style="height:20px;margin:0;">
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div id="creditbook">
+    <table class="compact highlight pinch border-top">
+  <tbody id="creditbook">
+
+    <tr>
+      <td colspan="2" style="text-align: center">
+        <span class="small-emph">MARGIN RESERVED</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="width:70px;" class="col-info">Long</td>
+      <td>
+          0, <a href="/funding/USD" class="ajax" data-remote="true">
+            Go reserve some
+          </a>
+      </td>
+    </tr>
+    <tr>
+      <td class="col-info">Short</td>
+      <td>
+          0, <a href="/funding/BTC" class="ajax" data-remote="true">
+            Go reserve some
+          </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="compact highlight pinch border-top">
+  <tbody id="creditbook">
+
+    <tr>
+      <td colspan="2" style="text-align: center">
+        <span class="small-emph">MARGIN AVAILABLE</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="col-info" style="width:70px;">Long</td>
+      <td>
+        6,436.73 BTC (7,444,718.94 USD)
+          <br/><strong>0.037-0.181% <span class="show75">per day</span></strong>
+      </td>
+    </tr>
+    <tr>
+      <td class="col-info">Short</td>
+      <td>
+        15,733.99 BTC
+          <br/><strong>0.017-0.381% <span class="show75">per day</span></strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div><!--row-->
+</form><!--form-->

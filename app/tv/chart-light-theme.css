@@ -1,0 +1,989 @@
+/*
+$bfx-black1: #eff1f2; //  |  lightest
+$bfx-black2: #fff; //
+$bfx-black3: #fff; // \|/ darkest
+$bfx-black4: #0c1218; //  ˘
+$bfx-blue: #5B91B2; */
+
+html, body {
+  background: #fff none repeat scroll 0 0;
+  color: #999;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#library-container {
+  border: none;
+  background: transparent;
+}
+
+.chart-loading-screen {
+  background-color: #fff;
+}
+
+.tv-side-toolbar {
+  border: none;
+}
+
+.onchart-tv-logo {
+  transform: scale(.9);
+  opacity: .8;
+  background: none;
+}
+
+.onchart-tv-logo.expanded .wrapper,
+.onchart-tv-logo .wrapper {
+    padding: 0;
+    background: none !important;
+    background-color: none !important;
+}
+
+a, a:visited {
+  color: #5B91B2;
+}
+a:hover {
+  color: #5B91B2;
+}
+
+.chart-page .chart-container {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.header-chart-panel {
+  background-color: #fff;
+}
+
+.tv-side-toolbar {
+  background-color: #fff;
+  border-color: #fff;
+  color: #999;
+}
+
+.tv-side-toolbar .tools-group:not(:first-child):not(.no-delimiter)::before {
+  background-color: #fff;
+}
+
+.tv-side-toolbar .tools-group .button:active:not(.subgroup),
+.tv-side-toolbar .tools-group .button.active:not(.subgroup),
+.tv-side-toolbar .tools-group .button.selected:not(.subgroup),
+.properties-toolbar .tools-group .button:active,
+.properties-toolbar .tools-group .button.active,
+.drawing-favorites-toolbar .tools-group .button:active,
+.drawing-favorites-toolbar .tools-group .button.active,
+.tv-side-toolbar .tools-group .button.selected .main,
+.tv-side-toolbar .tools-group .button:active .side,
+.tv-side-toolbar .tools-group .button.active .side {
+  background-color: #fff;
+}
+
+.tv-side-toolbar .tools-group .button .side {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.tv-main-panel {
+  background-color: #fff;
+}
+
+.chart-controls-bar {
+  background: #fff !important;
+}
+
+input.symbol-edit,
+.symbol-search-dialog input {
+  background-color: #fff;
+  border-color: #fff;
+  color: #aaa;
+}
+
+.favored-list-container span {
+    background-color: #fff;
+    border-color: #fff;
+    color: #aaa !important;
+}
+
+.header-chart-panel .button,
+.hotlist-controls .button,
+.symbol-edit-widget .button,
+.bottom-widgetbar-content.backtesting .button {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+    color: #999;
+}
+
+.header-chart-panel .button.disabled,
+.header-chart-panel .button.disabled:active,
+.header-chart-panel .button.disabled.active {
+    background: #eff1f2 none repeat scroll 0 0 !important;
+    border-color: #eff1f2;
+    color: #999;
+}
+
+.layout-toggle-container .tv-button {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+}
+
+.save-load-buttons .button.first {
+    border-color: #eff1f2;
+}
+
+.save-load-buttons .title {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+    color: #999;
+}
+
+.save-load-buttons .button.last {
+    border-color: #eff1f2;
+}
+
+.ch-item-header {
+    color: rgba(200, 200, 200, 0.6);
+}
+
+.ch-item-symbol {
+    color: #aa3;
+}
+
+.ch-item-text {
+    color: #aaa;
+}
+
+.ch-item {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+}
+
+.ch-highlight-user {
+    background-color: #eff1f2 !important;
+}
+
+.ch-highlight-user .ch-item-text {
+    color: #999;
+}
+
+.ch-highlight-user .ch-item-symbol,
+.ch-highlight-user .ch-item-header {
+    color: #bb4;
+}
+
+.ch-item:hover {
+    background-color: #5B91B2;
+    border-color: #eff1f2;
+}
+
+i {
+    filter: invert(100%);
+}
+
+.ch-item-text img {
+    border-color: #eff1f2;
+}
+
+.fancybox-skin {
+    background-color: #888;
+    color: #aaa;
+}
+
+.widgetbar-tab-spacer {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+    color: #999;
+}
+
+.widgetbar-tab {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+}
+
+.widgetbar-tab:hover,
+.widgetbar-tab.active {
+    background-color: #eff1f2;
+}
+
+.widgetbar-widget {
+    background: #eff1f2;
+    border-color: #eff1f2;
+}
+
+.widgetbar-pages {
+    background-color: #eff1f2;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.ch-input {
+    background-color: #fff;
+}
+
+.ch-input .wrap textarea {
+    background-color: #fff;
+    border-color: #fff;
+    color: #aaa;
+}
+
+.widgetbar-tabs {
+    background-color: #eff1f2;
+}
+
+.widgetbar-widgetheader {
+    background-color: #eff1f2;
+}
+
+.widgetbar-addwidgetpopup-itemtitle,
+.widgetbar-widgettitle {
+    color: #999;
+}
+
+.tv-close-panel.left,
+.hidden .tv-close-panel.right,
+.tv-close-panel.top,
+.tv-close-panel.right,
+.hidden .tv-close-panel.left {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+}
+
+.favored-list-container span {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+    color: #524f4f;
+}
+
+.on-widget .getimage .icon {
+  background-image: none;
+  fill: #999;
+}
+
+.header-chart-panel .button.published-settings {
+    border-color: #eff1f2;
+}
+
+.widgetbar-headerspace .button {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+}
+
+.chart-controls-bar-buttons a::before {
+    border-color: #eff1f2;
+}
+
+#footer-chart-panel .bottom-toolbar-tab {
+    background: #eff1f2;
+    border-color: #eff1f2;
+}
+
+#footer-chart-panel,
+.bottom-toolbar-tab,
+.trading-floating-toolbar,
+.bottom-widgetbar-handle,
+.widgetbar-handle {
+    background-color: #fff;
+    border-color: #fff;
+    color: #999;
+}
+
+.market-table thead th {
+    background-color: #fff;
+    color: #999;
+}
+
+.symbol-list-item.success {
+    color: #ccc;
+}
+
+.symbol-list-item:nth-child(2n) {
+    background-color: #fff;
+}
+
+#footer-chart-panel .bottom-toolbar-tab:hover,
+#footer-chart-panel .bottom-toolbar-tab.active {
+    background: #fff none repeat scroll 0 0;
+}
+
+#bottom-area .bottom-widgetbar-content {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #fff;
+}
+
+.tv-data-table--trading-paper .tv-data-table__thead {
+    background: #fff none repeat scroll 0 0;
+}
+
+.tv-data-table {
+    color: #999;
+}
+
+.tv-data-table__cell--blue-background {
+    background: #fff none repeat scroll 0 0;
+}
+
+#footer-chart-panel a.publish-chart-button {
+    background: #214456 none repeat scroll 0 0;
+}
+
+#footer-chart-panel a.publish-chart-dropdown-button {
+    background: #2A4F63 none repeat scroll 0 0;
+}
+
+#footer-chart-panel a.publish-chart-button,
+#footer-chart-panel a.publish-chart-dropdown {
+    color: #81bae8;
+}
+
+.tv-data-table__stroke:last-child .tv-data-table__cell {
+    border-bottom: medium none #fff;
+}
+
+.tv-data-table__cell--status {
+    background: #ffffff none repeat scroll 0 0;
+    height: 15px;
+    white-space: nowrap;
+}
+
+.ace-tomorrow .ace_gutter {
+    background: #252525 none repeat scroll 0 0;
+    color: #aaa;
+    font-weight: 800;
+}
+
+.ace-tomorrow {
+    background-color: #111;
+    color: #4d4d4c;
+}
+
+.tv-script-header .button {
+    color: #aaa;
+}
+
+.tv-script-header .button:hover {
+    color: #5B91B2;
+}
+
+.ace-tomorrow .ace_entity.ace_name.ace_function,
+.ace-tomorrow .ace_support.ace_function,
+.ace-tomorrow .ace_variable {
+    color: #5B91B2;
+}
+
+.ace-tomorrow {
+    color: #aaa;
+}
+
+.ace-tomorrow .ace_heading,
+.ace-tomorrow .ace_string {
+    color: #A8C436;
+}
+
+.tv-script-header .tv-script-header-content {
+    background: #fff none repeat scroll 0 0;
+}
+
+.ace-tomorrow .ace_marker-layer .ace_active-line {
+    background: #fff none repeat scroll 0 0;
+}
+
+.ace-tomorrow .ace_marker-layer .ace_selection {
+    background: #fff none repeat scroll 0 0;
+}
+
+.ace_gutter-cell {
+    background-color: #414141;
+}
+
+#bottom-area .bottom-widgetbar-content {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #fff;
+}
+
+.ace-tomorrow .ace_marker-layer .ace_selection {
+    background: #fff none repeat scroll 0 0;
+}
+
+.text_notes .notes-block .notes .note.active {
+    background-color: #fff;
+}
+
+.text_notes .notes-block .notes .note {
+    border-bottom: 1px solid #fff;
+}
+
+.text_notes {
+    color: #aaa;
+}
+
+.text_notes .textnotes-search-header {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.text_notes .textnotes-search-header .search-input {
+    background: #111 none repeat scroll 0 0;
+    border: 1px solid #fff;
+    color: #aaa;
+}
+
+.text_notes .textnotes-search-header .new-note-btn {
+    background-color: #324B36;
+    color: #a28B66;
+}
+
+.text_notes .notes-desc-block .title {
+    color: #aaa;
+    background-color: #111;
+}
+
+.text_notes .notes-desc-block textarea {
+    border-color: #fff -moz-use-text-color -moz-use-text-color;
+    color: #aaa;
+    background-color: #111;
+}
+
+.text_notes .notes-block {
+    border-right: 1px solid #fff;
+}
+
+.tv-data-table__thead {
+    border: 1px solid #fff;
+}
+
+#bottom-area .bottom-widgetbar-content.backtesting .backtesting-head-wrapper,
+.strategy-report-wrap .backtesting-head-wrapper {
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+#bottom-area .bottom-widgetbar-content.backtesting .backtesting-head-wrapper .group .strategy-select.has-strategies,
+.strategy-report-wrap .backtesting-head-wrapper .group .strategy-select.has-strategies {
+    color: #eabd2d;
+}
+
+.report-tabs:hover {
+    color: #5B91B2;
+}
+
+.report-data {
+    color: #ccc;
+}
+
+#bottom-area .bottom-widgetbar-content.backtesting .backtesting-head-wrapper .backtesting-select-wrapper .report-tabs,
+.strategy-report-wrap .backtesting-head-wrapper .backtesting-select-wrapper .report-tabs {
+    color: #aaa;
+}
+
+.tv-script-header .name-wrap {
+    color: #eabd2d;
+}
+
+#bottom-area .bottom-widgetbar-content.backtesting .backtesting-content-wrapper .report-content.performance .report-data,
+.strategy-report-wrap .backtesting-content-wrapper .report-content.performance .report-data,
+#bottom-area .bottom-widgetbar-content.backtesting .backtesting-content-wrapper .report-content.trades .report-data,
+.strategy-report-wrap .backtesting-content-wrapper .report-content.trades .report-data {
+    color: #aaa;
+}
+
+table {
+    border-color: #fff;
+}
+
+#bottom-area .bottom-widgetbar-content.backtesting .backtesting-content-wrapper .report-content.performance table td,
+.strategy-report-wrap .backtesting-content-wrapper .report-content.performance table td {
+    border-bottom: 1px solid #fff;
+}
+
+#bottom-area .bottom-widgetbar-content.backtesting .backtesting-content-wrapper .report-content.trades table tbody td,
+.strategy-report-wrap .backtesting-content-wrapper .report-content.trades table tbody td {
+    border-top: 1px solid #fff;
+}
+
+.ch-item-text img.snapshot-preview {
+    border-color: #fff;
+}
+
+.msg-data .msg-item::after {
+    background: #fff none repeat scroll 0 0;
+}
+
+.msg-window {
+    background: #fff none repeat scroll 0 0;
+}
+
+.tv-notifications .event-block.new {
+    background: #212121 none repeat scroll 0 0;
+}
+
+.tv-notifications .event-block::after {
+    background: #fff none repeat scroll 0 0;
+}
+
+.tv-notifications .event-block .text {
+    background: rgba(212, fff, 231, 0) none repeat scroll 0 0;
+}
+
+.tv-notifications .event-block .head .line.event {
+    color: #A8BF78;
+}
+
+.event-block .text {
+    color: #999;
+}
+
+.note-block {
+    border-top: 1px solid #fff;
+}
+
+.note-block .name {
+    color: #3e98cd !important;
+}
+
+.widgetbar-widget {
+    background-color: #fff !important;
+}
+
+.note-block img.preview {
+    border: 5px solid #999;
+}
+
+.alerts-widget .alert-list {
+    color: #aaa !important;
+}
+
+._tv-button {
+    background: #eff1f2 none repeat scroll 0 0 !important;
+    border: 1px solid #eff1f2 !important;
+    color: #6f7073 !important;
+}
+
+#chart-area.fullscreen {
+    background: #fff;
+}
+/*   test*/
+
+._tv-button,
+button._tv-button {
+    -moz-user-select: none;
+    border: 1px solid #eff1f2 !important;
+}
+
+.symbol-list-item.active {
+    background: #023 none repeat scroll 0 0;
+}
+
+.symbol-list-item:hover {
+    background: #fff none repeat scroll 0 0;
+}
+
+.symbol-list-header {
+    border-bottom: 1px solid #fff;
+    color: #888989;
+}
+
+.ns-item {
+    border-bottom: 1px solid #fff;
+}
+
+.ns-item:hover {
+    background: #fff none repeat scroll 0 0;
+}
+
+.ns-item-title {
+    color: #E0D6AF;
+    font-size: 13px;
+    margin: 0 12px;
+}
+
+.dl-header-symbol {
+    color: #E4AE00;
+}
+
+.dl-header-price {
+    color: #B3B3B3;
+}
+
+.dl-bidoffer-spread span.dl-bid {
+    background: #122540 none repeat scroll 0 0;
+    color: #8eafdd;
+}
+
+.dl-bidoffer-spread span.dl-ask {
+    background: #401913 none repeat scroll 0 0;
+    color: #EDA593;
+}
+
+.dl-range-bar-bg {
+    background: #515050 none repeat scroll 0 0;
+}
+
+.dl-range-caption {
+    color: #aaa;
+}
+
+.dl-range-price-l,
+.dl-range-price-r {
+    color: #A4A4A4;
+}
+
+.symbol-list-header {
+    color: #F4E8B1 !important;
+}
+
+.chart-data-window {
+    background-color: rgb(40, 40, 40);
+    color: rgb(162, 162, 162);
+}
+
+.chart-data-window .active .chart-data-window-header {
+    background: #153A4B none repeat scroll 0% 0%;
+}
+
+.chart-data-window .chart-data-window-header {
+    background: #fff none repeat scroll 0 0;
+}
+
+.tv-dfx-calendar__date-block--today .tv-dfx-calendar__day {
+    background: #284D01 none repeat scroll 0 0;
+    color: #A9E070;
+}
+
+.tv-dfx-calendar__date-block--today .tv-dfx-calendar__item {
+    background: #fff none repeat scroll 0 0;
+}
+
+.tv-dfx-calendar__item {
+    color: #A2A2A2;
+}
+
+div.calendar-widget.day.green {
+    background: #203c04 none repeat scroll 0 0;
+    color: #a2e75a;
+}
+
+div.calendar-widget.green {
+    background: #fff none repeat scroll 0 0;
+}
+
+div.calendar-widget.day {
+    background: #03273D none repeat scroll 0 0;
+    color: #79ADCD;
+}
+
+div.calendar-widget,
+div.calendar-widget.header {
+    color: #ADADAD;
+}
+
+div.calendar-widget.regular div.symbol {
+    color: #CFCFCF;
+}
+
+div.calendar-widget.regular.active {
+    background: #fff none repeat scroll 0 0;
+}
+
+div.calendar-widget.regular.active:hover {
+    background: #fff none repeat scroll 0 0;
+}
+
+div.calendar-widget.regular:hover {
+    background: #fff none repeat scroll 0 0;
+}
+
+.wl-symbol-edit {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #fff;
+    color: #eee;
+}
+
+.tv-notifications .event-block .symbol {
+    background: #480B96 none repeat scroll 0 0;
+    border: 1px solid red;
+}
+
+.msg-data .msg-item.active {
+    background: #fff none repeat scroll 0 0;
+}
+
+.msg-data .msg-item .title {
+    color: #5B91B2;
+}
+
+.tv-notifications-widget-item__username-event-wrap span:last-child {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tv-notifications-widget-item__icon-time-wrap time {
+    color: rgba(190, 190, 190, 0.6);
+}
+
+.tv-notifications-widget-item__chart-symbol {
+    background-color: #304067;
+    color: #C3CCE4;
+}
+
+.tv-notifications-widget-item {
+    border-bottom: 1px solid #fff;
+}
+
+.tv-notifications-widget-item__description {
+    color: #aaa;
+}
+
+.desc {
+    color: #aaa;
+}
+
+.tv-notifications-widget-item__chart-title {
+    color: #999;
+}
+
+.ch-message-type-warning {
+    background: #330000 !important;
+}
+
+.properties-toolbar {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #fff;
+}
+
+.properties-toolbar .drag-handler i {
+    filter: none;
+}
+
+.properties-toolbar .tools-group .colorpicker-widget + svg .bg {
+    fill: #fff;
+}
+
+.properties-toolbar .tools-group .custom-select .switcher {
+    background-color: #fff;
+}
+
+.tv-side-toolbar .tools-group .button:hover, .tv-side-toolbar .tools-group .button:active, .tv-side-toolbar .tools-group .button.active, .tv-side-toolbar .tools-group .button.selected, .properties-toolbar .tools-group .button, .drawing-favorites-toolbar .tools-group .button {
+    background-color: #eff1f2;
+    border-color: #eff1f2;
+}
+
+.tvcolorpicker-popup {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+._tv-dialog {
+    background: #fff;
+    border: 2px solid #fff;
+}
+
+.properties-tabs {
+    border-bottom: 1px solid #fff;
+}
+
+.custom-select .switcher {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+.custom-select .items {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #fff;
+}
+
+.ui-widget-content {
+    filter: invert(70%);
+}
+
+.tv-text-input.inset {
+    background: #fff;
+}
+
+.tv-text-input {
+    border: 1px solid #fff;
+    color: #aaa;
+}
+
+.tv-ticker .icon {
+    filter: invert(90%);
+}
+
+.property-page {
+    color: #aaa;
+}
+
+.properties-tabs a.properties-tabs-label {
+    color: #aaa;
+}
+
+._tv-dialog-title {
+    color: #aaa;
+}
+
+._tv-dialog-content {
+    color: #aaa;
+}
+
+.tv-select-container .sbSelector {
+    color: #aaa;
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+._tv-dialog-content form input[type="text"], ._tv-dialog-content form input[type="password"], ._tv-dialog-text-input {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #aaa;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    color: #fff;
+}
+
+.clockpicker-popover .popover-content {
+    background-color: #fff;
+}
+
+.clockpicker-popover .popover-title {
+    background-color: #fff;
+}
+
+.popover-title {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.clockpicker-plate {
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+._tv-dialog-content textarea {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #fff;
+    color: #aaa;
+}
+
+.context-menu-wrapper {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #aaa;
+}
+
+.context-menu .action-separator td {
+    background-color: #fff;
+    border-bottom: 6px solid #fff;
+    border-top: 6px solid #fff;
+    height: 1px;
+}
+
+to {
+    background: #fff;
+}
+
+._tv-dialog-content ._tv-dialog-tree-item {
+    border-bottom: 1px solid #fff;
+    color: #aaa;
+}
+
+._tv-dialog-content .manage-drawings .row .symbol-title {
+    border-bottom: 1px solid #fff;
+}
+
+._tv-dialog-content .manage-drawings .row.header {
+  border-bottom: 1px solid #fff;
+  color: #aaa;
+}
+
+.charts-popup-list {
+  background: #fff;
+  border: 1px solid #fff;
+}
+
+.charts-popup-list.intervals-list .item {
+  color: #aaa;
+}
+
+.charts-popup-list .item.active {
+  background: #fff;
+}
+
+.insert-study-dialog {
+  background: #fff;
+  color: #adafb3;
+  border: none;
+}
+
+.tv-chart-study-dialog-search-control input {
+  background: #eff1f2;
+  color: #adafb3;
+}
+
+.tv-chart-study-dialog-search-control {
+  border: none;
+}
+
+.favored-list-container.active span.submenu, .favored-list-container span.submenu.active {
+  background: #fff;
+  border-color: #fff;
+  color: #adafb3;
+}
+
+.charts-popup-list .separator {
+  border-top: 1px solid #fff;
+}
+
+.favored-list-container span:active, .favored-list-container span.active, .favored-list-container span.selected {
+  background: #fff;
+  color: #fff;
+}
+
+.favored-list-container span:hover {
+  background: #fff;
+}
+
+@-webkit-keyframes highlight-animation {
+    from {
+		background: transparent;
+  }
+}
+
+@-moz-keyframes highlight-animation {
+  from {
+  	background: transparent;
+  }
+
+  to {
+  	background: #fff;
+  }
+}
+
+@-ms-keyframes highlight-animation {
+  from {
+  	background: transparent;
+  }
+
+  to {
+  	background: #fff;
+  }
+}
+
+@-o-keyframes highlight-animation {
+  from {
+  	background: transparent;
+  }
+
+  to {
+  	background: #fff;
+  }
+}
+
+@keyframes highlight-animation {
+  from {
+  	background: transparent;
+  }
+
+  to {
+  	background: #fff;
+  }
+}
+
+._tv-dialog .button:not(.disabled):not(.selected):hover:before, ._tv-dialog .custom-select .switcher:not(.disabled):not(.selected):hover:before, ._tv-dialog .favored-list-container span:not(.disabled):not(.selected):hover:before, ._tv-dialog .submenu:not(.disabled):not(.selected):hover:before, .bottom-widgetbar-content.backtesting .button:not(.disabled):not(.selected):hover:before, .bottom-widgetbar-content.backtesting .custom-select .switcher:not(.disabled):not(.selected):hover:before, .bottom-widgetbar-content.backtesting .favored-list-container span:not(.disabled):not(.selected):hover:before, .bottom-widgetbar-content.backtesting .submenu:not(.disabled):not(.selected):hover:before, .header-chart-panel .button:not(.disabled):not(.selected):hover:before, .header-chart-panel .custom-select .switcher:not(.disabled):not(.selected):hover:before, .header-chart-panel .favored-list-container span:not(.disabled):not(.selected):hover:before, .header-chart-panel .submenu:not(.disabled):not(.selected):hover:before, .properties-toolbar .button:not(.disabled):not(.selected):hover:before, .properties-toolbar .custom-select .switcher:not(.disabled):not(.selected):hover:before, .properties-toolbar .favored-list-container span:not(.disabled):not(.selected):hover:before, .properties-toolbar .submenu:not(.disabled):not(.selected):hover:before {
+  border: none;
+}

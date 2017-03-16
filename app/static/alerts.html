@@ -1,0 +1,39 @@
+<a class="dropdown-button"
+  title="Recent notices"
+  style="padding-right:4px;padding-left: 30px;"
+  href='javascript:;'
+  data-alignment="right"
+  data-hover="true"
+  data-beloworigin="true"
+  data-activates='notices-dropdown'>
+  <i class="fa fa-bell icon-only"></i>
+      <i class="fa fa-circle unread-notice-icon middle"></i>
+      <i class="fa fa-circle unread-notice-icon outer"></i>
+</a>
+<!-- Dropdown Structure -->
+<ul id='notices-dropdown' class='dropdown-content'>
+
+
+        <li data-alert-id="1067">
+          <h6>New announcement <span class="date">Feb 24</span></h6>
+          <span class="message"><a href='/posts/190'>Security Notice and Reminder</a></span>
+            <a href="javascript:;" onclick="alertDropdownNoticeSeen(1067);" class="mark-seen">
+              <i class="fa fa-circle"></i> Mark as read
+            </a>
+        </li>
+        <li data-alert-id="1063">
+          <h6>New announcement <span class="date">Feb 23</span></h6>
+          <span class="message"><a href='/posts/189'>Bank Holidays</a></span>
+            <a href="javascript:;" onclick="alertDropdownNoticeSeen(1063);" class="mark-seen">
+              <i class="fa fa-circle"></i> Mark as read
+            </a>
+        </li>
+        <li data-alert-id="1062">
+          <h6>New announcement <span class="date">Feb 22</span></h6>
+          <span class="message"><a href='/posts/188'>API changes for DDoS protection</a></span>
+            <a href="javascript:;" onclick="alertDropdownNoticeSeen(1062);" class="mark-seen">
+              <i class="fa fa-circle"></i> Mark as read
+            </a>
+        </li>
+
+</ul>

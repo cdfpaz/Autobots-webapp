@@ -1,0 +1,43 @@
+{
+  "notices": [
+    {
+      "id": 1067,
+      "notification_type": "notification",
+      "key": "New announcement",
+      "message": "<a href='/posts/190'>Security Notice and Reminder</a>",
+      "user_id": 0,
+      "activation_url": "upon_login",
+      "closeable": 1,
+      "active": 1,
+      "created_at": "2017-02-24T17:29:05.000000Z",
+      "updated_at": "2017-02-24T17:29:05.000000Z",
+      "expires_at": "2017-03-10T17:29:04.558607Z"
+    },
+    {
+      "id": 1063,
+      "notification_type": "notification",
+      "key": "New announcement",
+      "message": "<a href='/posts/189'>Bank Holidays</a>",
+      "user_id": 0,
+      "activation_url": "upon_login",
+      "closeable": 1,
+      "active": 1,
+      "created_at": "2017-02-23T11:34:00.000000Z",
+      "updated_at": "2017-02-23T11:34:00.000000Z",
+      "expires_at": "2017-03-09T11:34:00.187814Z"
+    },
+    {
+      "id": 1062,
+      "notification_type": "notification",
+      "key": "New announcement",
+      "message": "<a href='/posts/188'>API changes for DDoS protection</a>",
+      "user_id": 0,
+      "activation_url": "upon_login",
+      "closeable": 1,
+      "active": 1,
+      "created_at": "2017-02-22T19:19:47.000000Z",
+      "updated_at": "2017-02-22T19:19:47.000000Z",
+      "expires_at": "2017-03-08T19:19:47.193977Z"
+    }
+  ]
+}

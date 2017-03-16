@@ -1,0 +1,3564 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<!--controller:trading -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description"
+          content="The largest and most advanced cryptocurrencies exchange">
+    <meta name="keywords"
+          content="bitcoin,exchange,bitcoin exchange,litecoin,zcash,ethereum,margin,trade">
+    <meta property="og:title" content="Bitfinex">
+    <meta property="og:description"
+          content="The largest and most advanced cryptocurrencies exchange">
+    <meta property="og:image" content="https://bitfinex.com/assets/bfx-stacked.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@bitfinex">
+    <meta name="twitter:title" content="Bitfinex">
+    <meta name="twitter:description"
+          content="The largest and most advanced cryptocurrencies exchange">
+    <meta name="twitter:image" content="https://bitfinex.com/assets/bfx-stacked.png">
+    <meta name="referrer" content="origin">
+
+    <title>Bitfinex - Trading</title>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <!--enable localization within javascripts-->
+    <script src="/assets/localization.js"></script>
+
+    <link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+    <link href="/assets/application.bfx-304333e0543b5fd587733f7a50b420d2badd7b240d7d4e128fe29b17bf53edd6.css"
+          media="screen" rel="stylesheet"/>
+    <!--<script src="/assets/application.bfx-f59575286e1d544f5cd06caedaca3a7a7adb183d55e61765860fcd97098a280f.js"></script>-->4
+
+    <script src="/assets/application.bfx.js"></script>
+
+    <meta content="authenticity_token" name="csrf-param"/>
+    <meta content="jM6rhFCoYx6s/sgGSBWz//0wnoEo1iT/kGMaT4TjrPg=" name="csrf-token"/>
+
+
+</head>
+<body class="light-theme sidebar-left ticker-side "
+      data-env="production"
+      data-logged-in="true"
+      data-nyip="false"
+      data-waip="false"
+      data-usip="false"
+      data-warntwofa="false"
+      data-onmobile="false">
+
+
+<div id="api-key-modal" class="modal" style="max-width:660px;">
+    <div class="modal-content" style="padding-bottom:0;">
+        <div class="body">
+            <p class="center-align" style="padding:40px 20px 20px 20px;font-size:22px;">
+          <span class="show-pending show50">
+            <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+          </span>
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:;"
+           class="modal-action modal-close waves-effect waves-green btn-flat">
+            Close
+        </a>
+    </div>
+</div>
+
+<div id="notification-modal" class="modal" style="max-width:500px;">
+    <div class="modal-content" style="padding-bottom:0;">
+        <h5 class="title" style="display:inline-block;"></h5>
+        <div class="divider" style="margin-bottom:15px;"></div>
+        <div class="body"><p></p></div>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:;"
+           class="modal-action modal-close waves-effect waves-green btn-flat">
+            <i class="fa fa-check bfx-green-text"></i> Okay
+        </a>
+    </div>
+</div>
+
+<div id="ip-lookup-modal" class="modal" style="max-width:500px;">
+    <div class="modal-content" style="padding-bottom:0;">
+        <h5 class="title" style="display:inline-block;">IP Look Up</h5>
+        <div class="divider" style="margin-bottom:5px;"></div>
+        <div class="body">
+            <p class="center-align" style="padding:40px 20px 20px 20px;font-size:22px;">
+          <span class="show-pending show50">
+            <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+          </span>
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:;"
+           class="modal-action modal-close waves-effect waves-green btn-flat">
+            <i class="fa fa-check bfx-green-text"></i> Close
+        </a>
+    </div>
+</div>
+
+<!-- claim position -->
+<div id="modal-claim-position" class="modal" style="max-width:500px;">
+    <div class="modal-content" style="padding-bottom:0;">
+        <h5>Claim this Position</h5>
+        <div class="divider" style="margin-bottom:15px;"></div>
+
+        <div class="row no-margin-bottom">
+            <div class="s12 m12 l12 col">
+                <p style="margin:0 0 15px 0;" class="message-text"></p>
+            </div>
+        </div>
+
+        <form accept-charset="UTF-8" action="/positions/claim" data-remote="true" id="claim-position-form"
+              method="post">
+            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;"/></div>
+
+            <div class="row no-margin-bottom">
+                <div class="col input-field s8">
+                    <input
+                            name="amount"
+                            id="claim-amount"
+                            type="text">
+                    <label class="amount-label">Amount to Claim</label>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="s12 m12 l12 col">
+
+                    <button
+                            class="btn btn-green"
+                            type="submit"
+                            name="action"
+                            data-disable-with="<div class='hide-text'>Claim</div><i class='fa fa-circle-o-notch fa-spin'>">
+                        Claim
+                    </button>
+
+                </div>
+
+                <div class="s3 col"></div>
+
+            </div>
+
+        </form><!--form-->
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:;"
+           class="modal-action modal-close waves-effect waves-green btn-flat">
+            <i class="fa fa-check green-text"></i> Close
+        </a>
+    </div>
+</div><!--claim position-->
+
+<!-- quick wallet transfer -->
+<div id="quick-xfer-modal" class="modal" style="max-width:500px;">
+    <div class="modal-content" style="padding-bottom:0;">
+        <h5><i class="fa fa-exchange show50"></i> Wallet Transfer</h5>
+        <div class="divider" style="margin-bottom:15px;"></div>
+
+        <form accept-charset="UTF-8" action="/managewallets/create" data-remote="true" method="post">
+            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;"/></div>
+
+            <input type="hidden" id="actionwallet" name="actionwallet" value="TRANSFER"/>
+            <input type="hidden" name="modaltransfer" value="true"/>
+            <input type="hidden" id="xfer-token" name="token" value=""/>
+            <input name="currency" id="xfer-currency" type="hidden" value=""/>
+            <input name="walletfrom" id="xfer-walletfrom" type="hidden" value=""/>
+            <input name="walletto" id="xfer-walletto" type="hidden" value=""/>
+
+            <div class="row">
+                <div class="col s12">
+                    <p>Transfer <strong class="currency"></strong> from <strong class="fromWallet"></strong> <span
+                            class="translation_missing" title="translation missing: en.helpers.to">To</span> <strong
+                            class="toWallet"></strong> wallet. Your <a href="javascript:;"
+                                                                       class="show50 tooltip-no-hide-on-click"
+                                                                       title="If you have limit orders, open positions, unused or active margin funding, this will decrease your available balance. To increase it, you can cancel limit orders or reduce/close your positions.">available
+                        <span class="currency"></span> balance</a> on your <span class="fromWallet"></span> wallet is
+                        <span class="max-avail"></span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="s12 m6 l6 col input-field">
+                    <input
+                            name="amount"
+                            id="transfer-amount"
+                            autocomplete="off"
+                            type="text">
+                    <label class="amount-label active"><span class="currency"></span> to transfer</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="s12 m12 l12 col">
+
+                    <button
+                            class="btn btn-green"
+                            type="submit"
+                            name="action"
+                            data-disable-with="<div class='hide-text'>Transfer</div><i class='fa fa-circle-o-notch fa-spin'>">
+                        Transfer
+                    </button>
+
+                </div>
+                <div class="s3 col"></div>
+            </div>
+
+        </form><!--form-->
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:;"
+           class="modal-action modal-close waves-effect waves-green btn-flat">
+            <i class="fa fa-check green-text"></i> Close
+        </a>
+    </div>
+</div><!--quick wallet transfer-->
+
+<!-- authorization edit action -->
+<div id="modal-action-edit" class="modal" style="max-width:500px;">
+    <div class="modal-content" style="padding-bottom:0;">
+        <h5><span class="action-controller-name"></span>: <span class="action-name"></span></h5>
+
+        <div class="divider" style="margin-bottom:15px;"></div>
+
+        <div class="row no-margin-bottom">
+            <div class="s12 m12 l12 col">
+                <p style="margin:0;" class="message-text"></p>
+            </div>
+        </div>
+
+        <!--real form action gets set upon open-->
+        <form accept-charset="UTF-8" action="/power/update_action" class="ajax" data-remote="true" method="post">
+            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;"/></div>
+
+            <input name="action_id" type="hidden" class="action-id" value=""/>
+
+            <div class="row no-margin-bottom">
+                <div class="s12 m12 l12 col input-field">
+                    <input
+                            name="description"
+                            class="action-description"
+                            type="text">
+                    <label class="amount-label">Description</label>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="s12 m12 l12 col">
+
+                    <button
+                            class="btn btn-green"
+                            type="submit"
+                            name="action"
+                            data-disable-with="<div class='hide-text'>Update</div><i class='fa fa-circle-o-notch fa-spin'>">
+                        Update
+                    </button>
+
+                </div>
+
+                <div class="s3 col"></div>
+
+            </div>
+
+        </form><!--form-->
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:;"
+           class="modal-action modal-close waves-effect waves-green btn-flat">
+            <i class="fa fa-check green-text"></i> Close
+        </a>
+    </div>
+</div><!-- authorization edit action -->
+
+<!--
+  Used for showing the details of a table row that has been partially hidden
+  at narrow widths
+-->
+<div id="row-expander-modal" class="modal">
+    <div class="modal-content">
+        <h5 class="title">Row Details</h5>
+        <div class="divider" style="margin-bottom:5px;"></div>
+        <div class="body"></div>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:void(0)" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
+<div id="deposit-modal" class="modal" style="max-width:500px;">
+    <div class="modal-content" style="padding-bottom:0;">
+        <h5 class="title" style="display:inline-block;"></h5>
+        <div class="currency-wallet-modal show50"></div>
+        <div class="divider" style="margin-bottom:5px;"></div>
+        <div class="body"></div>
+        <div class="modal-address"></div>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:;"
+           class="modal-action modal-close waves-effect waves-green btn-flat">
+            <i class="fa fa-check bfx-green-text"></i> Close
+        </a>
+    </div>
+</div>
+
+
+<div id="custom-confirm-modal" class="modal" style="max-width:410px;">
+    <div class="modal-content">
+        <h5 class="title">Please Confirm</h5>
+        <div class="divider" style="margin-bottom:5px;"></div>
+        <div class="body">
+            <p></p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:;"
+           onclick="BFX.modal.close();"
+           class="modal-action btn-small btn-grey modal-close waves-effect waves-light btn-flat ok-modal-simple">
+            Okay
+        </a>
+        <a href="javascript:;"
+           onclick="BFX.confirm.okay();"
+           class="modal-action btn-small btn-green modal-close waves-effect waves-light btn-flat ok-modal-confirm">
+            <i class="fa fa-check green-white"></i> Okay
+        </a>
+        <a href="javascript:;"
+           onclick="BFX.confirm.cancel();"
+           class="modal-action btn-small modal-close waves-effect waves-dark btn-flat cancel">
+            Cancel
+        </a>
+    </div>
+</div>
+
+
+<!-- multipurpose modal used by BFX.modal.load() -->
+<!-- TODO: refactor more modals to load this way, reduce the size of this file-->
+<div id="multi-purpose-modal" class="modal" style="max-width:600px;">
+    <div id="show-draggable">
+        <i class="fa fa-arrows"></i>
+        <a href="javascript:;" onclick="BFX.modal.close()" class="modal-closer">
+            <i class="fa fa-close"></i>
+        </a>
+    </div>
+    <div class="modal-content" style="margin-top:8px;">
+        <!--filled dynamically with BFX.modal-->
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:void(0)" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
+
+<div id="login-modal" class="modal">
+    <h3>Log in</h3>
+    <div class="modal-content" style="padding-top:0;">
+        <!--filled on open-->
+    </div>
+</div>
+
+<div id="clef-modal" class="modal">
+    <h3>Log In Using Clef</h3>
+    <div class="modal-content" style="padding-top:0;">
+        <!--filled on open-->
+    </div>
+</div>
+
+<div id="twofa-modal" class="modal">
+    <h3>Two-Factor Authentication</h3>
+    <div class="modal-content" style="padding-top:0;">
+    </div>
+    <div class="tips"><a href="/pages/twofa_help" target="_blank">
+        <i class="fa fa-info-circle"></i> Need some help?</a>
+    </div>
+</div>
+<div id="signup-modal" class="modal">
+
+    <form accept-charset="UTF-8" action="/users" id="user-signup-form-modal" method="post">
+        <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;"/><input name="authenticity_token"
+                                                                                            type="hidden"
+                                                                                            value="jM6rhFCoYx6s/sgGSBWz//0wnoEo1iT/kGMaT4TjrPg="/>
+        </div>
+
+        <h3>Sign up</h3>
+
+        <div class="modal-content" style="padding-top:0;">
+
+            <div class="row no-margin-bottom">
+                <div class="col s12 m6 input-field">
+                    <input name="user[username]"
+                           type="text"
+                           id="signup-username"
+                           data-error-required="Username is required">
+                    <label for="signup-username">Username</label>
+                </div>
+
+                <div class="col s12 m6 input-field">
+                    <input
+                            name="user[email]"
+                            type="email"
+                            id="signup-email"
+                            data-error-required="An email address is required">
+                    <label for="signup-email">Email address</label>
+                </div>
+            </div><!--row-->
+
+            <div class="row no-margin-bottom">
+                <div class="col s12 m6 input-field">
+                    <input
+                            name="password"
+                            id="signup-password-modal"
+                            type="password"
+                            data-error-required="Password is required"
+                            data-error-good-password="Passwords must be at least 8 characters with 1 capital letter, 1 number, and one special character">
+                    <label for="signup-password-modal">Password</label>
+                </div>
+
+                <div class="col s12 m6 input-field">
+                    <input
+                            name="password_confirmation"
+                            type="password"
+                            id="signup-password-conf">
+                    <label for="signup-password-conf">Confirm password</label>
+                </div>
+            </div><!--.row-->
+
+            <div class="row no-margin-bottom">
+                <div class="col s12 input-field referrer-field">
+                    <input id="referrer-field" name="referrer" type="text">
+                    <label for="referrer-field">Referrer code</label>
+                    <p>Enter the code given by your referrer, and get a 10% discount on your trading fees for the first
+                        30 days. (Optional.)</p>
+                </div>
+            </div>
+
+            <div class="row no-margin-bottom">
+
+                <div class="col s12 m6">
+                    <label>Timezone</label>
+                    <div class="nice-select-wrap">
+                        <select id="user_timezone" name="user[timezone]">
+                            <option value="American Samoa">(GMT-11:00) American Samoa</option>
+                            <option value="International Date Line West">(GMT-11:00) International Date Line West
+                            </option>
+                            <option value="Midway Island">(GMT-11:00) Midway Island</option>
+                            <option value="Samoa">(GMT-11:00) Samoa</option>
+                            <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                            <option value="Alaska">(GMT-09:00) Alaska</option>
+                            <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)
+                            </option>
+                            <option value="Tijuana">(GMT-08:00) Tijuana</option>
+                            <option value="Arizona">(GMT-07:00) Arizona</option>
+                            <option value="Chihuahua">(GMT-07:00) Chihuahua</option>
+                            <option value="Mazatlan">(GMT-07:00) Mazatlan</option>
+                            <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp;
+                                Canada)
+                            </option>
+                            <option value="Central America">(GMT-06:00) Central America</option>
+                            <option value="Central Time (US &amp; Canada)">(GMT-06:00) Central Time (US &amp; Canada)
+                            </option>
+                            <option value="Guadalajara">(GMT-06:00) Guadalajara</option>
+                            <option value="Mexico City">(GMT-06:00) Mexico City</option>
+                            <option value="Monterrey">(GMT-06:00) Monterrey</option>
+                            <option value="Saskatchewan">(GMT-06:00) Saskatchewan</option>
+                            <option value="Bogota">(GMT-05:00) Bogota</option>
+                            <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)
+                            </option>
+                            <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                            <option value="Lima">(GMT-05:00) Lima</option>
+                            <option value="Quito">(GMT-05:00) Quito</option>
+                            <option value="Atlantic Time (Canada)">(GMT-04:00) Atlantic Time (Canada)</option>
+                            <option value="Caracas">(GMT-04:00) Caracas</option>
+                            <option value="Georgetown">(GMT-04:00) Georgetown</option>
+                            <option value="La Paz">(GMT-04:00) La Paz</option>
+                            <option value="Santiago">(GMT-04:00) Santiago</option>
+                            <option value="Newfoundland">(GMT-03:30) Newfoundland</option>
+                            <option value="Brasilia">(GMT-03:00) Brasilia</option>
+                            <option value="Buenos Aires">(GMT-03:00) Buenos Aires</option>
+                            <option value="Greenland">(GMT-03:00) Greenland</option>
+                            <option value="Montevideo">(GMT-03:00) Montevideo</option>
+                            <option value="Mid-Atlantic">(GMT-02:00) Mid-Atlantic</option>
+                            <option value="Azores">(GMT-01:00) Azores</option>
+                            <option value="Cape Verde Is.">(GMT-01:00) Cape Verde Is.</option>
+                            <option value="Casablanca">(GMT+00:00) Casablanca</option>
+                            <option value="Dublin">(GMT+00:00) Dublin</option>
+                            <option value="Edinburgh">(GMT+00:00) Edinburgh</option>
+                            <option value="Lisbon">(GMT+00:00) Lisbon</option>
+                            <option value="London">(GMT+00:00) London</option>
+                            <option value="Monrovia">(GMT+00:00) Monrovia</option>
+                            <option selected="selected" value="UTC">(GMT+00:00) UTC</option>
+                            <option value="Amsterdam">(GMT+01:00) Amsterdam</option>
+                            <option value="Belgrade">(GMT+01:00) Belgrade</option>
+                            <option value="Berlin">(GMT+01:00) Berlin</option>
+                            <option value="Bern">(GMT+01:00) Bern</option>
+                            <option value="Bratislava">(GMT+01:00) Bratislava</option>
+                            <option value="Brussels">(GMT+01:00) Brussels</option>
+                            <option value="Budapest">(GMT+01:00) Budapest</option>
+                            <option value="Copenhagen">(GMT+01:00) Copenhagen</option>
+                            <option value="Ljubljana">(GMT+01:00) Ljubljana</option>
+                            <option value="Madrid">(GMT+01:00) Madrid</option>
+                            <option value="Paris">(GMT+01:00) Paris</option>
+                            <option value="Prague">(GMT+01:00) Prague</option>
+                            <option value="Rome">(GMT+01:00) Rome</option>
+                            <option value="Sarajevo">(GMT+01:00) Sarajevo</option>
+                            <option value="Skopje">(GMT+01:00) Skopje</option>
+                            <option value="Stockholm">(GMT+01:00) Stockholm</option>
+                            <option value="Vienna">(GMT+01:00) Vienna</option>
+                            <option value="Warsaw">(GMT+01:00) Warsaw</option>
+                            <option value="West Central Africa">(GMT+01:00) West Central Africa</option>
+                            <option value="Zagreb">(GMT+01:00) Zagreb</option>
+                            <option value="Athens">(GMT+02:00) Athens</option>
+                            <option value="Bucharest">(GMT+02:00) Bucharest</option>
+                            <option value="Cairo">(GMT+02:00) Cairo</option>
+                            <option value="Harare">(GMT+02:00) Harare</option>
+                            <option value="Helsinki">(GMT+02:00) Helsinki</option>
+                            <option value="Jerusalem">(GMT+02:00) Jerusalem</option>
+                            <option value="Kaliningrad">(GMT+02:00) Kaliningrad</option>
+                            <option value="Kyiv">(GMT+02:00) Kyiv</option>
+                            <option value="Pretoria">(GMT+02:00) Pretoria</option>
+                            <option value="Riga">(GMT+02:00) Riga</option>
+                            <option value="Sofia">(GMT+02:00) Sofia</option>
+                            <option value="Tallinn">(GMT+02:00) Tallinn</option>
+                            <option value="Vilnius">(GMT+02:00) Vilnius</option>
+                            <option value="Baghdad">(GMT+03:00) Baghdad</option>
+                            <option value="Istanbul">(GMT+03:00) Istanbul</option>
+                            <option value="Kuwait">(GMT+03:00) Kuwait</option>
+                            <option value="Minsk">(GMT+03:00) Minsk</option>
+                            <option value="Moscow">(GMT+03:00) Moscow</option>
+                            <option value="Nairobi">(GMT+03:00) Nairobi</option>
+                            <option value="Riyadh">(GMT+03:00) Riyadh</option>
+                            <option value="St. Petersburg">(GMT+03:00) St. Petersburg</option>
+                            <option value="Volgograd">(GMT+03:00) Volgograd</option>
+                            <option value="Tehran">(GMT+03:30) Tehran</option>
+                            <option value="Abu Dhabi">(GMT+04:00) Abu Dhabi</option>
+                            <option value="Baku">(GMT+04:00) Baku</option>
+                            <option value="Muscat">(GMT+04:00) Muscat</option>
+                            <option value="Samara">(GMT+04:00) Samara</option>
+                            <option value="Tbilisi">(GMT+04:00) Tbilisi</option>
+                            <option value="Yerevan">(GMT+04:00) Yerevan</option>
+                            <option value="Kabul">(GMT+04:30) Kabul</option>
+                            <option value="Ekaterinburg">(GMT+05:00) Ekaterinburg</option>
+                            <option value="Islamabad">(GMT+05:00) Islamabad</option>
+                            <option value="Karachi">(GMT+05:00) Karachi</option>
+                            <option value="Tashkent">(GMT+05:00) Tashkent</option>
+                            <option value="Chennai">(GMT+05:30) Chennai</option>
+                            <option value="Kolkata">(GMT+05:30) Kolkata</option>
+                            <option value="Mumbai">(GMT+05:30) Mumbai</option>
+                            <option value="New Delhi">(GMT+05:30) New Delhi</option>
+                            <option value="Sri Jayawardenepura">(GMT+05:30) Sri Jayawardenepura</option>
+                            <option value="Kathmandu">(GMT+05:45) Kathmandu</option>
+                            <option value="Almaty">(GMT+06:00) Almaty</option>
+                            <option value="Astana">(GMT+06:00) Astana</option>
+                            <option value="Dhaka">(GMT+06:00) Dhaka</option>
+                            <option value="Urumqi">(GMT+06:00) Urumqi</option>
+                            <option value="Rangoon">(GMT+06:30) Rangoon</option>
+                            <option value="Bangkok">(GMT+07:00) Bangkok</option>
+                            <option value="Hanoi">(GMT+07:00) Hanoi</option>
+                            <option value="Jakarta">(GMT+07:00) Jakarta</option>
+                            <option value="Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
+                            <option value="Novosibirsk">(GMT+07:00) Novosibirsk</option>
+                            <option value="Beijing">(GMT+08:00) Beijing</option>
+                            <option value="Chongqing">(GMT+08:00) Chongqing</option>
+                            <option value="Hong Kong">(GMT+08:00) Hong Kong</option>
+                            <option value="Irkutsk">(GMT+08:00) Irkutsk</option>
+                            <option value="Kuala Lumpur">(GMT+08:00) Kuala Lumpur</option>
+                            <option value="Perth">(GMT+08:00) Perth</option>
+                            <option value="Singapore">(GMT+08:00) Singapore</option>
+                            <option value="Taipei">(GMT+08:00) Taipei</option>
+                            <option value="Ulaanbaatar">(GMT+08:00) Ulaanbaatar</option>
+                            <option value="Osaka">(GMT+09:00) Osaka</option>
+                            <option value="Sapporo">(GMT+09:00) Sapporo</option>
+                            <option value="Seoul">(GMT+09:00) Seoul</option>
+                            <option value="Tokyo">(GMT+09:00) Tokyo</option>
+                            <option value="Yakutsk">(GMT+09:00) Yakutsk</option>
+                            <option value="Adelaide">(GMT+09:30) Adelaide</option>
+                            <option value="Darwin">(GMT+09:30) Darwin</option>
+                            <option value="Brisbane">(GMT+10:00) Brisbane</option>
+                            <option value="Canberra">(GMT+10:00) Canberra</option>
+                            <option value="Guam">(GMT+10:00) Guam</option>
+                            <option value="Hobart">(GMT+10:00) Hobart</option>
+                            <option value="Melbourne">(GMT+10:00) Melbourne</option>
+                            <option value="Port Moresby">(GMT+10:00) Port Moresby</option>
+                            <option value="Sydney">(GMT+10:00) Sydney</option>
+                            <option value="Vladivostok">(GMT+10:00) Vladivostok</option>
+                            <option value="Magadan">(GMT+11:00) Magadan</option>
+                            <option value="New Caledonia">(GMT+11:00) New Caledonia</option>
+                            <option value="Solomon Is.">(GMT+11:00) Solomon Is.</option>
+                            <option value="Srednekolymsk">(GMT+11:00) Srednekolymsk</option>
+                            <option value="Auckland">(GMT+12:00) Auckland</option>
+                            <option value="Fiji">(GMT+12:00) Fiji</option>
+                            <option value="Kamchatka">(GMT+12:00) Kamchatka</option>
+                            <option value="Marshall Is.">(GMT+12:00) Marshall Is.</option>
+                            <option value="Wellington">(GMT+12:00) Wellington</option>
+                            <option value="Chatham Is.">(GMT+12:45) Chatham Is.</option>
+                            <option value="Nuku&#39;alofa">(GMT+13:00) Nuku&#39;alofa</option>
+                            <option value="Tokelau Is.">(GMT+13:00) Tokelau Is.</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <p style="margin:0;">Default currency for fees:</p>
+
+                    <div class="row">
+                        <div class="col s12 has-error-container" data-error-container="#currency-validation-modal">
+
+                            <p class="left" style="margin-right:20px;">
+                                <input
+                                        name="user[prefcurrency]"
+                                        type="radio"
+                                        id="currencydollar"
+                                        value="USD">
+                                <label for="currencydollar">
+                                    <i class="fa fa-usd"></i> Dollar
+                                </label>
+                            </p>
+
+                            <p class="left">
+                                <input name="user[prefcurrency]"
+                                       type="radio"
+                                       id="current-btc"
+                                       value="BTC">
+                                <label for="current-btc">
+                                    <i class="fa fa-btc"></i> Bitcoin
+                                </label>
+                            </p>
+
+                        </div>
+                    </div><!--.row-->
+
+                    <div id="currency-validation-modal" class="move-up-20"></div>
+                </div>
+            </div><!--row-->
+
+            <div class="row">
+                <div class="col s12 terms-field">
+                    <label class="terms"><b>Terms &amp; Conditions</b></label>
+                    <label for="terms">
+                        <input name="user[agreed_tos]" type="hidden" id="terms" value="1">
+                        By signing up on Bitfinex, you agree to our <br/><a href="/terms" target="_blank"> Terms &
+                        Conditions</a> and <a href="/anti_spam" target="_blank"> Anti-Spam Policy</a>
+                    </label>
+                </div>
+            </div><!--.row-->
+
+        </div><!--.modal-content-->
+
+        <div class="modal-footer center-align">
+
+            <button
+                    class="btn btn-green"
+                    type="submit"
+                    style="float:none;"
+                    name="action"
+                    data-disable-with="<div class='hide-text'>Open Account</div><i class='fa fa-circle-o-notch fa-spin'>">
+                Open Account
+            </button>
+
+            <a href="javascript:void(0)" onclick="$('.modal').closeModal();" class="cancel-action">Cancel</a>
+
+        </div><!--.modal-footer-->
+
+    </form>
+</div><!--.modal-->
+
+<div id="clef-learn-modal" class="modal">
+    <div class="modal-content">
+        <div class="body">
+
+            <img alt="Clef" class="clef-logo"
+                 src="/assets/clef-71f45f126a22dcc9fd11fa28d08cd4a794883557e477e96313b556196da76ae6.png"/>
+
+            <div class="divider" style="margin-bottom:5px;"></div>
+
+            <p><strong>What is Clef?</strong></p>
+
+            <p>Clef is a new take on two-factor authentication. It makes logging in easier and more secure.</p>
+
+            <ul class="actual-list">
+                <li><strong>Secure:</strong> Prevents key-logging and "fishing" attacks</li>
+                <li><strong>Fast:</strong> No need to type in username, password and two-factor tokens</li>
+                <li><strong>Fun:</strong> Point your phone at the waveform, and you're in.</li>
+                <li><strong>Trusted:</strong> Used by over 100,000 sites.</li>
+            </ul>
+
+            <p class="learn-more">
+                <a href="https://getclef.com/bitfinex" target="_blank">Learn more about Clef &amp;
+                    Bitfinex&nbsp;&nbsp;<i class="fa fa-external-link show50"></i></a>
+            </p>
+
+            <p style="margin-top:30px;">Ready to get started? <a href="javascript:;" class="login-choose-standard">Log
+                in normally</a> and go to <strong>Security > Two-Factor Authentication</strong> to configure Clef.</p>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="progress" id="show-progress" style="display:none;">
+    <div class="indeterminate"></div>
+</div>
+
+<div id="header" class="app-header">
+
+    <div class="container">
+
+        <div class="row" style="padding-right:10px;position:relative;">
+
+            <div class="col logo left hide-on-med-and-down">
+                <a href="/" id="logo" onclick="showLoading();">
+                    <img alt="BitFinex" class="show-for-dark-theme"
+                         src="/assets/logo3-dark-theme-90276da89b3131461fd422756694de9bf75895deee13e02809682be956e229ff.svg"
+                         title="BitFinex"/>
+                    <img alt="BitFinex" class="show-for-light-theme"
+                         src="/assets/logo3-light-theme-e679a007de95d95ec2c904eedd6f94dc7f6f90f7f2b08bc34782e6d90be2b9c9.svg"
+                         title="BitFinex"/>
+                </a>
+            </div>
+
+            <div class="col s4 logo left hide-on-large-only" style="margin:8px 0 8px -8px;">
+                <a href="/" id="logo" onclick="showLoading();">
+                    <img alt="BitFinex" class="show-for-dark-theme"
+                         src="/assets/mobile_logo_dark-01bd54528effd1f0524d8864c955ab90df424c4899e6180d7cf3d146ae97ba36.svg"
+                         title="BitFinex"/>
+                    <img alt="BitFinex" class="show-for-light-theme"
+                         src="/assets/mobile_logo_light-c00094b78c980f164d3afb41204e2c2df61e001f581701f63809d5d5ce730a82.svg"
+                         title="BitFinex"/>
+                </a>
+            </div>
+
+            <div id="main-app-menu" class="app-menu-wrap hide-on-med-and-down">
+                <div class="app-menu">
+                    <!-- Dropdown Trigger -->
+                    <a href="/trading"
+                       class="ajax btn-flat dropdown-button center-align active-nav"
+                       id="app-menu-trading"
+                       data-remote="true"
+                       data-alignment="left"
+                       data-hover="true"
+                       data-beloworigin="true"
+                       data-activates='tradingdropdown'>
+                        Trading
+                    </a>
+                    <!-- Dropdown Structure -->
+                    <ul id='tradingdropdown' class='dropdown-content'>
+                        <li class='tradingdropdown-btcusd'>
+                            <a href="/trading/BTCUSD" class="ajax" data-remote="true">BTCUSD</a>
+                        </li>
+                        <li class='tradingdropdown-ethusd'>
+                            <a href="/trading/ETHUSD" class="ajax" data-remote="true">ETHUSD</a>
+                        </li>
+                        <li class='tradingdropdown-ethbtc'>
+                            <a href="/trading/ETHBTC" class="ajax" data-remote="true">ETHBTC</a>
+                        </li>
+                        <li class='tradingdropdown-etcusd'>
+                            <a href="/trading/ETCUSD" class="ajax" data-remote="true">ETCUSD</a>
+                        </li>
+                        <li class='tradingdropdown-etcbtc'>
+                            <a href="/trading/ETCBTC" class="ajax" data-remote="true">ETCBTC</a>
+                        </li>
+                        <li class='tradingdropdown-bfxusd'>
+                            <a href="/trading/BFXUSD" class="ajax" data-remote="true">BFXUSD</a>
+                        </li>
+                        <li class='tradingdropdown-bfxbtc'>
+                            <a href="/trading/BFXBTC" class="ajax" data-remote="true">BFXBTC</a>
+                        </li>
+                        <li class='tradingdropdown-zecusd'>
+                            <a href="/trading/ZECUSD" class="ajax" data-remote="true">ZECUSD</a>
+                        </li>
+                        <li class='tradingdropdown-zecbtc'>
+                            <a href="/trading/ZECBTC" class="ajax" data-remote="true">ZECBTC</a>
+                        </li>
+                        <li class='tradingdropdown-xmrusd'>
+                            <a href="/trading/XMRUSD" class="ajax" data-remote="true">XMRUSD</a>
+                        </li>
+                        <li class='tradingdropdown-xmrbtc'>
+                            <a href="/trading/XMRBTC" class="ajax" data-remote="true">XMRBTC</a>
+                        </li>
+                        <li class='tradingdropdown-rrtusd'>
+                            <a href="/trading/RRTUSD" class="ajax" data-remote="true">RRTUSD</a>
+                        </li>
+                        <li class='tradingdropdown-rrtbtc'>
+                            <a href="/trading/RRTBTC" class="ajax" data-remote="true">RRTBTC</a>
+                        </li>
+                        <li class='tradingdropdown-ltcusd'>
+                            <a href="/trading/LTCUSD" class="ajax" data-remote="true">LTCUSD</a>
+                        </li>
+                        <li class='tradingdropdown-ltcbtc'>
+                            <a href="/trading/LTCBTC" class="ajax" data-remote="true">LTCBTC</a>
+                        </li>
+                    </ul>
+
+                    <a href="/funding"
+                       class="ajax btn-flat dropdown-button center-align "
+                       id="app-menu-funding"
+                       data-remote="true"
+                       data-alignment="left"
+                       data-hover="true"
+                       data-beloworigin="true"
+                       data-activates="fundingdropdown">
+                        Funding
+                    </a>
+                    <!-- Dropdown Structure -->
+                    <ul id="fundingdropdown" class='dropdown-content'>
+                        <li>
+                            <a href="/funding/USD" class="ajax" data-remote="true">USD</a>
+                        </li>
+                        <li>
+                            <a href="/funding/BTC" class="ajax" data-remote="true">BTC</a>
+                        </li>
+                        <li>
+                            <a href="/funding/ETH" class="ajax" data-remote="true">ETH</a>
+                        </li>
+                        <li>
+                            <a href="/funding/ETC" class="ajax" data-remote="true">ETC</a>
+                        </li>
+                        <li>
+                            <a href="/funding/BFX" class="ajax" data-remote="true">BFX</a>
+                        </li>
+                        <li>
+                            <a href="/funding/ZEC" class="ajax" data-remote="true">ZEC</a>
+                        </li>
+                        <li>
+                            <a href="/funding/LTC" class="ajax" data-remote="true">LTC</a>
+                        </li>
+                    </ul>
+
+                    <a href="/otc" data-remote="true" id="app-menu-otc" class="ajax btn-flat center-align">
+                        OTC
+                    </a>
+                </div>
+            </div>
+
+            <div class="col s5 hide-on-large-only page-title" style="padding:0 2px 0 8px;">
+                Trading
+            </div>
+
+            <div id="mobile-nav" class="col s3 hide-on-large-only" style="text-align:right;height:30px;">
+                <nav id="bfx-nav">
+                    <div class="nav-wrapper">
+
+                        <a href="javascript:;" data-activates="mobile-demo" class="button-collapse btn"
+                           style="margin:0px;padding:0;display:block;width:50px;height:50px;line-height:50px;text-align:center;">
+                            <i class="fa fa-bars"></i>
+                        </a>
+
+                        <ul class="side-nav" id="mobile-demo">
+
+                            <div id="logout-btn">
+                                <a href="/logout" onclick="showLoading();">
+                                    Logout <i class="fa fa-sign-out"></i>
+                                </a>
+                            </div>
+
+                            <!-- Trading Collapsible -->
+                            <li class="no-padding">
+                                <ul class="collapsible collapsible-accordion">
+                                    <li>
+                                        <a class="collapsible-header mobile-nav-collapsible">Trading</a>
+                                        <div class="collapsible-body">
+                                            <ul>
+                                                <!-- DEV NOTE: do not add indentation — we are js sensitive to string length
+                                                     on these. Putting the text on a new line adds 60 characters to the front -->
+                                                <li class="">
+                                                    <a href="/trading/BTCUSD" class="ajax write-title"
+                                                       data-remote="true">BTCUSD</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/ETHUSD" class="ajax write-title"
+                                                       data-remote="true">ETHUSD</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/ETHBTC" class="ajax write-title"
+                                                       data-remote="true">ETHBTC</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/ETCUSD" class="ajax write-title"
+                                                       data-remote="true">ETCUSD</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/ETCBTC" class="ajax write-title"
+                                                       data-remote="true">ETCBTC</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/BFXUSD" class="ajax write-title"
+                                                       data-remote="true">BFXUSD</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/BFXBTC" class="ajax write-title"
+                                                       data-remote="true">BFXBTC</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/ZECUSD" class="ajax write-title"
+                                                       data-remote="true">ZECUSD</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/ZECBTC" class="ajax write-title"
+                                                       data-remote="true">ZECBTC</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/XMRUSD" class="ajax write-title"
+                                                       data-remote="true">XMRUSD</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/XMRBTC" class="ajax write-title"
+                                                       data-remote="true">XMRBTC</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/RRTUSD" class="ajax write-title"
+                                                       data-remote="true">RRTUSD</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/RRTBTC" class="ajax write-title"
+                                                       data-remote="true">RRTBTC</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/LTCUSD" class="ajax write-title"
+                                                       data-remote="true">LTCUSD</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/trading/LTCBTC" class="ajax write-title"
+                                                       data-remote="true">LTCBTC</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li><!-- End Trading Collapsible -->
+
+                            <!-- Funding Collapsible -->
+                            <li class="no-padding">
+                                <ul class="collapsible collapsible-accordion">
+                                    <li>
+                                        <a class="collapsible-header mobile-nav-collapsible">Funding</a>
+                                        <div class="collapsible-body">
+                                            <ul>
+                                                <!-- DEV NOTE: do not add indentation — we are js sensitive to string length
+                                                     on these. Putting the text on a new line adds 60 characters to the front -->
+                                                <li class="">
+                                                    <a href="/funding/USD" class="ajax write-title" data-remote="true">USD</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/funding/BTC" class="ajax write-title" data-remote="true">BTC</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/funding/ETH" class="ajax write-title" data-remote="true">ETH</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/funding/ETC" class="ajax write-title" data-remote="true">ETC</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/funding/BFX" class="ajax write-title" data-remote="true">BFX</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/funding/ZEC" class="ajax write-title" data-remote="true">ZEC</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/funding/LTC" class="ajax write-title" data-remote="true">LTC</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li><!-- End Funding Collapsible -->
+
+                            <li class="">
+                                <a href="/deposit" data-remote="true" class="ajax write-title">Deposits</a>
+                            </li>
+
+                            <li class="">
+                                <a href="/withdraw" data-remote="true" class="ajax write-title">Withdraw</a>
+                            </li>
+
+                            <li class="">
+                                <a href="/wallets" data-remote="true"
+                                   class="ajax write-title bug-fix-spacer">Wallets</a>
+                            </li>
+
+                            <!-- Settings Collapsible -->
+                            <li class="no-padding">
+                                <ul class="collapsible collapsible-accordion">
+                                    <li>
+                                        <a class="collapsible-header mobile-nav-collapsible">Settings</a>
+                                        <div class="collapsible-body">
+                                            <ul>
+                                                <!-- DEV NOTE: do not add indentation — we are js sensitive to string length
+                                                     on these. Putting the text on a new line adds 60 characters to the front -->
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/account">Account</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/security">Security</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/history">Reports</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true"
+                                                       href="/notifications">Notifications</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/verification">Verification</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/interface">Interface</a>
+                                                </li>
+
+                                                <!--hide reporting from nav for now-->
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li><!-- End Settings Collapsible -->
+
+                            <!-- Utility & API Collapsible -->
+                            <li class="no-padding">
+                                <ul class="collapsible collapsible-accordion">
+                                    <li>
+                                        <a class="collapsible-header mobile-nav-collapsible">Utility &amp; API</a>
+                                        <div class="collapsible-body">
+                                            <ul>
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/api">API
+                                                        Keys</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="http://docs.bitfinex.com" target="blank">API
+                                                        Documentation</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/stats">Market
+                                                        Statistics</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/order_book">Order
+                                                        Book</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/funding_book">Funding
+                                                        Book</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true"
+                                                       href="/trading/history">Trades History</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a href="/posts">Announcements</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="write-title" href="/changelog">Change Log</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li><!-- End Utility & API Collapsible -->
+
+                            <!-- Support Collapsible -->
+                            <li class="no-padding">
+                                <ul class="collapsible collapsible-accordion">
+                                    <li>
+                                        <a class="collapsible-header mobile-nav-collapsible">Support</a>
+                                        <div class="collapsible-body">
+                                            <ul>
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/support">Support
+                                                        Center</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="javascript:;" class="new-support-ticket">
+                                                        New Help Desk Ticket
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li><!-- End Support Collapsible -->
+
+                            <!-- More Collapsible -->
+                            <li class="no-padding">
+                                <ul class="collapsible collapsible-accordion">
+                                    <li>
+                                        <a class="collapsible-header mobile-nav-collapsible">More</a>
+                                        <div class="collapsible-body">
+                                            <ul>
+                                                <li>
+                                                    <a href="https://bitfinex.statuspage.io/" target="_blank">
+                                                        Status Page
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="http://blog.bitfinex.com/" target="_blank">
+                                                        Blog
+                                                    </a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/app">Mobile
+                                                        App</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/features">Features</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/howitworks">How
+                                                        it works</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true"
+                                                       href="/security_policy">Security</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/fees">Our
+                                                        fees</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li><!-- End More Collapsible -->
+
+
+                            <!-- Legal Collapsible -->
+                            <li class="no-padding">
+                                <ul class="collapsible collapsible-accordion">
+                                    <li>
+                                        <a class="collapsible-header mobile-nav-collapsible">Legal</a>
+                                        <div class="collapsible-body">
+                                            <ul>
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/terms">Terms
+                                                        of Service</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/risk">Risk
+                                                        Disclosure Statement</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/privacy">Privacy
+                                                        Policy</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true"
+                                                       href="/law_enforcement_requests_policy">Law Enforcement Request
+                                                        Policy</a>
+                                                </li>
+
+                                                <li class="">
+                                                    <a class="ajax write-title" data-remote="true" href="/anti_spam">Anti-Spam
+                                                        Policy</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li><!-- End Legal Collapsible -->
+
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+            <div id="top-right-nav" class="hide-on-med-and-down">
+
+                <div class="dropdown-wrap">
+                    <!-- Dropdown Trigger -->
+                    <a class="dropdown-button ajax"
+                       id="manage-account-dropdown"
+                       title="Manage Account"
+                       href='/account'
+                       data-remote="true"
+                       data-alignment="right"
+                       data-hover="true"
+                       data-beloworigin="true"
+                       data-activates='accountdropdown'>
+                        Account
+                    </a>
+                    <!-- Dropdown Structure -->
+                    <ul id='accountdropdown' class='dropdown-content'>
+
+                        <li>
+                            <a href="/account" class="ajax" data-remote="true">
+                                Account
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/security" class="ajax" data-remote="true">
+                                Security
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/notifications" class="ajax" data-remote="true">
+                                Notifications
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/interface" class="ajax" data-remote="true">
+                                Interface
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/verification" class="ajax" data-remote="true">
+                                Verification
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/history" class="ajax" data-remote="true">
+                                Reports
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/api" class="ajax" data-remote="true">
+                                API
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/posts">
+                                Announcements
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/careers">
+                                Careers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/changelog">
+                                Change Log
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/logout" onclick="showLoading();">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="dropdown-wrap">
+
+                    <a class="dropdown-button"
+                       title="Get Support"
+                       href="/support"
+                       data-alignment="right"
+                       data-hover="true"
+                       data-beloworigin="true"
+                       data-activates='support-dropdown'>
+                        Support
+                    </a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='support-dropdown' class='dropdown-content'>
+                        <li>
+                            <a href="javascript:;" onclick="BFX.modal.load('tours')">
+                                Tours &amp; Guides
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://support.bitfinex.com/" target="_blank">
+                                Help Center
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="new-support-ticket">
+                                Open New Ticket
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--dropdown-wrap-->
+
+                <div class="dropdown-wrap" id="funds-dropdown-wrap">
+                    <!-- Dropdown Trigger -->
+                    <a class="dropdown-button ajax"
+                       title="Manage funds"
+                       href='/wallets'
+                       data-remote="true"
+                       data-alignment="right"
+                       data-hover="true"
+                       data-beloworigin="true"
+                       data-activates='transferdropdown'>
+                        Transfer
+                    </a>
+                    <!-- Dropdown Structure -->
+                    <ul id='transferdropdown' class='dropdown-content'>
+
+                        <li>
+                            <a href="/deposit" class="ajax" data-remote="true">
+                                Deposit
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/withdraw" class="ajax" data-remote="true">
+                                Withdraw
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/wallets" class="ajax" data-remote="true">
+                                Wallets
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <a href="/equity"
+                   id="equity-nav"
+                   class="tooltip-dark-bottom-hide-on-click"
+                   title="Equity options">
+                    Equity
+                </a>
+
+                <div class="dropdown-wrap" id="notices-dropdown-wrap" style="margin-right:12px;">
+                    <a class="dropdown-button"
+                       title="Recent notices"
+                       style="padding-right:4px;padding-left: 30px;"
+                       href='javascript:;'
+                       data-alignment="right"
+                       data-hover="true"
+                       data-beloworigin="true"
+                       data-activates='notices-dropdown'>
+                        <i class="fa fa-bell icon-only"></i>
+                    </a>
+                    <!-- Dropdown Structure -->
+                    <ul id='notices-dropdown' class='dropdown-content'>
+
+                        <li>
+                            <h6>Recent Notifications</h6>
+                            <span class="message">No notices at this time.</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div><!--.row-->
+    </div><!--.container-->
+</div><!--#header-->
+
+<div id="sub-header">
+    <div class="container">
+        <div class="row" style="margin-bottom:0;margin-right:0;">
+
+            <div class="col" id="ticker"></div>
+            <script id='ractive-ticker-template' type='text/ractive'>
+                  <table style="{{ tableWidthStyle }}">
+
+                    {{#if isConnected }}
+
+                      <tbody>
+
+                        <!-- show wider layout when 6 or less pairs-->
+                        {{#if !onMobile() && pairs.length <= 6}}
+
+                          <!-- first row is the currencies and their current price-->
+                          <tr>
+                            {{#pairs}}
+                              <td style="width:65px;padding-top:12px;padding-left:14px;" class="ticker-hoverable" data-pair="{{pairs[@index]}}">
+                                <h5>{{ pairs[@index] }}
+                                  <a href="{{ urlFor(pairs[@index]) }}"
+                                    data-remote="true"
+                                    style="display:none;"
+                                    class="ajax ticker-pair-link-{{pairs[@index]}}">{{ pairs[@index] }}
+                                  </a>
+                                </h5>
+                              </td>
+                              <td class="ticker-hoverable" style="padding-top:12px;" data-pair="{{pairs[@index]}}">
+                                <h5><span class="bfx-green-text tooltip-dark-bottom" title="Last Trade">{{ lastPrice(pairs[@index]) }}</span></h5>
+                              </td>
+                            {{/pairs}}
+                          </tr>
+
+                          <!-- second row is the "24h CHG" row-->
+                          <tr>
+                            {{#pairs}}
+                              <td style="padding-left:14px;" class="ticker-hoverable" data-pair="{{pairs[@index]}}"><span class="muted">24h CHG</span></td>
+                              <td class="ticker-hoverable" data-pair="{{pairs[@index]}}">
+                                <span class="{{ directionClass(pairs[@index]) }} tooltip-dark-bottom" title="24h Change">
+                                  {{ dailyChange(pairs[@index]) }}
+                                  <i class="fa {{ caretClass(pairs[@index]) }}"></i>
+                                  ({{ dailyPercentChange(pairs[@index]) }}%)
+                                </span>
+                              </td>
+                            {{/pairs}}
+                          </tr>
+
+                          <!-- 3rd row is the "24h High/Low" row-->
+                          <tr>
+                            {{#pairs}}
+                              <td style="padding-left:14px;" class="ticker-hoverable" data-pair="{{pairs[@index]}}"><span class="muted">24h RNG</span></td>
+                              <td class="ticker-hoverable" data-pair="{{pairs[@index]}}">
+                                <span class="tooltip-dark-bottom" title="24h Range">
+                                  {{ dailyLow(pairs[@index]) }} <i class="fa fa-arrows-h show75"></i> {{ dailyHigh(pairs[@index]) }}
+                                </span>
+                              </td>
+                            {{/pairs}}
+                          </tr>
+
+                          <!-- 4rd row is "24h volume" row-->
+                          <tr>
+                            {{#pairs}}
+                              <td style="padding-left:14px;" class="ticker-hoverable ticker-pair-footer" data-pair="{{pairs[@index]}}">
+                                <span class="muted">
+                                  24h VOL
+                                </span>
+                              </td>
+                              <td class="ticker-hoverable ticker-pair-footer" data-pair="{{pairs[@index]}}">
+                                <span class="tooltip-dark-bottom vol-inverse-{{pairs[@index]}}" title="24h VOL (≈... {{ lastCurr(pairs[@index]) }})">
+                                  {{ formatDailyVol(pairs[@index]) }}
+                                </span>
+                              </td>
+                            {{/pairs}}
+                          </tr>
+
+                        {{/if}}
+
+                        <!-- show more compact layout when more than 6 pairs-->
+                        {{#if onMobile() || pairs.length > 6}}
+
+                          <!-- first row is the currencies and their current price-->
+                          <tr>
+                            {{#pairs}}
+                              <td style="width:65px;padding-top:12px;padding-left:14px;" class="ticker-hoverable" data-pair="{{pairs[@index]}}">
+                                <h5>
+                                  {{ pairs[@index] }}
+                                  <a href="{{ urlFor(pairs[@index]) }}"
+                                    data-remote="true"
+                                    style="display:none;"
+                                    class="ajax ticker-pair-link-{{pairs[@index]}}">{{ pairs[@index] }}
+                                  </a>
+                                </h5>
+                              </td>
+                              <td class="ticker-hoverable" style="padding-top:12px;" data-pair="{{pairs[@index]}}">
+                                <h5><span class="bfx-green-text tooltip-dark-bottom" title="Last Trade">{{ lastPrice(pairs[@index]) }}</span></h5>
+                              </td>
+                            {{/pairs}}
+                          </tr>
+
+                          <!-- second row is the "24h CHG" row-->
+                          <tr>
+                            {{#pairs}}
+                              <td colspan="2" style="padding-left:14px;" class="ticker-hoverable" data-pair="{{pairs[@index]}}">
+                                <span class="{{ directionClass(pairs[@index]) }} tooltip-dark-bottom" title="24h Change">
+                                  {{ dailyChange(pairs[@index]) }}
+                                  <i class="fa {{ caretClass(pairs[@index]) }}"></i>
+                                  ({{ dailyPercentChange(pairs[@index]) }}%)</span>
+                              </td>
+                            {{/pairs}}
+                          </tr>
+
+                          <!-- 3rd row is the "24h High/Low" row-->
+                          <tr>
+                            {{#pairs}}
+                              <td colspan="2" style="padding-left:14px;" class="ticker-hoverable" data-pair="{{pairs[@index]}}">
+                                <span class="tooltip-dark-bottom" title="24h Range">
+                                  {{ dailyLow(pairs[@index]) }} <i class="fa fa-arrows-h show75"></i> {{ dailyHigh(pairs[@index]) }}
+                                </span>
+                              </td>
+                            {{/pairs}}
+                          </tr>
+
+                          <!-- 4rd row is "24h volume" row-->
+                          <tr>
+                            {{#pairs}}
+                              <td colspan="2" style="padding-left:14px;" class="ticker-hoverable ticker-pair-footer" data-pair="{{pairs[@index]}}">
+                                <span class="tooltip-dark-bottom vol-inverse-{{pairs[@index]}}" title="24h VOL (≈... {{ lastCurr(pairs[@index]) }})">
+                                  {{ formatDailyVol(pairs[@index]) }} <span class="muted show75">{{ volumeCcy(pairs[@index]) }}</span>
+                                </span>
+                              </td>
+                            {{/pairs}}
+                          </tr>
+
+                        {{/if}}
+
+                      </tbody>
+
+                    {{/if}}
+
+                    {{#if !isConnected }}
+
+                      <tr>
+                        <td id="ticker-loading-message">
+                          {{{ loadingMessage }}}
+                        </td>
+                      </tr>
+
+                    {{/if}}
+
+                  </table>
+
+            </script>
+
+            <a href="javascript:;" class="settings-float-icon" id="ticker-settings-icon"
+               onclick="BFX.modal.load('interface_tickers');" style="display:none;">
+                <i class="fa fa-gear"></i>
+            </a>
+
+        </div><!--.row-->
+    </div><!--.container-->
+</div>
+
+
+<div class="container row"
+     id="interface"
+     data-user-id="32699"
+     data-two-fa-remind="">
+    <div id="sidebar">
+
+        <div class="sidebar-content">
+            <div id="ticker-sidebar"></div>
+
+            <div class="form-sidebar-wrap" style="display:none;" id="widget-sidebar-1"></div>
+            <div class="form-sidebar-wrap" style="display:none;" id="widget-sidebar-2"></div>
+            <div class="form-sidebar-wrap" style="display:none;" id="widget-sidebar-3"></div>
+            <div class="form-sidebar-wrap" style="display:none;" id="widget-sidebar-4"></div>
+
+            <a id="sidebar-quick-settings-link" href="javascript:;" onclick="BFX.modal.load('interface_settings');">
+                <i class="fa fa-gear"></i>Interface Settings
+            </a>
+        </div>
+
+    </div>
+
+    <script id='ractive-ticker-sidebar-template' type='text/ractive'>
+
+          {{#if isConnected }}
+
+            <div id="ticker-sidebar-loader"></div>
+
+            {{#pairs}}
+
+              <div class="ticker-sidebar-selected form-sidebar-wrap" style="display:none;"
+                data-pair="{{pairs[@index]}}">
+                <i class="fa fa-ellipsis-v ticker-opening-icon"></i>
+                <table>
+                  <tbody>
+                    <!-- first row is the currencies and their current price-->
+                    <tr>
+                      <td class="col-info" rowspan="3" style="width:44px;">
+                        <span class="svg"><img class="svg-img" src="{{ svgPath(pairs[@index]) }}" style="width:20px;" /></span>
+                      </td>
+                      <td class="col-info" data-pair="{{pairs[@index]}}" style="width:95px;">
+                        <h5>{{ pairs[@index] }}
+                          <a href="{{ urlFor(pairs[@index]) }}"
+                            data-remote="true"
+                            style="display:none;"
+                            class="ajax ticker-pair-link-{{pairs[@index]}}">{{ pairs[@index] }}
+                          </a>
+                        </h5>
+                      </td>
+                      <td class="col-info" data-pair="{{pairs[@index]}}">
+                        <h5>
+                          {{ lastPrice(pairs[@index]) }}
+                        </h5>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td class="col-info" data-pair="{{pairs[@index]}}" style="height:18px">
+                        <span class="show-soft">VOL</span>
+                        <span class="tooltip-dark-bottom vol-inverse-{{pairs[@index]}}" title="24h VOL (≈... {{ lastCurr(pairs[@index]) }})">
+                          {{ formatDailyVol(pairs[@index]) }}
+                        </span>
+                      </td>
+
+                      <td class="col-info" data-pair="{{pairs[@index]}}">
+                        <span class="{{ directionClass(pairs[@index]) }}">
+                          {{ dailyChange(pairs[@index]) }}
+                          <i class="fa {{ caretClass(pairs[@index]) }}"></i>
+                          ({{ dailyPercentChange(pairs[@index]) }}%)
+                        </span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-info" data-pair="{{pairs[@index]}}" style="height:18px">
+                        <span class="show-soft">LOW</span>
+                        {{ dailyLow(pairs[@index]) }}
+                      </td>
+
+                      <td class="col-info" data-pair="{{pairs[@index]}}">
+                      <span class="show-soft">HIGH</span>
+                        {{ dailyHigh(pairs[@index]) }}
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            {{/pairs}}
+
+            {{#fundingCcys}}
+
+              <div class="ticker-sidebar-selected form-sidebar-wrap" style="display:none;"
+                data-pair="{{this}}">
+                <i class="fa fa-ellipsis-v ticker-opening-icon"></i>
+                <table>
+                  <tbody>
+                    <!-- first row is the currencies and their current price-->
+                    <tr>
+                      <td class="col-info" rowspan="3" style="width:44px;">
+                        <span class="svg"><img class="svg-img" src="{{ svgPath(this) }}" style="width:20px;" /></span>
+                      </td>
+                      <td class="col-info" data-pair="{{this}}" style="width:95px;">
+                        <h5>{{ this }}
+                          <a href="{{ urlFor(this) }}"
+                            data-remote="true"
+                            style="display:none;"
+                            class="ajax ticker-pair-link-{{this}}">{{ this }}
+                          </a>
+                        </h5>
+                      </td>
+                      <td class="col-info" data-pair="{{this}}">
+                        <h5>
+                          {{ lastPrice(this) }}
+                        </h5>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td class="col-info" data-pair="{{this}}" style="height:18px">
+                        <span class="show-soft">VOL</span>
+                        {{ formatDailyVol(this) }}
+                      </td>
+
+                      <td class="col-info" data-pair="{{this}}">
+                        <span class="{{ directionClass(this) }}">
+                          {{ dailyChange(this) }}
+                          <i class="fa {{ caretClass(this) }}"></i>
+                          ({{ dailyPercentChange(this) }}%)
+                        </span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-info" data-pair="{{this}}" style="height:18px">
+                        <span class="show-soft">LOW</span>
+                        {{ dailyLow(this) }}
+                      </td>
+
+                      <td class="col-info" data-pair="{{this}}">
+                      <span class="show-soft">HIGH</span>
+                        {{ dailyHigh(this) }}
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            {{/fundingCcys}}
+
+            {{#favPairs}}
+
+              <div class="ticker-sidebar-favs form-sidebar-wrap"
+                data-pair="{{favPairs[@index]}}">
+                <table>
+                  <tbody>
+
+                    <tr>
+                      <td class="col-info ticker-hoverable" data-pair="{{favPairs[@index]}}" style="width:25%;">
+                        {{ favPairs[@index] }}
+                        <a href="{{ urlFor(favPairs[@index]) }}"
+                          data-remote="true"
+                          style="display:none;"
+                          class="ajax ticker-pair-link-{{favPairs[@index]}}">{{ favPairs[@index] }}
+                        </a>
+                      </td>
+                      <td class="col-currency ticker-hoverable" data-pair="{{favPairs[@index]}}" style="width:21%;">
+                        {{ lastPrice(favPairs[@index]) }}
+                      </td>
+
+                      <td class="col-currency ticker-hoverable" data-pair="{{favPairs[@index]}}" style="width:24%;">
+                        <span class="{{ directionClass(favPairs[@index]) }}">
+                          {{ dailyPercentChange(favPairs[@index]) }}%
+                          <!-- <i class="fa {{ caretClass(favPairs[@index]) }}"></i> -->
+                        </span>
+                      </td>
+
+                      <td class="col-currency ticker-hoverable row-right-edge" data-pair="{{favPairs[@index]}}">
+                        <span class="tooltip-dark-bottom vol-inverse-{{favPairs[@index]}}" title="24h VOL (≈... {{ lastCurr(favPairs[@index]) }})">
+                          {{ formatDailyVol(favPairs[@index]) }}
+                        </span>
+                        <i class="sidebar-symbol-fav fa {{ favClass(favPairs[@index]) }}" onclick="return BFX.ticker.markFav(event);" data-pair="{{favPairs[@index]}}"></i>
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            {{/favPairs}}
+
+          {{/if}}
+
+          {{#if !isConnected }}
+
+            <div class="form-sidebar-wrap" style="padding:0;">
+              <p class="center-align" style="{{ loadingStyle }}">{{{ loadingMessage }}}</p>
+            </div>
+
+          {{/if}}
+
+          {{#if isConnected }}
+
+            <div id="ticker-sidebar-nav">
+
+              <h6>Trading</h6>
+
+              {{#pairsSplit:firstCcy}}
+
+                <div class="pair-table-wrap">
+                  <table>
+                    <tbody>
+                      <!-- first row is the currencies and their current price-->
+
+                      <tr>
+
+                        <td class="col-info" style="width:21%;padding-left:6px;" rowspan="{{#if firstCcy == 'BTC'}}1{{/if}}{{#if firstCcy != 'BTC'}}2{{/if}}">
+                          <span class="svg"><img class="svg-img" src="{{ svgPath(firstCcy) }}" style="width:20px;" /></span>
+                          <h5>{{ firstCcy }}</h5>
+                        </td>
+
+                        <td class="ticker-hoverable col-currency" data-pair="{{firstCcy}}USD" style="width:21%">
+
+                          <span class="">
+                            {{ lastPrice(firstCcy + 'USD') }}
+                          </span>
+                          <a href="{{ urlFor(firstCcy + 'USD') }}"
+                            data-remote="true"
+                            style="display:none;"
+                            class="ajax ticker-pair-link-{{ firstCcy + 'USD' }}">{{ firstCcy + 'USD' }}
+                          </a>
+                        </td>
+
+                        <td class="ticker-hoverable col-info" data-pair="{{firstCcy}}USD"
+                          style="width:10%;">
+                          <span class="lighter">USD</span>
+                        </td>
+
+                        <td class="ticker-hoverable col-currency" data-pair="{{firstCcy}}USD" style="width:17%;">
+                          <span class="{{ directionClass(firstCcy + 'USD') }}">
+                            {{ dailyPercentChange(firstCcy + 'USD') }}%
+                            <!-- <i class="fa {{ caretClass(firstCcy + 'USD') }}"></i> -->
+                          </span>
+                        </td>
+
+                        <td class="col-currency ticker-hoverable row-right-edge" data-pair="{{firstCcy}}USD">
+                          <span class="tooltip-dark-bottom vol-inverse-{{firstCcy}}USD" title="24h VOL (≈... {{ lastCurr(firstCcy + 'USD') }})">
+                            {{ formatDailyVol(firstCcy + 'USD') }}
+                          </span>
+                          <i class="sidebar-symbol-fav fa {{ favClass(firstCcy + 'USD') }}" onclick="return BFX.ticker.markFav(event);" data-pair="{{firstCcy}}USD"></i>
+                        </td>
+
+                      </tr>
+
+                      {{#if firstCcy != 'BTC'}}
+                        <tr>
+
+                          <td class="ticker-hoverable col-currency" data-pair="{{firstCcy}}BTC" style="width:21%">
+                            <span class="">
+                              {{ lastPrice(firstCcy + 'BTC') }}
+                            </span>
+                            <a href="{{ urlFor(firstCcy + 'BTC') }}"
+                              data-remote="true"
+                              style="display:none;"
+                              class="ajax ticker-pair-link-{{ firstCcy + 'BTC' }}">{{ firstCcy + 'BTC' }}
+                            </a>
+                          </td>
+
+                          <td class="ticker-hoverable col-info" data-pair="{{firstCcy}}BTC"
+                            style="width:10%;">
+                            <span class="lighter">BTC</span>
+                          </td>
+
+                          <td class="ticker-hoverable col-currency" data-pair="{{firstCcy}}BTC" style="width:17%;">
+                            <span class="{{ directionClass(firstCcy + 'BTC') }}">
+                              {{ dailyPercentChange(firstCcy + 'BTC') }}%
+                              <!-- <i class="fa {{ caretClass(firstCcy + 'BTC') }}"></i> -->
+                            </span>
+                          </td>
+
+                          <td class="col-currency ticker-hoverable row-right-edge" data-pair="{{firstCcy}}BTC">
+                            <span class="tooltip-dark-bottom vol-inverse-{{firstCcy}}BTC" title="24h VOL (≈... {{ lastCurr(firstCcy + 'BTC') }})">
+                              {{ formatDailyVol(firstCcy + 'BTC') }}
+                            </span>
+                            <i class="sidebar-symbol-fav fa {{ favClass(firstCcy + 'BTC') }}" onclick="return BFX.ticker.markFav(event);" data-pair="{{firstCcy}}BTC"></i>
+                          </td>
+
+                        </tr>
+                      {{/if}}
+
+                    </tbody>
+                  </table>
+                </div>
+
+              {{/pairsSplit}}
+
+              <h6>Funding</h6>
+
+              {{#fundingCcys}}
+
+                <div class="pair-table-wrap">
+                  <table>
+                    <tbody>
+                      <!-- first row is the currencies and their current price-->
+
+                      <tr>
+
+                        <td class="col-info ticker-hoverable" data-pair="{{this}}" style="width:21%;padding-left: 6px;">
+                          <span class="svg"><img class="svg-img" src="{{ svgPath(this) }}" style="width:20px;" /></span>
+                          <h5>{{ this }}</h5>
+                        </td>
+
+                        <td class="ticker-hoverable col-currency" data-pair="{{this}}" style="width:21%">
+                          {{ lastPrice(this) }}
+                          <a href="{{ urlFor(this) }}"
+                            data-remote="true"
+                            style="display:none;"
+                            class="ajax ticker-pair-link-{{ this }}">{{ this }}
+                          </a>
+                        </td>
+
+                        <td class="ticker-hoverable col-info" data-pair="{{this}}" style="width:10%;">
+                          <span class="lighter"></span>
+                        </td>
+
+                        <td class="ticker-hoverable col-currency " data-pair="{{this}}" style="width:17%;">
+                          <span class="{{ directionClass(this) }}">
+                            {{ dailyPercentChange(this) }}%
+                            <!-- <i class="fa {{ caretClass(this) }}"></i> -->
+                          </span>
+                        </td>
+
+                        <td class="col-currency ticker-hoverable row-right-edge" data-pair="{{this}}">
+                          <span class="tooltip-dark-bottom" title="24h VOL">
+                            {{ formatDailyVol(this) }}
+                          </span>
+                          <i class="sidebar-symbol-fav fa {{ favClass(this) }}"
+                            onclick="return BFX.ticker.markFav(event);" data-pair="{{this}}"></i>
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+              {{/fundingCcys}}
+
+            </div><!--#ticker-sidebar-nav-->
+
+          {{/if}}
+
+
+    </script>
+    <script id='ractive-balance-overview-template' type='text/ractive'>
+
+          <ul class="collapsible solid-title" data-collapsible="accordion" data-identifier="balances" data-on-open="BFX.sidebar.floatCheck">
+            <li style="margin-bottom:0;position:relative;">
+              <div class="collapsible-header active">
+
+                <div class="bfx-collapsible-header section-header">
+                  <h5>Balances</h5>
+                  <div class="bfx-collapsible-options" style="display: none;">
+                    <a class="dropdown-button"
+                      data-alignment="right"
+                      data-hover="true"
+                      data-beloworigin="true"
+                      onclick="BFX.util.doNothing(event);"
+                      data-activates='bal-opts-dropdown'>
+                      <i class="fa fa-ellipsis-v"></i>
+                    </a>
+                    <!-- Dropdown Structure -->
+                    <ul id='bal-opts-dropdown' class='dropdown-content'>
+                      <li>
+                        <a href="/deposit" data-remote="true" class="ajax" onclick="BFX.ajax.handleNav(event, true);">
+                          Deposit
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/withdraw" data-remote="true" class="ajax" onclick="BFX.ajax.handleNav(event, true);">
+                          Withdraw
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/history" data-remote="true" class="ajax" onclick="BFX.ajax.handleNav(event, true);">
+                          Reports
+                        </a>
+                      </li>
+                    </ul>
+                  </div><!--bfx-collapsible-options-->
+                  <div class="sub-items balance-show-options" style="display:none;">
+                    <a href="javascript:;" onclick="BFX.balances.displaySet('total', true, event);"
+                      class="btn-flat center-align" data-balance-show="total">
+                      Total
+                    </a>
+                    <a href="javascript:;" onclick="BFX.balances.displaySet('avail', true, event);"
+                      class="btn-flat center-align" data-balance-show="avail">
+                      Available
+                    </a>
+                    <a href="javascript:;" onclick="BFX.balances.displaySet('both', true, event);"
+                      class="btn-flat center-align" data-balance-show="both">
+                      Both
+                    </a>
+                  </div><!--.sub-items-->
+                  <i class="fa fa-chevron-right"></i>
+                  <i class="fa fa-chevron-down"></i>
+                </div><!--bfx-collapsible-header-->
+
+              </div>
+              <div class="collapsible-body">
+
+                <div class="balances-overview-wrap">
+
+                  <div id="quick-transfer-wrap" style="display:none;">
+                    <span class="overlay-title"></span>
+                    <a href="javascript:;" onclick="BFX.balances.endQuickTransfer();" class="closer">&times;</a>
+                  </div>
+
+                  {{#if isConnected }}
+
+                    <table cellspacing="0" class="show-stripes">
+                      <thead>
+                        <tr class="header-row">
+                          <th>&nbsp;</th>
+                          <th style="text-align:right;" class="wallettitle" onclick="BFX.balances.startBalOverlay('exchange','');" data-wallet="exchange"><h5>
+                            <a href="javascript:;" class="tooltip-dark-top-slow no-q" title="Funds in your Exchange Wallet are used for Exchange Trading. Click for more.">
+                              Exchange
+                            </a>
+                          </h5></th>
+                          <th style="text-align:right;" class="wallettitle" onclick="BFX.balances.startBalOverlay('trading','');" data-wallet="trading"><h5>
+                            <a href="javascript:;" class="tooltip-dark-top-slow no-q" title="Funds in your Margin Wallet are used for Margin Trading. Click for more.">
+                              Margin
+                            </a>
+                          </h5></th>
+                          <th style="text-align:right;" class="wallettitle" onclick="BFX.balances.startBalOverlay('deposit','');" data-wallet="deposit"><h5>
+                            <a href="javascript:;" class="tooltip-dark-top-slow no-q" title="Funds in your Funding Wallet are used for Margin Funding. Click for more.">
+                              Funding
+                            </a>
+                          </h5></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        {{#balances:currency}}
+
+                          {{#if currencyTotal(this) != 0 || currency == 'USD' || currency == 'BTC'}}
+
+                            <tr class="balance-row-{{@index}}" data-currency="{{ currency }}">
+                              <td style="text-align:center;" onclick="BFX.balances.startBalOverlay('','{{ currency }}');" class="trigger-ledger-modal" data-currency="{{ currency }}">
+                                <a href="javascript:;" class="ccy tooltip no-q" title="{{ currency }}">
+                                  <span class="svg">
+                                    <img class="svg-img" src="{{ svgPath(currency) }}" style="width:20px;" />
+                                  </span>
+                                </a>
+                              </td>
+                              <td class="transfer-selectable trigger-ledger-modal {{ isEmpty(currency, 'exchange') }}"
+                                onclick="BFX.balances.startBalOverlay('exchange','{{ currency }}');"
+                                data-currency="{{ currency }}"
+                                data-wallet="exchange"
+                                style="text-align:right;">
+                                {{{ totalNicely(currency, 'exchange') }}}
+                                {{{ availNicely(currency, 'exchange') }}}
+                              </td>
+                              <td class="transfer-selectable trigger-ledger-modal {{ isEmpty(currency, 'trading') }}"
+                                onclick="BFX.balances.startBalOverlay('trading','{{ currency }}');"
+                                data-currency="{{ currency }}"
+                                data-wallet="trading"
+                                style="text-align:right;">
+                                {{{ totalNicely(currency, 'trading') }}}
+                                {{{ availNicely(currency, 'trading') }}}
+                              </td>
+                              <td class="transfer-selectable trigger-ledger-modal {{ isEmpty(currency, 'deposit') }}"
+                                onclick="BFX.balances.startBalOverlay('deposit','{{ currency }}');"
+                                data-currency="{{ currency }}"
+                                data-wallet="deposit"
+                                style="text-align:right;">
+                                {{{ totalNicely(currency, 'deposit') }}}
+                                {{{ availNicely(currency, 'deposit') }}}
+                              </td>
+                              <!--
+                                <td style="text-align:right;"><b>{{ nicely(currencyTotal(this)) }}</b></td>
+                              -->
+                            </tr>
+
+                          {{/if}}
+
+                        {{/balances}}
+
+                      </tbody>
+                    </table>
+
+                    <div class="equiv-wrap" style="text-align:right;">
+                      <h5 class="left hide-unless-hover">
+                        <span class="tooltip-dark-top-slow" title="Your approximate USD equivalent balance using your balances and current market prices.">USD EQUIV</span>
+                      </h5>
+                      <p class="smaller-checkbox tooltip-dark-top-slow hide-unless-hover" id="usd-equiv-market-checkbox"
+                        title="Include position P/L and position swap in USD approximate equivalent balance calculation.">
+                        <input
+                          type="checkbox"
+                          name="market-equiv"
+                          class="filled-in"
+                          {{#if isMarkEquiv() }}
+                            checked
+                          {{/if}}
+                          onchange="BFX.balances.updateMarketEquivSetting()"
+                          id="enable-toggle-market-equiv">
+                        <label for="enable-toggle-market-equiv">
+                          MARKET
+                        </label>
+                      </p>
+                      {{#if usdEquivVal != 'connecting'}}
+                        <h5 class="right tooltip-dark-top-slow total-equiv" title="Your approximate USD equivalent balance using your balances and current market prices." style="font-size:14px;">{{{ usdEquivVal }}}</h5>
+                      {{/if}}
+                      {{#if usdEquivVal == 'connecting'}}
+                        <h5 class="right"><i class="fa fa-spinner fa-spin"></i></h5>
+                      {{/if}}
+                    </div><!--equiv-wrap-->
+                    <div class="note-wrap" style="display:none;"><!--filled by js--></div>
+
+                    <div id="bal-overlay" style="display:none;">
+
+                      <a href="javascript:;" onclick="BFX.balances.closeBalOverlay();" class="closer">&times;</a>
+                      <span class="overlay-title">
+                        <span class='overlay-wallet'></span> <span class="overlay-ccy"></span> Wallet
+                      </span>
+
+                      <a href="javascript:;" class="btn overlay-btn left overlay-transfer-link">
+                        Transfer <span class="overlay-ccy"></span>
+                      </a>
+                      <a href="javascript:;" class="btn overlay-btn right overlay-ledger-link">
+                        Ledger Entries
+                      </a>
+
+                      <div style="clear:both;height: 8px;"></div>
+
+                      <a href="/deposits/new/btc" data-remote="true" onclick="BFX.balances.closeBalOverlay();" class="ajax btn overlay-btn left overlay-deposit-link">
+                        Deposit <span class="overlay-ccy"></span>
+                      </a>
+                      <a href="/withdraw/new/btc" data-remote="true" onclick="BFX.balances.closeBalOverlay();" class="ajax btn overlay-btn right overlay-withdraw-link">
+                        Withdraw <span class="overlay-ccy"></span>
+                      </a>
+
+                    </div>
+
+                  {{/if}}
+
+                  {{#if !isConnected }}
+                    <p style="text-align:center; padding: 36px 0 !important">
+                      {{{ loadingMessage }}}
+                    </p>
+                  {{/if}}
+
+                </div>
+
+              </div><!--collapsible-body-->
+            </li>
+          </ul>
+
+    </script>
+    <script id='ractive-trading-summary-template' type='text/ractive'>
+
+  <ul class="collapsible solid-title" data-collapsible="accordion" data-identifier="tradesum" data-on-open="BFX.sidebar.floatCheck">
+    <li>
+      <div class="collapsible-header active">
+
+        <div class="bfx-collapsible-header section-header">
+          <h5>Summary</h5>
+          <div class="bfx-collapsible-options">
+            <a class="dropdown-button"
+              data-alignment="right"
+              data-hover="true"
+              data-beloworigin="true"
+              onclick="BFX.util.doNothing(event);"
+              data-activates='summary-opts-dropdown'>
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+            <!-- Dropdown Structure -->
+            <ul id='summary-opts-dropdown' class='dropdown-content'>
+              <li>
+                <a href="javascript:;" onclick="BFX.sidebar.fluidSidebarHeight();BFX.tradingSummary.setPage('trading', event);$('.toggle-full-margin-calc').toggle();$('.toggle-word').toggle();">
+                  <span class="toggle-word">Show</span><span class="toggle-word" style="display:none;">Hide</span> full calculations
+                </a>
+              </li>
+            </ul>
+          </div><!--bfx-collapsible-options-->
+          <div class="sub-items">
+            <a href="javascript:;" onclick="BFX.tradingSummary.setPage('trading', event);"
+              class="btn-flat center-align {{ page == 'trading' ? 'active' : ''}}">
+              Margin
+            </a>
+            <a href="javascript:;" onclick="BFX.tradingSummary.setPage('funding', event);"
+              class="btn-flat center-align {{ page == 'funding' ? 'active' : ''}}">
+              Funding
+            </a>
+          </div><!--.sub-items-->
+          <i class="fa fa-chevron-right"></i>
+          <i class="fa fa-chevron-down"></i>
+        </div><!--bfx-collapsible-header-->
+
+      </div>
+      <div class="collapsible-body">
+
+        <div id="sidebar-summary-rendered">
+
+          {{#if isConnected }}
+
+            {{#if page == 'trading'}}
+
+              <table class="compact highlight pinch toggle-full-margin-calc" style="display:none;">
+                <tbody>
+
+                  <tr>
+                    <td colspan="2" style="text-align: center">
+                      <span class="small-emph">Margin Wallet</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="tooltip" title="Gross Trading Balance is the USD equivalent of your Margin wallet balances.">Gross Trading Balance</span></td>
+                    <td class="col-num">{{{ formatted(margin_balance) }}}</td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="tooltip" title="Total unrealized profit/loss for all open margin positions.">Unrealized P/L</span></td>
+                    <td class="col-num">{{{ formattedWithColor(unrealizedpl) }}}</td>
+                  </tr>
+
+                  <tr>
+                    <td colspan="2">
+                      <span class="left tooltip" title="Total unrealized funding cost for all open margin positions.&quot;">Unrealized Funding Cost</span>
+                      <span class="right col-num">{{{ formattedWithColor(unrealizedswap) }}}</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="tooltip" title="(Gross Trading Balance) + (Unrealized P/L) + (Unrealized Funding Cost)">Net Trading Balance</span></td>
+                    <td class="col-num border-top"><strong>{{{ formattedWithColorWithStrike(netvalue, minimumnetvalue * 2) }}}</strong></td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <table class="compact highlight pinch border-top toggle-full-margin-calc" style="display:none;">
+                <tbody>
+
+                  <tr>
+                    <td colspan="2" style="text-align: center">
+                      <span class="small-emph">Gross Tradable Balance</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span class="tooltip" title="(Gross Trading Balance) + (Unrealized P/L) + (Unrealized Funding Cost)">
+                        Net Trading Balance
+                      </span>
+                    </td>
+                    <td class="col-num">
+                      {{{ formatted(netvalue) }}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span class="tooltip" title="The percent needed to open a position of value X. For an initial margin of 50% and a Net Trading Balance of 100 USD you could open a position worth 200 USD.">
+                        {{ current_pair }} Initial Margin
+                      </span>
+                    </td>
+                    <td class="col-num">{{ initialMargin(current_pair) }}</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span class="tooltip" title="The amount of tradable balance on {{ current_pair }} just calculated from your Margin wallet funds and the available leverage on {{ current_pair }}">
+                        Gross Tradable Balance
+                      </span>
+                    </td>
+                    <td class="col-num border-top">
+                      <strong>{{{ formatted(tradeable_balances[current_pair].dumb) }}}</strong>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <table class="compact highlight pinch" style="margin-top:5px;">
+                <tbody>
+
+                  <tr>
+                    <td colspan="2" class="col-info">
+                      <span class="buying-icon show50" style="margin-right:3px;"><i class="fa fa-circle"></i></span>
+                      <span class="small-emph tooltip" title="Calculations for determining the available Tradable Balance for margin buying.">
+                        Buying
+                      </span>
+                    </td>
+                    <td class="col-info border-right" style="width: 6px;">&nbsp;</td>
+                    <td class="col-info" style="width: 6px;">&nbsp;</td>
+                    <td colspan="2" class="col-info">
+                      <span class="selling-icon show50" style="margin-right:3px;"><i class="fa fa-circle"></i></span>
+                      <span class="small-emph tooltip" title="Calculations for determining the available Tradable Balance for margin selling.">
+                        Selling
+                      </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="tooltip" title="Gross Tradable Balance is calculated from the available collateral in your Margin wallet and the initial margin requirement for this pair.">Gross</span></td>
+                    <td class="col-num">
+                      {{{ formatted(tradeable_balances[current_pair].dumb) }}}
+                    </td>
+                    <td class="col-info border-right" style="width: 6px;">&nbsp;</td>
+                    <td class="col-info" style="width: 6px;">&nbsp;</td>
+                    <td><span class="tooltip" title="Gross Tradable Balance is calculated from the available collateral in your Margin wallet and the initial margin requirement for this pair.">Gross</span></td>
+                    <td class="col-num">
+                      {{{ formatted(tradeable_balances[current_pair].dumb) }}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="tooltip" title="Amount of Tradable Balance used by your active margin positions.">Positions</span></td>
+                    <td class="col-num">
+                      {{{ formattedWithColorWithStrike(tradeable_balances[current_pair].pos_adj, 0) }}}
+                    </td>
+                    <td class="col-info border-right" style="width: 6px;">&nbsp;</td>
+                    <td class="col-info" style="width: 6px;">&nbsp;</td>
+                    <td><span class="tooltip" title="Amount of Tradable Balance used by your active margin positions.">Positions</span></td>
+                    <td class="col-num">
+                      {{{ formattedWithColorWithStrike(tradeable_balances[current_pair].pos_adj, 0) }}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="tooltip" title="Amount of Tradable Balance used by your active margin orders.">Orders</span></td>
+                    <td class="col-num">
+                      {{{ formattedWithColorWithStrike(tradeable_balances[current_pair].ordBuy_adj, 0) }}}
+                    </td>
+                    <td class="col-info border-right" style="width: 6px;">&nbsp;</td>
+                    <td class="col-info" style="width: 6px;">&nbsp;</td>
+                    <td><span class="tooltip" title="Amount of Tradable Balance used by your active margin orders.">Orders</span></td>
+                    <td class="col-num">
+                      {{{ formattedWithColorWithStrike(tradeable_balances[current_pair].ordSell_adj, 0) }}}
+                    </td>
+                  </tr>
+
+                  <tr class="trading_wallet_{{ current_pair }}">
+                    <td><span class="tooltip" title="Total amount of Tradable Balance available for margin buying based on the collateral in you Margin Wallet and the state of your margin positions and margin orders.">Net</span></td>
+                    <td class="col-num border-top"><strong>{{{ formattedWithColorWithStrike(tradeable_balances[current_pair].realBuy, 0) }}}</strong></td>
+                    <td class="col-info border-right" style="width: 6px;">&nbsp;</td>
+                    <td class="col-info" style="width: 6px;">&nbsp;</td>
+                    <td><span class="tooltip" title="Total amount of Tradable Balance available for margin selling based on the collateral in you Margin Wallet and the state of your margin positions and margin orders.">Net</span></td>
+                    <td class="col-num border-top"><strong>{{{ formattedWithColorWithStrike(tradeable_balances[current_pair].realSell, 0) }}}</strong></td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <table class="compact highlight pinch border-top">
+                <tbody>
+
+                  <tr>
+                    <td colspan="2" style="text-align: center">
+                      <span class="small-emph">Liquidation</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td colspan="2">
+                      <span class="left tooltip" title="The percentage of equity required to maintain open margin positions for this pair.">
+                        {{ current_pair }} Maintenance
+                      </span>
+                      <span class="right col-num">
+                        {{{ formatted(marginRequirement(current_pair), 1) }}}%
+                      </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="tooltip" title="The amount of equity required to maintain open margin positions for this pair. For example, for a margin position worth 500 USD and a maintenance value of 0.25, 125 USD worth of available collateral is required in the Margin Wallet to prevent automatic position liquidation.">Required Equity</span></td>
+                    <td class="col-num">{{{ formatted(minimumnetvalue) }}}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            {{/if}}
+
+            {{#if page == 'funding'}}
+
+              <table class="compact highlight pinch">
+                <tbody>
+
+                  <tr>
+                    <td colspan="4" style="text-align: center">
+                      <span class="small-emph">Taken: Unused</span>
+                    </td>
+                  </tr>
+
+                  <tr>{{{ taken_unused_summary }}}</tr>
+
+                </tbody>
+              </table>
+
+              <table class="compact highlight pinch border-top">
+                <tbody>
+
+                  <tr>
+                    <td colspan="4" style="text-align: center">
+                      <span class="small-emph">Taken: Using</span>
+                    </td>
+                  </tr>
+
+                  <tr>{{{ taken_used_summary }}}</tr>
+
+                </tbody>
+              </table>
+
+              <table class="compact highlight pinch border-top">
+                <tbody>
+
+                  <tr>
+                    <td colspan="4" style="text-align: center">
+                      <span class="small-emph">Provided</span>
+                    </td>
+                  </tr>
+
+                  <tr>{{{ provided_summary }}}</tr>
+
+                </tbody>
+              </table>
+
+            {{/if}}
+
+          {{/if}}
+
+          {{#if !isConnected }}
+
+            <p style="text-align:center; padding-top: 56px;">
+              {{{ loadingMessage }}}
+            </p>
+
+          {{/if}}
+
+        </div><!--#sidebar-summary-rendered-->
+
+      </div><!--.collapsible-body-->
+    </li>
+  </ul>
+
+
+    </script>
+    <script id='ractive-performance-template' type='text/ractive'>
+
+          <ul class="collapsible solid-title" data-collapsible="accordion" data-identifier="perf" data-on-open="BFX.sidebar.floatCheck">
+            <li>
+              <div class="collapsible-header ">
+
+                <div class="bfx-collapsible-header section-header">
+                  <h5>Performance</h5>
+                  <div class="sub-items">
+                    <a href="javascript:;" onclick="BFX.performance.setPage('mine', event);"
+                      class="btn-flat center-align {{ page == 'mine' ? 'active' : ''}}">
+                      Mine
+                    </a>
+                    <a href="javascript:;" onclick="BFX.performance.setPage('leaderboard', event);"
+                      class="btn-flat center-align {{ page == 'leaderboard' ? 'active' : ''}}">
+                      Leaderboard
+                    </a>
+                  </div><!--.sub-items-->
+                  <i class="fa fa-chevron-right"></i>
+                  <i class="fa fa-chevron-down"></i>
+                </div><!--bfx-collapsible-header-->
+
+              </div>
+              <div class="collapsible-body">
+
+                <div id="sidebar-summary-rendered">
+
+                  {{#if page == 'mine'}}
+
+                    <div style="width:295px;height:150px;">
+                      <canvas id="performance-chart"></canvas>
+                    </div>
+
+                  {{/if}}
+
+                  {{#if page == 'leaderboard'}}
+
+                    <p>leaderboard coming soon.</p>
+
+                  {{/if}}
+
+                </div><!--#sidebar-summary-rendered-->
+
+              </div><!--.collapsible-body-->
+            </li>
+          </ul>
+
+
+    </script>
+    <div id="app-page-content" style="position:relative;">
+        <div id="flash-notices">
+            <div class="row" style="margin:0;">
+                <div class="col s12">
+                </div>
+            </div><!--.row-->
+        </div>
+        <input type="hidden" name="page-pair" id="page-pair" value="BTCUSD"/>
+
+
+        <div class="no-margin-bottom" id="notice-no-balance-trading" style="display:none;">
+            <p class="notice" style="margin:0 0 5px 0;">
+                <i class="fa fa-info-circle bfx-blue"></i> Your Exchange and Margin Wallets are empty. <a class="ajax"
+                                                                                                          data-remote="true"
+                                                                                                          href="/wallets">Transfer
+                funds</a> or make a <a class="ajax" data-remote="true" href="/deposit">new deposit</a> to get started.
+                Want a tour? <a href="javascript:;" onclick="BFX.tours['exchange_trading'].start()">Explore exchange
+                trading</a> or <a href="javascript:;" onclick="BFX.tours['margin_trading'].start()">explore margin
+                trading</a>.
+            </p>
+        </div>
+
+
+        <div id="trading-react-app"></div>
+        <div class="form-sidebar-wrap" id="trading-widget-page-3"></div>
+        <div class="form-sidebar-wrap" id="trading-widget-page-4"></div>
+        <div class="form-sidebar-wrap" id="trading-widget-page-5"></div>
+        <!-- TODO remove  -->
+        <div class="form-sidebar-wrap" id="trading-widget-page-6" style="display:none;"></div>
+        <div class="form-sidebar-wrap" id="trading-widget-page-7" style="display:none;"></div>
+
+        <script id='ractive-orders-template' type='text/ractive'>
+              <ul class="collapsible solid-title" data-collapsible="accordion" data-identifier="ord">
+                <li>
+                  <div class="collapsible-header ">
+                    <div class="bfx-collapsible-header section-header">
+                      <h5 id="active-orders-title">Orders</h5>
+                      <span class="count-in-title">
+                        {{#if allOrders}}({{totalOrders}}){{/if}}
+                        {{^allOrders}}
+                          {{{ showOrdersLoading }}}
+                        {{/allOrders}}
+                      </span>
+
+                      <div class="sub-items">
+                        <a href="javascript:;" onclick="BFX.orders.filterBy('bids', event);"
+                          class="btn-flat center-align {{ filterBy == 'bids' ? 'active' : ''}}">
+                          Bids
+                        </a>
+                        <a href="javascript:;" onclick="BFX.orders.filterBy('asks', event);"
+                          class="btn-flat center-align {{ filterBy == 'asks' ? 'active' : ''}}">
+                          Asks
+                        </a>
+                        <a href="javascript:;" onclick="BFX.orders.filterBy('all', event);"
+                          class="btn-flat center-align {{ filterBy == 'all' ? 'active' : ''}}">
+                          All
+                        </a>
+                      </div><!--.sub-items-->
+
+                      {{{ filterLabels }}}
+                      <span class="show75 collapsible-summary hide-on-small-and-down">
+                        {{#summary}}
+                          <div class="uniform-min-width" data-group="{{pair}}">
+                            {{formatted_summary(total)}} <span class="show75">{{pair}}</span>
+                          </div>
+                        {{/summary}}
+                      </span>
+                      <i class="fa fa-chevron-right"></i>
+                      <i class="fa fa-chevron-down"></i>
+                    </div><!--bfx-collapsible-header-->
+                  </div><!--collapsible-header-->
+
+                  <div class="collapsible-body">
+                    <table class="highlight compact bordered" id="orderstable">
+                      <thead class="sortable">
+                      <tr>
+                        <th style="padding:0;width:20px;"></th>
+                        <th class="col-info" style="width:85px;padding:0;">
+                          Pair&nbsp;&nbsp;<a href="javascript:;" onclick="BFX.orders.togglePairFilter()" class="ultra-tiny-btn tooltip-dark-top no-q filter-order-pair-icon hide-on-med-and-down" title="Filter by pair"><i class="fa fa-filter"></i></a>
+                        </th>
+                        <th class="col-info" style="width:100px;padding-top:0;padding-bottom:0;" on-click='sort:ctx' data-sort-header="ctx">
+                          Context
+                        </th>
+                        <th class="col-info" style="width:120px;" on-click='sort:type' data-sort-header="type">
+                          Type
+                        </th>
+                        <th class="col-currency" on-click='sort:ammt' data-sort-header="ammt">
+                          Amount
+                        </th>
+                        <th class="col-currency" style="width:92px;" on-click='sort:price' data-sort-header="price">
+                          Price
+                        </th>
+                        <th class="col-info" style="width:110px;" on-click='sort:status' data-sort-header="status">
+                          Status
+                        </th>
+                        <th class="col-date hide-on-med-and-down" on-click='sort:created' data-sort-header="created" style="width:130px;">
+                          <a class="tooltip"
+                            title="DD-MM-YY HH:MM:SS
+            Configure in account settings">
+                            Placed
+                          </a>
+                        </th>
+                        <th class="col-info hide-on-small-and-down" style="width:120px;padding-top:0;padding-bottom:0;padding-left:34px;">
+                          <a href="javascript:;"
+                            id="order-cancel-all-btn"
+                            class="confirm-modal btn-flat btn-light-grey btn-tiny tooltip-dark-top no-q"
+                            onclick="return confirmModal(event)"
+                            title="Cancel all"
+                            data-method="callback-only"
+                            data-callback="BFX.loans.submitClose"
+                            data-message="Cancel all of your active orders?"
+                            data-callback="BFX.orders.cancelAll"
+                            style="margin-right:1px;">
+                            <i class="fa fa-times"></i>
+                          </a>
+                          <a href="/orders/_notify_all?turn={{ notify_all_turn() }}"
+                            class="btn-flat btn-light-grey btn-tiny tooltip-dark-top no-q"
+                            title="Toggle notify all"
+                            data-remote="true">
+                            <i class="fa fa-rss order-notify-all-icon {{ notify_all_class() }}"></i>
+                          </a>
+                        </th>
+                      </tr>
+                      </thead>
+
+                      {{^filteredOrders}}
+                        <tbody>
+                          <tr>
+                            <td colspan="9" class="center-align">
+                              {{{ noOrdersMessage }}}
+                            </td>
+                          </tr>
+                        </tbody>
+                      {{/filteredOrders}}
+
+                      {{#orderPairs:i}}
+
+                        {{#if orderPairs.length > 1}}
+
+                          <tbody class="tbody-header {{ isMinimized(orderPairs[i], 'collapsed') }}" data-pair="{{orderPairs[i]}}">
+                            <tr>
+                              <th class="col-info">
+                                <i class="fa fa-minus-square-o show50"></i>
+                                <i class="fa fa-plus-square-o show50"></i>
+                              </th>
+                              <th>
+                                <div style="position:relative;">
+                                  <span class="show-soft">{{ orderPairs[i] }}&nbsp;({{ filteredOrders[orderPairs[i]].length }})</span>
+                                </div>
+                              </th>
+                              <th colspan="2"></th>
+                              <th class="col-num">
+                                <span class="summary-data">
+                                  {{{ format(summaryByPair[orderPairs[i]].total, 8) }}}
+                                </span>
+                              </th>
+                              <th class="col-num">
+                                <span class="summary-data">
+                                  {{{ price_format(summaryByPair[orderPairs[i]].weighted_avg) }}}
+                                </span>
+                              </th>
+                              <th class="col-id" style="padding:0;">
+                                <span class="left summary-data show50 tooltip-dark-top"
+                                  title="Weighted average, {{ orderPairs[i] }} orders"
+                                  style="width:18px;height:20px;line-height:20px;position:relative;top:-3px;">
+                                  <i class="fa fa-info-circle"></i>
+                                </span>
+                              </th>
+                              <th>&nbsp;</th>
+                              <td class="col-info hide-on-small-and-down" style="padding-top:1px;padding-bottom:1px;">
+                                <a href="javascript:;"
+                                  class="btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                  title="Cancel {{orderPairs[i]}}"
+                                  onclick="BFX.orders.cancelByPair('{{orderPairs[i]}}', event)">
+                                  <i class="fa fa-times"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+
+                        {{/if}}
+
+                        <tbody class="{{ isMinimized(orderPairs[i], 'filtered') }}">
+
+                          {{#displayOrders[orderPairs[i]]}}
+
+                            {{#if header}}
+
+                              <tr class="order-gid-header {{ orderPairs.length == 1 ? 'single-ccy' : '' }} {{ closedClass(this, 'collapsed') }}" data-gid="{{ gid }}">
+                                <th class="col-info">
+                                  <i class="fa fa-minus-square-o show50"></i>
+                                  <i class="fa fa-plus-square-o show50"></i>
+                                </th>
+                                <td class="group-td">
+                                  <span class="show-soft">
+                                    {{ headerContent(header.type, orders.length) }}
+                                  </span>
+                                </td>
+                                <td class="col-info">&nbsp;</td>
+                                <td class="col-info">&nbsp;</td>
+                                <td class="col-num">
+                                  <span class="show-soft tooltip" title="Total amount in {{ header.type }}">
+                                    {{{ amount_generic(header.totalAmount) }}}
+                                  </span>
+                                </td>
+                                <td class="price col-currency">
+                                  <span class="show-soft tooltip" title="Weighted average price in {{ header.type }}">
+                                    {{{ price_generic(header.weightedAveragePrice) }}}
+                                  </span>
+                                </td>
+                                <td class="col-info"></td>
+                                <td class="nowrapping col-date hide-on-med-and-down"></td>
+                                <td class="col-info hide-on-small-and-down" style="padding-top:1px;padding-bottom:1px;">
+                                  <a href="javascript:;"
+                                    class="btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                    title="Cancel {{ header.type }}"
+                                    onclick="BFX.orders.cancelByGid('{{gid}}', event)">
+                                    <i class="fa fa-times"></i>
+                                  </a>
+                                </td>
+                              </tr>
+
+                              {{#orders}}
+
+                                <tr id="order_{{id}}" class="order-gid-row {{ cancelingClass(this) }} {{ orderPairs.length == 1 ? 'single-ccy' : '' }} {{ closedClass(this, 'filtered') }}" data-gid="{{ gid }}">
+                                  <td style="padding:0;width:20px;text-align:center;">
+                                    <a href="javascript:;" title="Open" data-modal-title="Active Order" class="btn-flat btn-tiny row-to-modal show50 bfx-blue show-on-med-and-down">
+                                      <i class="fa fa-external-link-square"></i>
+                                    </a>
+                                    {{{ icon(this) }}}
+                                  </td>
+                                  <td class="col-info">{{put_pair(this)}}</td>
+                                  <td class="col-info">{{ context }}</td>
+                                  <td class="col-info" data-modal-value="{{order_type()}}">
+                                    {{{order_type(this)}}}{{{algo_tooltip(this)}}}
+                                  </td>
+                                  <td class="col-num" onclick="$('input#amount').val(Math.abs({{ amount }}))">
+                                    {{{amount_formatted(this)}}}
+                                  </td>
+                                  <td class="price col-currency">
+                                    {{{price_formatted(this)}}}
+                                  </td>
+                                  <td class="col-info" data-modal-value="{{pretty_order_status(this)}}">
+                                    {{{pretty_order_status(this)}}}{{{is_hidden(this)}}}
+                                  </td>
+                                  <td class="nowrapping col-date hide-on-med-and-down">
+                                    <span class="show50">{{placed_formatted(this)}}</span>
+                                  </td>
+                                  <td class="col-info hide-on-small-and-down"
+                                    style="padding-top:1px;padding-bottom:1px;">
+
+                                    {{#if is_cancelable(this)}}
+                                      <a href="javascript:;"
+                                        style="width:26px;"
+                                        class="btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                        title="{{edit_tooltip(this)}}"
+                                        onclick="BFX.orders.modifyModal('{{ id }}');">
+                                        <i class="fa {{edit_icon(this)}}"></i>
+                                      </a>
+                                      <a href="javascript:;"
+                                        class="btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                        title="Cancel"
+                                        onclick="BFX.orders.cancel('{{id}}')">
+                                        <i class="fa fa-times"></i>
+                                      </a>
+                                    {{/if}}
+
+                                    {{#if is_notifiable(this)}}
+                                      <a href="/orders/_notify/{{id}}?turn={{is_notify(this) ? 'off' : 'on'}}"
+                                        class="btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                        title="{{ notify_tooltip(this) }}"
+                                        data-remote="true">
+                                        <i class="fa fa-rss {{ is_notify(this) ? 'bfx-blue' : '' }}"></i>
+                                      </a>
+                                    {{/if}}
+                                  </td>
+                                </tr>
+
+                              {{/orders}}
+
+                            {{/if}}
+
+                            {{#if !header}}
+
+                              {{#orders}}
+
+                                <tr id="order_{{id}}" class="{{ cancelingClass(this) }}">
+                                  <td style="padding:0;width:20px;text-align:center;">
+                                    <a href="javascript:;" title="Open" data-modal-title="Active Order" class="btn-flat btn-tiny row-to-modal show50 bfx-blue show-on-med-and-down">
+                                      <i class="fa fa-external-link-square"></i>
+                                    </a>
+                                    {{{ icon(this) }}}
+                                  </td>
+                                  <td class="col-info">{{put_pair(this)}}</td>
+                                  <td class="col-info">{{ context }}</td>
+                                  <td class="col-info" data-modal-value="{{order_type()}}">
+                                    {{{order_type(this)}}}{{{algo_tooltip(this)}}}
+                                  </td>
+                                  <td class="col-num" onclick="$('input#amount').val(Math.abs({{ amount }}))">
+                                    {{{amount_formatted(this)}}}
+                                  </td>
+                                  <td class="price col-currency">
+                                    {{{price_formatted(this)}}}
+                                  </td>
+                                  <td class="col-info" data-modal-value="{{pretty_order_status(this)}}">
+                                    {{{pretty_order_status(this)}}}{{{is_hidden(this)}}}
+                                  </td>
+                                  <td class="nowrapping col-date hide-on-med-and-down">
+                                    <span class="show50">{{placed_formatted(this)}}</span>
+                                  </td>
+                                  <td class="col-info hide-on-small-and-down"
+                                    style="padding-top:1px;padding-bottom:1px;">
+
+                                    {{#if is_cancelable(this)}}
+                                      <a href="javascript:;"
+                                        style="width:26px;"
+                                        class="btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                        title="{{edit_tooltip(this)}}"
+                                        onclick="BFX.orders.modifyModal('{{ id }}');">
+                                        <i class="fa {{edit_icon(this)}}"></i>
+                                      </a>
+                                      <a href="javascript:;"
+                                        class="btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                        title="Cancel"
+                                        onclick="BFX.orders.cancel('{{id}}')">
+                                        <i class="fa fa-times"></i>
+                                      </a>
+                                    {{/if}}
+
+                                    {{#if is_notifiable(this)}}
+                                      <a href="/orders/_notify/{{id}}?turn={{is_notify(this) ? 'off' : 'on'}}"
+                                        class="btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                        title="{{ notify_tooltip(this) }}"
+                                        data-remote="true">
+                                        <i class="fa fa-rss {{ is_notify(this) ? 'bfx-blue' : '' }}"></i>
+                                      </a>
+                                    {{/if}}
+                                  </td>
+                                </tr>
+
+                              {{/orders}}
+
+                            {{/if}}
+
+                          {{/displayOrders}}
+
+                        </tbody>
+
+                      {{/orderPairs}}
+
+                    </table>
+
+                  </div>
+                </li>
+              </ul>
+
+        </script>
+        <script id='ractive-positions-template' type='text/ractive'>
+              <ul class="collapsible solid-title" data-collapsible="accordion" data-identifier="pos">
+                <li>
+                  <div class="collapsible-header ">
+                    <div class="bfx-collapsible-header section-header">
+                      <h5 id="active-positions-title">Positions</h5>
+                      <span class="count-in-title">
+                        {{#if positions}}({{positions.length}}){{/if}}
+                        {{^positions}}
+                          {{{ showPositionsLoading }}}
+                        {{/positions}}
+                      </span>
+                      <span class="show75 collapsible-summary hide-on-small-and-down">
+                        {{#summary}}
+                          <div class="uniform-min-width" data-group="{{pair}}">
+                            {{ fourDecimals(total) }} <span class="show75">{{pair}}</span>
+                          </div>
+                        {{/summary}}
+                      </span>
+                      <i class="fa fa-chevron-right"></i>
+                      <i class="fa fa-chevron-down"></i>
+                    </div><!--bfx-collapsible-header-->
+                  </div><!--collapsible-header-->
+
+                  <div class="collapsible-body">
+
+                    <table class="highlight compact bordered">
+                      <thead>
+                      <tr>
+                        <th class="show-on-med-and-down">Expand</th>
+                        <th style="width:20px;">&nbsp;</th>
+                        <th class="col-info" style="width:85px;padding-right:20px;">
+                          Pair
+                        </th>
+                        <th class="col-num">
+                          Amount
+                        </th>
+                        <th class="col-currency">
+                          Base price
+                        </th>
+                        <th class="col-currency hide-on-med-and-down">
+                          <a class="tooltip" title="Liquidation Price is indicative: it varies with your trading balance and your margin funding, and the number of your active positions. It does not represent a contractual price.">
+                            Liq Price
+                          </a>
+                        </th>
+                        <th class="col-currency">
+                          <a class="tooltip" title="P/L is indicative: it is based on best ask and bid, and includes the maximum order fees you can have when closing the position.">
+                            P/L
+                          </a>
+                        </th>
+                        <th class="col-num">
+                          P/L%
+                        </th>
+                        <th class="col-currency">
+                          <a class="tooltip" title="Current amount owed to margin funding lenders for this position.  If you have multiple positions, this figure may not be completely accurate on a per positions-basis, but is accurate in total.">Funding Cost</a>
+                        </th>
+                        <th class="col-info hide-on-med-and-down" style="width:110px;">
+                          <a class="tooltip" title="Users can choose to settle margin funding interest daily or when the position is closed (term).  Some users prefer term because it shows the total cost over the lifetime of the position, but will result in additional funding being reserved to account for the growing balance.">
+                            Funding Type
+                          </a>
+                        </th>
+                        <th class="col-info hide-on-small-and-down" style="width:65px;">
+                          Actions
+                        </th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                        {{^positions}}
+                          <tr>
+                            <td colspan="14" class="center-align">
+                              {{{ noPositionsMessage }}}
+                            </td>
+                          </tr>
+                        {{/positions}}
+
+                        {{#positions}}
+                          <tr class="pos-row-{{ pair }}">
+                            <td class="show-on-med-and-down col-info" style="width:30px">
+                              <a href="javascript:void(0);" title="Open" data-modal-title="Active Position" class="btn-flat btn-tiny row-to-modal show50 bfx-blue">
+                                <i class="fa fa-external-link-square"></i>
+                              </a>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td class="col-info"><a href="/trading/{{ pair }}" style="color:inherit;" class="ajax" onclick="BFX.orderForm.leverageSet(3.3, true);" data-remote="true">{{ pair }}</a></td>
+                            <td class="col-num" onclick="$('input#amount').val(Math.abs({{ amount }}))">
+                              {{{ formatted_amount(this) }}}
+                            </td>
+                            <td class="col-currency">
+                              {{{ formatted_base_price(this) }}}
+                            </td>
+                            <td class="col-currency hide-on-med-and-down">
+                              {{{ formatted_liquidation_price(this) }}}
+                            </td>
+                            <td class="col-currency">
+                              {{{ profit_loss(this) }}} {{ last_pair_unit(this) }}
+                            </td>
+                            <td class="col-num">
+                              {{{ profit_loss_percent(this) }}}
+                            </td>
+                            <td class="col-currency">
+                              {{{ swap_cost(this) }}}
+                            </td>
+
+                            <td class="col-info hide-on-med-and-down">
+                              <a href="/positions/change_funding_type/{{id}}" data-remote="true" class="mini-toggle" style="postion:relative;top:1px;">
+                                <span class="mini-toggle-btn tooltip-dark-top no-q {{#if fundingType(this) === "Daily"}} active {{/if}}" title="Daily">24h</span>
+                                <span class="mini-toggle-btn tooltip-dark-top no-q {{#if fundingType(this) === "Term"}} active {{/if}}" title="Term"><i class="fa fa-clock-o"></i></span>
+                              </a>
+                            </td>
+
+                            <td class="col-info hide-on-small-and-down" style="padding-left:0;padding-right:0;">
+                              <a href="javascript:;"
+                                class="confirm-modal btn-flat btn-clear btn-tiny tooltip-dark-top no-q close-pos-btn"
+                                onclick="return confirmModal(event)"
+                                title="Close this position with a MARKET order"
+                                data-href="/positions/{{id}}"
+                                data-method="ajax-delete"
+                                data-message="Are you sure you want to close this position with a MARKET order?">
+                                <i class="fa fa-times"></i>
+                              </a>
+
+                              {{#if is_bitlicense_block() }}
+                                <a href="javascript:;"
+                                  class="btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                  title="Claim"
+                                  onclick="BFX.modal.load('bitlicense_no_claim')">
+                                  <i class="fa fa-arrow-down"></i>
+                                </a>
+                              {{/if}}<!--is_bitlicense_block-->
+
+                              {{#if !is_bitlicense_block() }}
+                                {{#if long_position(this) }}
+                                  {{#if is_claimable(this) }}
+
+                                    <!--/positions/claim/{{id}}-->
+                                    <a href="javascript:;"
+                                      class="show-position-claim-modal btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                      title="Claim"
+                                      data-pair="{{id}}"
+                                      data-max-claimable="{{ maxClaimable(this) }}"
+                                      data-amount-label="Amount of {{ first_in_pair(this).toUpperCase() }} to Claim"
+                                      data-message="This uses a combination of the {{ last_in_pair(this).toUpperCase() }} in your trading wallet balance and the unrealized P&L in your position (net of any outstanding financing charges) to satisfy some or all of the outstanding financing associated with your position, resulting in some or all of your position now being reflected as part of your {{ first_in_pair(this).toUpperCase() }} wallet balance. The cost of claiming this position is {{ claim_fee(this) }}%.{{ maxClaimableMessage(this) }}">
+                                      <i class="fa fa-arrow-down"></i>
+                                    </a>
+
+                                  {{/if}}<!--is_claimable-->
+
+                                  {{#if !is_claimable(this) }}
+
+                                    <a href="javascript:;"
+                                      class="alert-modal btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                      title="Claim"
+                                      data-message="Claiming some or all of this position requires that you have enough partially realized P&L (position reduced at a profit) or {{ last_in_pair(this).toUpperCase() }} in your trading wallet (net of any outstanding financing charges) to satisfy some or all of the outstanding financing associated with your position.">
+                                      <i class="fa fa-arrow-down"></i>
+                                    </a>
+
+                                  {{/if}}<!--!is_claimable-->
+                                {{/if}}<!--long_position-->
+
+                                {{#if short_position(this) }}
+                                  {{#if is_claimable(this) }}
+
+                                    <a href="javascript:;"
+                                      class="show-position-claim-modal btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                      title="Claim"
+                                      data-pair="{{id}}"
+                                      data-max-claimable="{{ maxClaimable(this) }}"
+                                      data-amount-label="Portion (in {{ first_in_pair(this).toUpperCase() }}) of the position to Claim"
+                                      data-message="This uses the {{ first_in_pair(this).toUpperCase() }} in your trading wallet balance (net of any outstanding financing charges) to satisfy some or all of the outstanding financing associated with your position, resulting in some or all of your position's {{ last_in_pair(this).toUpperCase() }} now being reflected as part of your {{ last_in_pair(this).toUpperCase() }} wallet balance. The cost of claiming this position is {{ claim_fee(this) }}%.{{ maxClaimableMessage(this) }}">
+                                      <i class="fa fa-arrow-down"></i>
+                                    </a>
+
+                                  {{/if}}<!--is_claimable-->
+
+                                  {{#if !is_claimable(this) }}
+
+                                    <a href="javascript:;"
+                                      class="alert-modal btn-flat btn-clear btn-tiny tooltip-dark-top no-q"
+                                      title="Claim"
+                                      data-message="Claiming some or all of this position requires that you have enough {{ first_in_pair(this).toUpperCase() }} in your trading wallet (net of any outstanding financing charges) to satisfy some or all of the outstanding financing associated with your position.">
+                                      <i class="fa fa-arrow-down"></i>
+                                    </a>
+
+                                  {{/if}}<!--!is_claimable-->
+                                {{/if}}<!--short_position-->
+                              {{/if}}<!--!is_bitlicense_block-->
+
+                            </td>
+                          </tr>
+                        {{/positions}}
+                      </tbody>
+                    </table>
+                  </div>
+                </li>
+              </ul>
+
+        </script>
+        <script id='ractive-order-history-template' type='text/ractive'>
+              <ul class="collapsible solid-title" data-collapsible="accordion" data-identifier="ohist" data-on-open="BFX.orderHistory.handleOpen">
+                <li>
+                  <div class="collapsible-header ">
+                    <div class="bfx-collapsible-header section-header">
+                      <h5 id="inactive-orders-title">Order History</h5>
+
+                      <div class="sub-items">
+                        <a href="javascript:;" onclick="BFX.orderHistory.filterBy('canceled', event);"
+                          class="btn-flat center-align {{ filterBy == 'canceled' ? 'active' : ''}}">
+                          Canceled
+                        </a>
+                        <a href="javascript:;" onclick="BFX.orderHistory.filterBy('executed', event);"
+                          class="btn-flat center-align {{ filterBy == 'executed' ? 'active' : ''}}">
+                          Executed
+                        </a>
+                        <a href="javascript:;" onclick="BFX.orderHistory.filterBy('all', event);"
+                          class="btn-flat center-align {{ filterBy == 'all' ? 'active' : ''}}">
+                          All
+                        </a>
+                      </div><!--.sub-items-->
+
+                      {{{ filterLabels }}}
+                      <i class="fa fa-chevron-right"></i>
+                      <i class="fa fa-chevron-down"></i>
+                    </div><!--bfx-collapsible-header-->
+                  </div><!--collapsible-header-->
+
+                  <div class="collapsible-body">
+                    <table class="highlight compact bordered" id="inactive-orders-table">
+                      <thead class="sortable">
+                      <tr>
+                        <th style="padding:0;width:20px;"></th>
+                        <th class="show-on-med-and-down" style="padding:0;width:20px;"></th>
+                        <th class="col-info" style="width:85px;padding:0;" on-click='sort:pair' data-sort-header="pair">
+                          Pair&nbsp;&nbsp;<a href="javascript:;" onclick="BFX.orders.togglePairFilter()" class="no-sort ultra-tiny-btn tooltip-dark-top no-q filter-order-pair-icon hide-on-med-and-down" title="Filter by pair"><i class="fa fa-filter no-sort"></i></a>
+                        </th>
+                        <th class="col-info" style="width:100px;padding-top:0;padding-bottom:0;" on-click='sort:ctx' data-sort-header="ctx">
+                          Context
+                        </th>
+                        <th class="col-info" style="width:100px;" on-click='sort:type' data-sort-header="type">
+                          Type
+                        </th>
+                        <th class="col-num" on-click='sort:ammt' data-sort-header="ammt">
+                          Amount
+                        </th>
+                        <th class="col-currency" style="width:85px;" on-click='sort:price' data-sort-header="price">
+                          Price
+                        </th>
+                        <th class="col-info" style="width:120px;" on-click='sort:status' data-sort-header="status">
+                          Status
+                        </th>
+                        <th class="col-date hide-on-med-and-down" style="width:130px;" on-click='sort:placed' data-sort-header="placed">
+                          <a class="tooltip"
+                            title="The time that the order became inactive, either by being cancelled or executed.">
+                            Inactive
+                          </a>
+                        </th>
+                        <th class="col-info hide-on-small-and-down" style="width:95px;" id="orderHistory-pagination">
+                        </th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                        {{^filteredOrders}}
+                          <tr>
+                            <td colspan="9" class="center-align">
+                              {{{ noOrdersMessage }}}
+                            </td>
+                          </tr>
+                        {{/filteredOrders}}
+
+                        {{#filteredOrders}}
+                          <tr id="order_{{id}}" class="{{ cancelingClass(this) }}">
+                            <td class="show-on-med-and-down" style="padding:0;width:20px;text-align:center;">
+                              <a href="javascript:;" title="Open" data-modal-title="Order History" class="btn-flat btn-tiny row-to-modal show50 bfx-blue">
+                                <i class="fa fa-external-link-square"></i>
+                              </a>
+                            </td>
+                            <td style="padding:0;width:20px;text-align:center;">
+                              {{{ icon(this) }}}
+                            </td>
+                            <td class="col-info">{{put_pair(this)}}</td>
+                            <td class="col-info">{{ context }}</td>
+                            <td class="col-info" data-modal-value="{{order_type()}}">
+                              {{order_type(this)}}
+                            </td>
+                            <td class="col-num" onclick="$('input#amount').val(Math.abs({{ amount }}))">
+                              {{{amount_formatted(this)}}}
+                            </td>
+                            <td class="price col-currency">
+                              {{{price_formatted(this)}}}
+                            </td>
+                            <td class="col-info" data-modal-value="{{pretty_order_status(this)}}">
+                              {{{pretty_order_status(this)}}} {{{is_hidden(this)}}}
+                            </td>
+                            <td class="nowrapping col-date hide-on-med-and-down">
+                              <span class="show50">{{placed_formatted(this)}}</span>
+                            </td>
+                            <td class="col-info hide-on-small-and-down"
+                              style="margin: 3px 5px;">
+                              &nbsp;
+                            </td>
+                          </tr>
+                        {{/filteredOrders}}
+
+                      </tbody>
+                    </table>
+                  </div>
+                </li>
+              </ul>
+
+        </script>
+
+        <!--form-->
+
+        <div class="tables book-tables" id="bid-ask-tables" style="margin:1px 0 0.4rem 0;overflow:hidden;">
+
+            <div class="col s12 m8 l8 form-sidebar-wrap"
+                 style="padding-right:0;padding-left:0;position:relative;background:none;">
+
+                <ul class="collapsible solid-title" data-collapsible="accordion" data-identifier="book">
+                    <li style="margin-bottom: 0;">
+                        <div class="collapsible-header active">
+                            <div class="bfx-collapsible-header section-header">
+                                <h5>Order Book <span class="show50">BTCUSD</span></h5>
+
+                                <span style="position:absolute;right:0;top:0;">
+              <a class="btn-flat no-bg decrement-zoom-btn depth-viz-zoom-btn btn-small tooltip-dark-top no-q {{#if precision == maxAgg}}show50{{/if}}"
+                 title="Decrease Precision"
+                 href="javascript:void(0);"
+                 id="book-agg-controls"
+                 onclick="BFX.book.zoomOut(event)">
+                <i class="fa fa-minus"></i>
+              </a>
+              <a class="btn-flat no-bg btn-small increment-zoom-btn depth-viz-zoom-btn tooltip-dark-top no-q {{#if precision == minAgg}}show50{{/if}}"
+                 title="Increase Precision"
+                 href="javascript:void(0);"
+                 onclick="BFX.book.zoomIn(event)">
+                <i class="fa fa-plus"></i>
+              </a>
+              <a class="btn-flat btn-small depth-viz-zoom-btn tooltip-dark-top no-q"
+                 title="Manage price alerts"
+                 href="javascript:void(0);"
+                 onclick="BFX.modal.load('price_alerts', false, event);">
+                <i class="fa fa-bell"></i>
+              </a>
+              <a class="btn-flat btn-small depth-viz-zoom-btn tooltip-dark-top no-q"
+                 title="Interface settings for order book"
+                 href="javascript:void(0);"
+                 onclick="BFX.modal.load('interface_book', false, event);">
+                <i class="fa fa-gear"></i>
+              </a>
+              <a class="btn-flat btn-small depth-viz-zoom-btn tooltip-dark-top no-q"
+                 title="Zoom out book depth visualization"
+                 href="javascript:void(0);"
+                 onclick="bookViz(1.2, event)">
+                <i class="fa fa-search-minus"></i>
+              </a>
+              <a class="btn-flat btn-small depth-viz-zoom-btn tooltip-dark-top no-q"
+                 title="Zoom in book depth visualization"
+                 href="javascript:void(0);"
+                 onclick="bookViz(0.8, event)">
+                <i class="fa fa-search-plus"></i>
+              </a>
+            </span>
+
+                                <i class="fa fa-chevron-right"></i>
+                                <i class="fa fa-chevron-down"></i>
+                            </div><!--bfx-collapsible-header-->
+                        </div><!--collapsible-header-->
+
+                        <div class="collapsible-body" style="padding-top:3px;">
+
+                            <div class="bookViz-green" id="bids"
+                                 style="width:50%;float:left;padding-left:0;padding-right:0;"></div>
+                            <div class="bookViz-red" id="asks"
+                                 style="width:50%;float:right;padding-right:0;padding-left:0;"></div>
+
+                        </div><!--collapsible-body-->
+                    </li>
+                </ul>
+
+            </div><!--form-sidebar-wrap-->
+
+            <div class="col s12 m4 l4 form-sidebar-wrap"
+                 id="recent-trades"
+                 style="padding-right:0;padding-left:8px;position:relative;background: none;">
+            </div>
+
+        </div>
+
+        <script id='ractive-bids-template' type='text/ractive'>
+
+              <div class="sell col-layout-{{layout}}">
+                <table class="compact book-table" style="transform: translateX(1px);">
+                  <thead>
+                  <tr>
+                    <th colspan="4">
+                      <div class="row pad-right-5">
+                        {{#bidColumns}}
+                          <div style="width:{{ width }}" class="col col-{{ type }}">
+                            {{ label }}
+                          </div>
+                        {{/bidColumns}}
+                      </div>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                    {{#if isConnected }}
+                    {{#if bids}}
+
+                      {{#bids}}
+                        {{#if @index < 24}}
+                        <tr id='bid-row-{{@index}}'>
+                          <td colspan="4" {{#if this.has_price_alert}}class="has-price-alert"{{/if}} style="position:relative;">
+                            {{#if this.user_orders.length > 0}}
+                              <div class="row-has-orders-indicator bids {{ getIconColor('bids', this) }} tooltip-advanced no-q" data-tip="{{{ tooltipUserOrders(this) }}}">
+                                <div class="has-orders-icon" data-order-ids="{{{ getOrderIds(this) }}}">
+                                  {{#if this.user_orders.length > 1}}
+                                    {{this.user_orders.length}}
+                                  {{/if}}
+                                </div>
+                              </div>
+                            {{/if}}
+                            <div class="row show-book-depth pad-right-5 {{ emphasisClass(pair, this.priceFormatted, precision) }}"
+                              onclick="BFX.book.bookRowClick('bid', {{ this.price }}, {{ this.cumulative }}, {{ this.amount }}, '{{ pair }}', event);">
+                              <div class="depth-bar bids"></div>
+                              <div class="user-orders-bar bids" data-value="{{ this.user_orders_total }}"></div>
+                              <div class="col col-info row-count">{{ this.count }}</div>
+                              <div class="col price col-currency row-price">
+                                {{ this.priceFormatted }}
+                              </div>
+                              <div class="col col-currency row-amount depth-value-amt">
+                                {{ this.amountFormatted }}
+                              </div>
+                              <div class="col col-currency depth-value-cml row-cumulative">
+                                {{ this.cumulativeFormatted }}
+                              </div>
+                            </div>
+                            <a class="row-alert-icon" href="javascript:;" onclick="BFX.alert.setPriceAlerts('{{ pair }}', '{{this.price}}', '{{ (this.alert_prices || []).join('-') }}', event);return false;"><i class="fa fa-bell"></i></a>
+                          </td>
+                        </tr>
+                        {{/if}}
+                      {{/bids}}
+
+                      <tr>
+                        <td colspan="4" style="position:relative;">
+                          <div class="row pad-right-5 table-status-row">
+                            <div style="width:100%" class="col">
+                              <!--placeholder row for book status-->
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    {{/if}}
+
+                    {{^bids}}
+                      <tr>
+                        <td colspan="4">
+                          {{{ noOrdersMessage }}}
+                        </td>
+                      </tr>
+                    {{/bids}}
+                    {{/if}}
+
+                    {{#if !isConnected}}
+                      <tr>
+                        <td colspan="4">
+                          <p class="center-align">
+                            <span class="show-pending show50">
+                              <i class="fa fa-circle-o-notch fa-spin"></i> Connecting...
+                            </span>
+                          </p>
+                        </td>
+                      </tr>
+                    {{/if}}
+
+                  </tbody>
+                </table>
+              </div>
+
+        </script>
+        <script id='ractive-asks-template' type='text/ractive'>
+              <div class="buy col-layout-{{layout}}">
+                <table class="compact book-table">
+                  <thead>
+                  <tr>
+                    <th colspan="4">
+                      <div class="row">
+                        {{#askColumns}}
+                          <div style="width:{{ width }}" class="col col-{{ type }}">
+                            {{ label }}
+                          </div>
+                        {{/askColumns}}
+                      </div>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                    {{#if isConnected }}
+                    {{#if asks}}
+                      {{#asks}}
+                        {{#if @index < 24}}
+                        <tr class="left-border" id='ask-row-{{@index}}'>
+                          <td colspan="4" {{#if this.has_price_alert}}class="has-price-alert"{{/if}} style="position:relative;">
+                            {{#if this.user_orders.length > 0}}
+                              <div class="row-has-orders-indicator asks {{ getIconColor('asks', this) }} tooltip-advanced no-q" data-tip="{{{ tooltipUserOrders(this) }}}">
+                                <div class="has-orders-icon" data-order-ids="{{{ getOrderIds(this) }}}">
+                                  {{#if this.user_orders.length > 1}}
+                                    {{this.user_orders.length}}
+                                  {{/if}}
+                                </div>
+                              </div>
+                            {{/if}}
+                            <div class="row show-book-depth {{ emphasisClass(pair, this.priceFormatted, precision) }}"
+                              onclick="BFX.book.bookRowClick('ask', {{ this.price }}, {{ this.cumulative }}, {{ this.amount }}, '{{ pair }}', event);">
+                              <div class="depth-bar asks"></div>
+                              <div class="user-orders-bar asks" data-value="{{ this.user_orders_total }}"></div>
+                              <div class="col col-currency depth-value-cml row-cumulative">
+                                {{ this.cumulativeFormatted }}
+                              </div>
+                              <div class="col col-currency row-amount depth-value-amt">
+                                {{ this.amountFormatted }}
+                              </div>
+                              <div class="col col-currency price row-price">
+                                {{ this.priceFormatted }}
+                              </div>
+                              <div class="col col-info row-count">{{ this.count }}</div>
+                            </div>
+                            <a class="row-alert-icon" href="javascript:;" onclick="BFX.alert.setPriceAlerts('{{ pair }}', '{{this.price}}', '{{ (this.alert_prices || []).join('-') }}', event);return false;"><i class="fa fa-bell"></i></a>
+                          </td>
+                        </tr>
+                        {{/if}}
+                      {{/asks}}
+                      <tr>
+                        <td colspan="4" style="position:relative;">
+                          <div class="row pad-right-5 table-status-row">
+                            <div style="width:100%" class="col">
+                              <a class="fullbook-link ajax" data-remote="true" href="/order_book/{{ pair.toLowerCase() }}">View Full Book</a>
+                              <span class="status" on-click='wsThrottleToggle'>
+                                {{#if wsConnected}}
+                                  <span class='tooltip' style='cursor:pointer;' title='Websocket connected. Click to toggle throttling.'><i class='fa fa-circle'></i> {{ status(this) }}</span>
+                                {{/if}}
+                                {{#if !wsConnected}}
+                                  <span class='tooltip' title='Limited WebSocket connectivity'><i class='fa fa-circle polling'></i> Disconnected</span>
+                                {{/if}}
+                              </span>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    {{/if}}
+                    {{^asks}}
+                      <tr>
+                        <td colspan="4">
+                          {{{ noOrdersMessage }}}
+                        </td>
+                      </tr>
+                    {{/asks}}
+                    {{/if}}
+
+                    {{#if !isConnected }}
+                      <tr>
+                        <td colspan="4">
+                          <p class="center-align">
+                            <span class="show-pending show50">
+                              <i class="fa fa-circle-o-notch fa-spin"></i> Connecting...
+                            </span>
+                          </p>
+                        </td>
+                      </tr>
+                    {{/if}}
+                  </tbody>
+                </table>
+              </div>
+
+        </script>
+        <script id='ractive-trades-template' type='text/ractive'>
+              <ul class="collapsible solid-title" data-collapsible="accordion" data-identifier="trades">
+                <li style="margin-bottom: 0;">
+                  <div class="collapsible-header active">
+                    <div class="bfx-collapsible-header section-header">
+                      <h5>Trades <span class="show50">{{ pair.toUpperCase() }}</span></h5>
+                      <div class="sub-items" style="margin-left:0;">
+                        <a href="javascript:void(0);"
+                          onclick="BFX.trades.toggle('market', event)"
+                          class="btn-flat center-align {{ toggle == 'market' ? 'active' : ''}}">
+                          Market
+                        </a>
+                        <a href="javascript:void(0);"
+                          onclick="BFX.trades.toggle('mine', event)"
+                          class="btn-flat center-align {{ toggle == 'mine' ? 'active' : ''}}">
+                          Mine
+                        </a>
+                      </div><!--.sub-items-->
+                      <i class="fa fa-chevron-right"></i>
+                      <i class="fa fa-chevron-down"></i>
+                    </div><!--bfx-collapsible-header-->
+                  </div><!--collapsible-header-->
+
+                  <div class="collapsible-body">
+
+                    <table class="compact book-table" style="width: 100.5%;">
+                      <thead>
+                      <tr>
+                        <th colspan="3">
+                          <div class="row">
+                            <div style="width:31%" class="col-info col">
+                              Time
+                            </div>
+                            <div style="width:31%" class="col-currency col">
+                              Price
+                            </div>
+                            <div style="width:38%;padding-right:5px;" class="col-currency col">
+                              Amount
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                        {{#if toggle == 'market'}}
+
+                          {{#trades}}
+                            {{#if @index < 24}}
+                              <tr class="left-border">
+                                <td colspan="3">
+                                  <div class="row recent-trades-row">
+                                    <div class="show-magnitude" style={{styleString}}></div>
+                                    <div class="col col-info" style="width:31%">
+                                      {{ timestampFormatted }}
+                                    </div>
+                                    <div class="col col-currency" style="width:31%">
+                                      {{ priceFormatted }}
+                                    </div>
+                                    <div class="col col-currency" style="width:38%;padding-right:10px;">
+                                      {{ amountFormatted }}
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            {{/if}}
+                          {{/trades}}
+
+                          {{^trades}}
+                            <tr>
+                              <td colspan="4">
+                                {{{ noTradesMessage }}}
+                              </td>
+                            </tr>
+                          {{/trades}}
+
+                        {{/if}}
+
+                        {{#if toggle == 'mine'}}
+
+                          {{#userTrades}}
+                            {{#if @index < 24}}
+
+                              {{#if dayRow}}
+                                <tr class="left-border">
+                                  <td colspan="3">
+                                    <div class="row recent-trades-row">
+                                      <div class="col col-info muted" style="width:100%">
+                                        {{ dayRow }}
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              {{/if}}
+
+                              {{#if !dayRow}}
+                                <tr class="left-border">
+                                  <td colspan="3">
+                                    <div class="row recent-trades-row">
+                                      <div class="show-magnitude" style={{styleString}}></div>
+                                      <div class="col col-info" style="width:31%">
+                                        {{ timestampFormatted }}
+                                      </div>
+                                      <div class="col col-currency" style="width:31%">
+                                        {{ priceFormatted }}
+                                      </div>
+                                      <div class="col col-currency" style="width:38%;padding-right:10px;">
+                                        {{ amountFormatted }}
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              {{/if}}
+                            {{/if}}
+                          {{/userTrades}}
+
+                          {{^userTrades}}
+                            <tr>
+                              <td colspan="4">
+                                {{{ noTradesMessage }}}
+                              </td>
+                            </tr>
+                          {{/userTrades}}
+
+                        {{/if}}
+
+                        {{#if trades}}
+                          <tr class="left-border">
+                            <td colspan="3" style="position:relative;">
+                              <div class="row pad-right-5 table-status-row">
+                                <div style="width:100%" class="col">
+                                  <a class="fullbook-link ajax" data-remote="true" href="/trading/history/{{ pair.toLowerCase() }}">View Full History</a>
+                                  {{{ status(this) }}}
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        {{/if}}
+
+                      </tbody>
+                    </table>
+
+                  </div><!--collapsible-body-->
+                </li>
+              </ul><!--collapsible-->
+
+
+        </script>
+
+
+        <!--ends bitlicense 'ok' block-->
+
+        <script>
+
+              $(function() {
+
+                // Make the name of the setup function according to the controller and action.
+                // Something like "setupTradingIndex"
+                var setupFunction = "setup" + "TradingIndex";
+
+                // Run the associated setup function for this controller-action pair if it exists
+                //
+                // The source for this setup function will be found in
+                // 'app/assets/javascripts/controllers/trading/index.js.coffee'
+                //
+
+                if (typeof window[setupFunction] != 'undefined') {
+                  window[setupFunction]("{&quot;action&quot;:&quot;index&quot;,&quot;controller&quot;:&quot;trading&quot;,&quot;ip&quot;:&quot;191.181.156.86&quot;,&quot;user_agent&quot;:&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36&quot;,&quot;actor_id&quot;:32699}");
+                }
+
+                setTimeout(function() {
+                  BFX.sidebar.isFullScreen(false);
+                }, 70);
+
+
+              })
+
+
+        </script>
+    </div>
+</div>
+
+</body>
+</html>
+

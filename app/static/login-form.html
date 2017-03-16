@@ -1,0 +1,45 @@
+<form accept-charset="UTF-8" action="/sessions" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="cW6RM18ZE9+gsFS2H4UMLn9r4kV+f7r1vKKz9Yuqr84=" /></div>
+
+  <div class="row" style="margin-bottom:15px;">
+    <div class="col s12 m6 l6 input-field">
+      <input id="login"
+        name="login"
+        autocomplete="off"
+        type="text">
+      <label for="login">Username or Email</label>
+    </div>
+
+    <div class="col s12 m6 l6 input-field">
+      <input
+        id="auth-password"
+        name="password"
+        type="password">
+      <label for="auth-password">Password</label>
+    </div>
+
+  </div><!--row-->
+
+  <div class="row">
+    <div class="col s12" style="text-align: right;">
+
+      <span style="line-height: 36px;padding-right: 20px;color:#a4a9ac">
+        <a href="/password_resets/new">Forgot your password?</a>
+      </span>
+
+      <button
+        class="btn btn-green"
+        type="submit"
+        style="float:none;"
+        name="action"
+        data-disable-with="<div class='hide-text'>Log in</div><i class='fa fa-circle-o-notch fa-spin'>">
+        Log in
+      </button>
+
+      <a href="javascript:void(0)" onclick="$('.modal').closeModal();" class="cancel-action">
+        Cancel
+      </a>
+
+    </div>
+  </div>
+
+</form>

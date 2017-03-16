@@ -1,0 +1,1040 @@
+{
+  "trading_pairs": [
+    "BTCUSD",
+    "ETHUSD",
+    "ETHBTC",
+    "ETCUSD",
+    "ETCBTC",
+    "BFXUSD",
+    "BFXBTC",
+    "ZECUSD",
+    "ZECBTC",
+    "LTCUSD",
+    "LTCBTC"
+  ],
+  "exchange_pairs": [
+    "BTCUSD",
+    "ETHUSD",
+    "ETHBTC",
+    "ETCUSD",
+    "ETCBTC",
+    "BFXUSD",
+    "BFXBTC",
+    "ZECUSD",
+    "ZECBTC",
+    "XMRUSD",
+    "XMRBTC",
+    "RRTUSD",
+    "RRTBTC",
+    "LTCUSD",
+    "LTCBTC"
+  ],
+  "all_pairs": [
+    "BTCUSD",
+    "ETHUSD",
+    "ETHBTC",
+    "ETCUSD",
+    "ETCBTC",
+    "BFXUSD",
+    "BFXBTC",
+    "ZECUSD",
+    "ZECBTC",
+    "XMRUSD",
+    "XMRBTC",
+    "RRTUSD",
+    "RRTBTC",
+    "LTCUSD",
+    "LTCBTC"
+  ],
+  "all_currencies": [
+    "USD",
+    "BTC",
+    "ETH",
+    "ETC",
+    "BFX",
+    "ZEC",
+    "XMR",
+    "RRT",
+    "LTC"
+  ],
+  "user_pairs": [
+    "BTCUSD",
+    "ETHUSD",
+    "ETHBTC",
+    "ETCUSD",
+    "ETCBTC",
+    "BFXUSD",
+    "BFXBTC",
+    "ZECUSD",
+    "ZECBTC",
+    "XMRUSD",
+    "XMRBTC",
+    "RRTUSD",
+    "RRTBTC",
+    "LTCUSD",
+    "LTCBTC"
+  ],
+  "currencies": [
+    "USD",
+    "BTC",
+    "ETH",
+    "ETC",
+    "BFX",
+    "ZEC",
+    "XMR",
+    "RRT",
+    "LTC"
+  ],
+  "swap_currencies": [
+    "USD",
+    "BTC",
+    "ETH",
+    "ETC",
+    "BFX",
+    "ZEC",
+    "LTC"
+  ],
+  "required_margin": {
+    "BTCUSD": 0.15,
+    "ETHUSD": 0.15,
+    "ETHBTC": 0.15,
+    "ETCUSD": 0.15,
+    "ETCBTC": 0.15,
+    "BFXUSD": 0.15,
+    "BFXBTC": 0.15,
+    "ZECUSD": 0.5,
+    "ZECBTC": 0.5,
+    "LTCUSD": 0.15,
+    "LTCBTC": 0.15
+  },
+  "initial_margin": {
+    "BTCUSD": 0.3,
+    "ETHUSD": 0.3,
+    "ETHBTC": 0.3,
+    "ETCUSD": 0.3,
+    "ETCBTC": 0.3,
+    "BFXUSD": 0.3,
+    "BFXBTC": 0.3,
+    "ZECUSD": 1.0,
+    "ZECBTC": 1.0,
+    "LTCUSD": 0.3,
+    "LTCBTC": 0.3
+  },
+  "bookagg": [
+    [
+      "BTCUSD",
+      "P1"
+    ],
+    [
+      "ETHUSD",
+      "P1"
+    ],
+    [
+      "ETHBTC",
+      "P1"
+    ],
+    [
+      "ETCUSD",
+      "P1"
+    ],
+    [
+      "ETCBTC",
+      "P1"
+    ],
+    [
+      "BFXUSD",
+      "P1"
+    ],
+    [
+      "BFXBTC",
+      "P1"
+    ],
+    [
+      "ZECUSD",
+      "P1"
+    ],
+    [
+      "ZECBTC",
+      "P1"
+    ],
+    [
+      "XMRUSD",
+      "P1"
+    ],
+    [
+      "XMRBTC",
+      "P1"
+    ],
+    [
+      "RRTUSD",
+      "P1"
+    ],
+    [
+      "RRTBTC",
+      "P1"
+    ],
+    [
+      "LTCUSD",
+      "P1"
+    ],
+    [
+      "LTCBTC",
+      "P1"
+    ]
+  ],
+  "tradesscope": [
+    [
+      "BTCUSD",
+      "market"
+    ],
+    [
+      "ETHUSD",
+      "market"
+    ],
+    [
+      "ETHBTC",
+      "market"
+    ],
+    [
+      "ETCUSD",
+      "market"
+    ],
+    [
+      "ETCBTC",
+      "market"
+    ],
+    [
+      "BFXUSD",
+      "market"
+    ],
+    [
+      "BFXBTC",
+      "market"
+    ],
+    [
+      "ZECUSD",
+      "market"
+    ],
+    [
+      "ZECBTC",
+      "market"
+    ],
+    [
+      "XMRUSD",
+      "market"
+    ],
+    [
+      "XMRBTC",
+      "market"
+    ],
+    [
+      "RRTUSD",
+      "market"
+    ],
+    [
+      "RRTBTC",
+      "market"
+    ],
+    [
+      "LTCUSD",
+      "market"
+    ],
+    [
+      "LTCBTC",
+      "market"
+    ]
+  ],
+  "fundingtradesscope": [
+    [
+      "USD",
+      "market"
+    ],
+    [
+      "BTC",
+      "market"
+    ],
+    [
+      "ETH",
+      "market"
+    ],
+    [
+      "ETC",
+      "market"
+    ],
+    [
+      "BFX",
+      "market"
+    ],
+    [
+      "ZEC",
+      "market"
+    ],
+    [
+      "XMR",
+      "market"
+    ],
+    [
+      "RRT",
+      "market"
+    ],
+    [
+      "LTC",
+      "market"
+    ]
+  ],
+  "funding_bookagg": [
+    [
+      "USD",
+      "P3"
+    ],
+    [
+      "BTC",
+      "P3"
+    ],
+    [
+      "ETH",
+      "P3"
+    ],
+    [
+      "ETC",
+      "P3"
+    ],
+    [
+      "BFX",
+      "P3"
+    ],
+    [
+      "ZEC",
+      "P3"
+    ],
+    [
+      "LTC",
+      "P3"
+    ]
+  ],
+  "autolend": [
+    [
+      "USD",
+      false
+    ],
+    [
+      "BTC",
+      false
+    ],
+    [
+      "ETH",
+      false
+    ],
+    [
+      "ETC",
+      false
+    ],
+    [
+      "BFX",
+      false
+    ],
+    [
+      "ZEC",
+      false
+    ],
+    [
+      "LTC",
+      false
+    ]
+  ],
+  "claim_fees": {
+    "500000": 0.2,
+    "100000": 0.2,
+    "50000": 0.2,
+    "0": 0.2
+  },
+  "throttle": {
+    "book": "0"
+  },
+  "notification_settings": {
+    "orders": true,
+    "trades": true,
+    "funding": true,
+    "main": true
+  },
+  "user_settings": {
+    "url_api": "api.bitfinex.com",
+    "notices": {},
+    "orders_filter": false,
+    "funding_filter": false,
+    "notify_orders": false,
+    "notify_offers": false,
+    "notify_funding_return": false,
+    "bfx_token_terms": "0",
+    "dev_ws": false,
+    "dev_ws_token": false,
+    "hide_pairs": "none",
+    "theme": "light-theme",
+    "last_leverage": "0",
+    "last_side": "buy",
+    "last_funding_side": "offer",
+    "trading_form_theme": "0",
+    "sidebar_form": true,
+    "sidebar_side": "left",
+    "ticker_style": "side",
+    "show_pairs": "all",
+    "fav_sym": [],
+    "bal_market_equiv": false,
+    "tablemin": "0",
+    "chart_height": "515",
+    "chart_interval": "30",
+    "chart_orders": true,
+    "chart_positions": true,
+    "chart_alerts": true,
+    "desktop_alerts": false,
+    "book_layout": "2",
+    "book_viz": "cml",
+    "o_hist_filter": "all",
+    "o_filter": "all",
+    "summary_sec": "trading",
+    "perf_sec": "mine",
+    "wallets": [
+      "deposit",
+      "exchange",
+      "trading"
+    ],
+    "keep_session_alive": true,
+    "alerts": [],
+    "user_id": 32699,
+    "tablesort": {},
+    "min_order_sizes": {
+      "BTCUSD": 0.01,
+      "LTCUSD": 0.1,
+      "LTCBTC": 0.1,
+      "ETHUSD": 0.1,
+      "ETHBTC": 0.1,
+      "ETCBTC": 0.1,
+      "ETCUSD": 0.1,
+      "BFXUSD": 0.1,
+      "BFXBTC": 0.1,
+      "RRTUSD": 0.1,
+      "RRTBTC": 0.1,
+      "ZECUSD": 0.0001,
+      "ZECBTC": 0.0001,
+      "XMRUSD": 0.1,
+      "XMRBTC": 0.1
+    },
+    "user_level": "trader",
+    "restrict_us_resident": false,
+    "chartStyle": {
+      "layout": "s",
+      "charts": [
+        {
+          "panes": [
+            {
+              "sources": [
+                {
+                  "type": "MainSeries",
+                  "id": "IXqBmZ",
+                  "state": {
+                    "style": 9,
+                    "esdShowDividends": true,
+                    "esdShowSplits": true,
+                    "esdShowEarnings": true,
+                    "esdShowBreaks": false,
+                    "esdBreaksStyle": {
+                      "color": "rgba( 226, 116, 91, 1)",
+                      "style": 2,
+                      "width": 1
+                    },
+                    "esdFlagSize": 2,
+                    "showCountdown": false,
+                    "showInDataWindow": true,
+                    "visible": true,
+                    "silentIntervalChange": false,
+                    "showPriceLine": true,
+                    "priceLineWidth": 1,
+                    "lockScale": false,
+                    "minTick": "default",
+                    "extendedHours": false,
+                    "sessVis": false,
+                    "candleStyle": {
+                      "upColor": "rgba( 107, 165, 131, 1)",
+                      "downColor": "rgba( 215, 84, 66, 1)",
+                      "drawWick": true,
+                      "drawBorder": true,
+                      "borderColor": "rgba( 55, 134, 88, 1)",
+                      "borderUpColor": "rgba( 34, 84, 55, 1)",
+                      "borderDownColor": "rgba( 91, 26, 19, 1)",
+                      "wickColor": "rgba( 115, 115, 117, 1)",
+                      "wickUpColor": "rgba( 115, 115, 117, 1)",
+                      "wickDownColor": "rgba( 115, 115, 117, 1)",
+                      "barColorsOnPrevClose": false
+                    },
+                    "hollowCandleStyle": {
+                      "upColor": "#6A833A",
+                      "downColor": "#8A3A3B",
+                      "drawWick": true,
+                      "drawBorder": true,
+                      "borderColor": "#C400CB",
+                      "borderUpColor": "#6A833A",
+                      "borderDownColor": "#8A3A3B",
+                      "wickColor": "rgba( 115, 115, 117, 1)",
+                      "wickUpColor": "#6A833A",
+                      "wickDownColor": "#8A3A3B"
+                    },
+                    "haStyle": {
+                      "upColor": "rgba( 107, 165, 131, 1)",
+                      "downColor": "rgba( 215, 84, 66, 1)",
+                      "drawWick": true,
+                      "drawBorder": true,
+                      "borderColor": "rgba( 55, 134, 88, 1)",
+                      "borderUpColor": "rgba( 34, 84, 55, 1)",
+                      "borderDownColor": "rgba( 91, 26, 19, 1)",
+                      "wickColor": "rgba( 115, 115, 117, 1)",
+                      "wickUpColor": "rgba( 115, 115, 117, 1)",
+                      "wickDownColor": "rgba( 115, 115, 117, 1)",
+                      "showRealLastPrice": false,
+                      "barColorsOnPrevClose": false
+                    },
+                    "barStyle": {
+                      "upColor": "rgba( 107, 165, 131, 1)",
+                      "downColor": "rgba( 215, 84, 66, 1)",
+                      "barColorsOnPrevClose": false,
+                      "dontDrawOpen": false
+                    },
+                    "lineStyle": {
+                      "color": "rgba( 60, 120, 216, 1)",
+                      "linestyle": 0,
+                      "linewidth": 1,
+                      "priceSource": "close",
+                      "styleType": 2
+                    },
+                    "areaStyle": {
+                      "color1": "rgba( 96, 96, 144, 0.5)",
+                      "color2": "rgba( 1, 246, 245, 0.5)",
+                      "linecolor": "rgba( 0, 148, 255, 1)",
+                      "linestyle": 0,
+                      "linewidth": 1,
+                      "priceSource": "close",
+                      "transparency": 50
+                    },
+                    "priceAxisProperties": {
+                      "autoScale": true,
+                      "autoScaleDisabled": false,
+                      "percentage": false,
+                      "percentageDisabled": false,
+                      "log": false,
+                      "logDisabled": false,
+                      "alignLabels": true
+                    },
+                    "renkoStyle": {
+                      "upColor": "rgba( 107, 165, 131, 1)",
+                      "downColor": "rgba( 215, 84, 66, 1)",
+                      "borderUpColor": "rgba( 34, 84, 55, 1)",
+                      "borderDownColor": "rgba( 91, 26, 19, 1)",
+                      "upColorProjection": "rgba( 74, 214, 190, 1)",
+                      "downColorProjection": "rgba( 214, 73, 207, 1)",
+                      "borderUpColorProjection": "rgba( 34, 84, 55, 1)",
+                      "borderDownColorProjection": "rgba( 91, 26, 19, 1)",
+                      "inputs": {
+                        "source": "close",
+                        "boxSize": 3,
+                        "style": "ATR",
+                        "atrLength": 14
+                      },
+                      "inputInfo": {
+                        "source": {
+                          "name": "Source"
+                        },
+                        "boxSize": {
+                          "name": "Box size"
+                        },
+                        "style": {
+                          "name": "Style"
+                        },
+                        "atrLength": {
+                          "name": "ATR Length"
+                        }
+                      }
+                    },
+                    "pbStyle": {
+                      "upColor": "rgba( 107, 165, 131, 1)",
+                      "downColor": "rgba( 215, 84, 66, 1)",
+                      "borderUpColor": "rgba( 34, 84, 55, 1)",
+                      "borderDownColor": "rgba( 91, 26, 19, 1)",
+                      "upColorProjection": "rgba( 74, 214, 190, 1)",
+                      "downColorProjection": "rgba( 214, 73, 207, 1)",
+                      "borderUpColorProjection": "rgba( 34, 84, 55, 1)",
+                      "borderDownColorProjection": "rgba( 91, 26, 19, 1)",
+                      "inputs": {
+                        "source": "close",
+                        "lb": 3
+                      },
+                      "inputInfo": {
+                        "source": {
+                          "name": "Source"
+                        },
+                        "lb": {
+                          "name": "Number of line"
+                        }
+                      }
+                    },
+                    "kagiStyle": {
+                      "upColor": "rgba( 107, 165, 131, 1)",
+                      "downColor": "rgba( 215, 84, 66, 1)",
+                      "upColorProjection": "rgba( 74, 214, 190, 1)",
+                      "downColorProjection": "rgba( 214, 73, 207, 1)",
+                      "inputs": {
+                        "source": "close",
+                        "style": "Traditional",
+                        "atrLength": 14,
+                        "reversalAmount": 1
+                      },
+                      "inputInfo": {
+                        "source": {
+                          "name": "Source"
+                        },
+                        "style": {
+                          "name": "Style"
+                        },
+                        "atrLength": {
+                          "name": "ATR Length"
+                        },
+                        "reversalAmount": {
+                          "name": "Reversal amount"
+                        }
+                      }
+                    },
+                    "pnfStyle": {
+                      "upColor": "rgba( 107, 165, 131, 1)",
+                      "downColor": "rgba( 215, 84, 66, 1)",
+                      "upColorProjection": "rgba( 74, 214, 190, 1)",
+                      "downColorProjection": "rgba( 214, 73, 207, 1)",
+                      "inputs": {
+                        "sources": "HL",
+                        "reversalAmount": 3,
+                        "boxSize": 1,
+                        "style": "ATR",
+                        "atrLength": 14
+                      },
+                      "inputInfo": {
+                        "sources": {
+                          "name": "Source"
+                        },
+                        "boxSize": {
+                          "name": "Box size"
+                        },
+                        "reversalAmount": {
+                          "name": "Reversal amount"
+                        },
+                        "style": {
+                          "name": "Style"
+                        },
+                        "atrLength": {
+                          "name": "ATR Length"
+                        }
+                      }
+                    },
+                    "symbol": "BTCUSD",
+                    "shortName": "BTCUSD",
+                    "timeframe": "",
+                    "onWidget": false,
+                    "interval": "30"
+                  },
+                  "zorder": -1
+                },
+                {
+                  "type": "Study",
+                  "id": "moIhT3",
+                  "state": {
+                    "styles": {
+                      "vol": {
+                        "linestyle": 0,
+                        "linewidth": 1,
+                        "plottype": 5,
+                        "trackPrice": false,
+                        "transparency": 65,
+                        "visible": true,
+                        "color": "#8A3A3B",
+                        "histogramBase": 0,
+                        "joinPoints": false,
+                        "title": "Volume"
+                      },
+                      "vol_ma": {
+                        "linestyle": 0,
+                        "linewidth": 1,
+                        "plottype": 4,
+                        "trackPrice": false,
+                        "transparency": 65,
+                        "visible": true,
+                        "color": "#0496FF",
+                        "histogramBase": 0,
+                        "joinPoints": false,
+                        "title": "Volume MA"
+                      }
+                    },
+                    "precision": "default",
+                    "palettes": {
+                      "volumePalette": {
+                        "colors": {
+                          "0": {
+                            "color": "#8A3A3B",
+                            "width": 1,
+                            "style": 0,
+                            "name": "Color 0"
+                          },
+                          "1": {
+                            "color": "#6A833A",
+                            "width": 1,
+                            "style": 0,
+                            "name": "Color 1"
+                          }
+                        }
+                      }
+                    },
+                    "inputs": {
+                      "0": {
+                        "id": "showMA",
+                        "name": "show MA",
+                        "defval": false,
+                        "type": "bool"
+                      },
+                      "1": {
+                        "id": "maLength",
+                        "name": "MA Length",
+                        "defval": 20,
+                        "type": "integer",
+                        "min": 1,
+                        "max": 2000
+                      },
+                      "showMA": false,
+                      "maLength": 20
+                    },
+                    "bands": {},
+                    "area": {},
+                    "graphics": {},
+                    "showInDataWindow": true,
+                    "visible": true,
+                    "showStudyArguments": true,
+                    "paneSize": "large",
+                    "plots": {
+                      "0": {
+                        "id": "vol",
+                        "type": "line"
+                      },
+                      "1": {
+                        "id": "volumePalette",
+                        "palette": "volumePalette",
+                        "target": "vol",
+                        "type": "colorer"
+                      },
+                      "2": {
+                        "id": "vol_ma",
+                        "type": "line"
+                      }
+                    },
+                    "_metainfoVersion": 15,
+                    "isTVScript": false,
+                    "isTVScriptStub": false,
+                    "is_hidden_study": false,
+                    "transparency": 65,
+                    "description": "Volume",
+                    "shortDescription": "Volume",
+                    "is_price_study": false,
+                    "id": "Volume@tv-basicstudies",
+                    "description_localized": "Volume",
+                    "shortId": "Volume",
+                    "packageId": "tv-basicstudies",
+                    "version": "1",
+                    "fullId": "Volume@tv-basicstudies-1",
+                    "productId": "tv-basicstudies",
+                    "name": "Volume@tv-basicstudies"
+                  },
+                  "zorder": -2,
+                  "metaInfo": {
+                    "palettes": {
+                      "volumePalette": {
+                        "colors": {
+                          "0": {
+                            "name": "Color 0"
+                          },
+                          "1": {
+                            "name": "Color 1"
+                          }
+                        }
+                      }
+                    },
+                    "inputs": [
+                      {
+                        "id": "showMA",
+                        "name": "show MA",
+                        "defval": false,
+                        "type": "bool"
+                      },
+                      {
+                        "id": "maLength",
+                        "name": "MA Length",
+                        "defval": 20,
+                        "type": "integer",
+                        "min": 1,
+                        "max": 2000
+                      }
+                    ],
+                    "plots": [
+                      {
+                        "id": "vol",
+                        "type": "line"
+                      },
+                      {
+                        "id": "volumePalette",
+                        "palette": "volumePalette",
+                        "target": "vol",
+                        "type": "colorer"
+                      },
+                      {
+                        "id": "vol_ma",
+                        "type": "line"
+                      }
+                    ],
+                    "graphics": {},
+                    "defaults": {
+                      "styles": {
+                        "vol": {
+                          "linestyle": 0,
+                          "linewidth": 1,
+                          "plottype": 5,
+                          "trackPrice": false,
+                          "transparency": 65,
+                          "visible": true,
+                          "color": "#8A3A3B"
+                        },
+                        "vol_ma": {
+                          "linestyle": 0,
+                          "linewidth": 1,
+                          "plottype": 4,
+                          "trackPrice": false,
+                          "transparency": 65,
+                          "visible": true,
+                          "color": "#0496FF"
+                        }
+                      },
+                      "precision": 0,
+                      "palettes": {
+                        "volumePalette": {
+                          "colors": {
+                            "0": {
+                              "color": "#8A3A3B",
+                              "width": 1,
+                              "style": 0
+                            },
+                            "1": {
+                              "color": "#6A833A",
+                              "width": 1,
+                              "style": 0
+                            }
+                          }
+                        }
+                      },
+                      "inputs": {
+                        "showMA": false,
+                        "maLength": 20
+                      }
+                    },
+                    "_metainfoVersion": 15,
+                    "isTVScript": false,
+                    "isTVScriptStub": false,
+                    "is_hidden_study": false,
+                    "transparency": 65,
+                    "styles": {
+                      "vol": {
+                        "title": "Volume",
+                        "histogramBase": 0
+                      },
+                      "vol_ma": {
+                        "title": "Volume MA",
+                        "histogramBase": 0
+                      }
+                    },
+                    "description": "Volume",
+                    "shortDescription": "Volume",
+                    "is_price_study": false,
+                    "id": "Volume@tv-basicstudies-1",
+                    "description_localized": "Volume",
+                    "shortId": "Volume",
+                    "packageId": "tv-basicstudies",
+                    "version": "1",
+                    "fullId": "Volume@tv-basicstudies-1",
+                    "productId": "tv-basicstudies",
+                    "name": "Volume@tv-basicstudies"
+                  }
+                }
+              ],
+              "leftAxisState": {
+                "m_priceRange": {
+                  "m_minValue": -0.5,
+                  "m_maxValue": 0.5
+                },
+                "m_isAutoScale": true,
+                "m_isPercentage": false,
+                "m_isLog": false,
+                "m_height": 434,
+                "m_topMargin": 0.05,
+                "m_bottomMargin": 0.05
+              },
+              "leftAxisSources": [],
+              "rightAxisState": {
+                "m_priceRange": {
+                  "m_minValue": 1110,
+                  "m_maxValue": 1222.4
+                },
+                "m_isAutoScale": true,
+                "m_isPercentage": false,
+                "m_isLog": false,
+                "m_height": 434,
+                "m_topMargin": 0.05,
+                "m_bottomMargin": 0.05
+              },
+              "rightAxisSources": [
+                "IXqBmZ"
+              ],
+              "overlayPriceScales": {
+                "moIhT3": {
+                  "m_priceRange": {
+                    "m_minValue": 0,
+                    "m_maxValue": 11443.25742796
+                  },
+                  "m_isAutoScale": true,
+                  "m_isPercentage": false,
+                  "m_isLog": false,
+                  "m_height": 434,
+                  "m_topMargin": 0.75,
+                  "m_bottomMargin": 0
+                }
+              },
+              "stretchFactor": 2000,
+              "mainSourceId": "IXqBmZ"
+            }
+          ],
+          "timeScale": {
+            "m_barSpacing": 11.438396227480492,
+            "m_rightOffset": 5
+          },
+          "chartProperties": {
+            "paneProperties": {
+              "background": "#1b262d",
+              "gridProperties": {
+                "color": "#E6E6E6",
+                "style": 0
+              },
+              "vertGridProperties": {
+                "color": "#28343C",
+                "style": 0
+              },
+              "horzGridProperties": {
+                "color": "#28343C",
+                "style": 0
+              },
+              "crossHairProperties": {
+                "color": "#626c73",
+                "style": 2,
+                "transparency": 0,
+                "width": 1
+              },
+              "topMargin": 5,
+              "bottomMargin": 5,
+              "leftAxisProperties": {
+                "autoScale": true,
+                "autoScaleDisabled": false,
+                "percentage": false,
+                "percentageDisabled": false,
+                "log": false,
+                "logDisabled": false,
+                "alignLabels": true
+              },
+              "rightAxisProperties": {
+                "autoScale": true,
+                "autoScaleDisabled": false,
+                "percentage": false,
+                "percentageDisabled": false,
+                "log": false,
+                "logDisabled": false,
+                "alignLabels": true
+              },
+              "overlayPropreties": {
+                "autoScale": true,
+                "autoScaleDisabled": false,
+                "percentage": false,
+                "percentageDisabled": false,
+                "log": false,
+                "logDisabled": false,
+                "alignLabels": true
+              },
+              "legendProperties": {
+                "showStudyArguments": true,
+                "showStudyTitles": true,
+                "showStudyValues": true,
+                "showSeriesTitle": true,
+                "showSeriesOHLC": true,
+                "showLegend": true
+              }
+            },
+            "scalesProperties": {
+              "showLeftScale": false,
+              "showRightScale": true,
+              "backgroundColor": "#1b262d",
+              "lineColor": "#555",
+              "textColor": "#999",
+              "fontSize": 11,
+              "scaleSeriesOnly": false,
+              "showSeriesLastValue": true,
+              "showStudyLastValue": false,
+              "showSymbolLabels": false,
+              "showStudyPlotLabels": false
+            },
+            "chartEventsSourceProperties": {
+              "visible": true,
+              "futureOnly": true,
+              "breaks": {
+                "color": "rgba(85, 85, 85, 1)",
+                "visible": false,
+                "style": 2,
+                "width": 1
+              }
+            }
+          },
+          "version": 2,
+          "timezone": "Etc/UTC"
+        }
+      ]
+    },
+    "ticker_vol_unit": "firstccy",
+    "collapsibles": {
+      "chart": false,
+      "positions": false,
+      "ohist": false
+    },
+    "balance_display": "both",
+    "price_sig_figs": 5,
+    "collapsed": ""
+  },
+  "wallet_ui_names": {
+    "trading": "Margin",
+    "exchange": "Exchange",
+    "deposit": "Funding",
+    "creditline": "Credit Line",
+    "conversion": "Conversion"
+  },
+  "asset_paths": {
+    "bfx-icon.png": "bfx-icon-7a05f57d0203a8b11d52b9d46a16d0ba6e5b227b491a0eaa4c6c951debb50a13.png",
+    "USD-alt.svg": "USD-alt-4f228f4d96cb52360ba5ed649885a95e4866a4e900933e16a4cfec4c59e27e5c.svg",
+    "BTC.svg": "BTC-98d9545dfcc556347f9329157ad52a4e078c839cca58f1133c08d17465a76f73.svg",
+    "BTC-alt.svg": "BTC-alt-daaf59e438a7e40c49c31a29a28b2b222a9f805d0dc00fe4a78e13e5f15cdcf0.svg",
+    "LTC.svg": "LTC-ebe7521fcf4fa4c278e4c1893ee561e3e57cb372d642f8b73c81db3635e5b247.svg",
+    "LTC-alt.svg": "LTC-alt-19d307a9a2261565153e244b6abd7a44912a92783986c453ce1a09144c931e42.svg",
+    "ETH.svg": "ETH-93043ccdf687c04ff935cad47586f6ca9ab228435f2852c32b14ffa72607a7dc.svg",
+    "ETH-alt.svg": "ETH-alt-3e1d645524281653071527e11ad56ceb0311f605649638df835dfc7437564804.svg",
+    "ETC-alt.svg": "ETC-alt-f388101543b6f2357b84c18a5b32c8b3560bd5971332804910d7e16554aa3712.svg",
+    "BFX-alt.svg": "BFX-alt-dd03066abd53db55ca9260ae83d80828fac6cd507f05595466ad20762db7c001.svg",
+    "RRT-alt.svg": "RRT-alt-be1a634b316fcc96c89725478477bd3c06aa97fd937382e65b259fd60dddb820.svg",
+    "ZEC-alt.svg": "ZEC-alt-993af5fe236d3b4ef5fcff9cbb37d646a7706158110a26db6b664f59ec7f8c66.svg",
+    "XMR.svg": "XMR-4e6b9287e8619c7009c529af7bb87b5cb697e49688ecaa85fb1bf0cd2d86b721.svg",
+    "XMR-alt.svg": "XMR-alt-adc9d2672e394034ca0a121e69393704a5d8e60b628ade514ebc8819680577f6.svg"
+  },
+  "env": "production"
+}
