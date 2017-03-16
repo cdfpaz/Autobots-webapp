@@ -65,34 +65,41 @@ var LoginModalController = {
 
         base.submitElements.on("click", function (e) {
             e.preventDefault();
+            $(".logmod__error").text("");
+            $(".logmod__create-error").text("");
 
             if (base.tabSelection) {
-                var tabCtrl = $(".logmod .logmod__tab.lgm-1");
-                var emailCtrl = tabCtrl.find("#user-email");
-                var pwdCtrl = tabCtrl.find("#user-pw");
-                var pwdRepeatCtrl = tabCtrl.find("#user-pw-repeat");
+                var emailCtrl = $("#user-create-email");
+                var pwdCtrl = $("#user-create-pw");
+                var pwdRepeatCtrl = $("#user-pw-repeat");
 
-                if (!emailCtrl.val() || !validateEmail(emailCtrl.val())) {
+                if (!emailCtrl.val()) {
+                    $(".logmod__create-error").text("Please fill your email, you must validate it");
                     emailCtrl.focus();
-                    $( "#dialog-message" ).dialog("open");
+                    return;
+                }
+
+                if (!validateEmail(emailCtrl.val())) {
+                    $(".logmod__create-error").text("Please enter a valid e-mail");
+                    emailCtrl.focus();
                     return;
                 }
 
                 if (!pwdCtrl.val()) {
+                    $(".logmod__create-error").text("Password cound not be empty");
                     pwdCtrl.focus();
-                    $( "#dialog-message" ).dialog("open");
                     return;
                 }
 
                 if (!pwdRepeatCtrl.val()) {
+                    $(".logmod__create-error").text("Please confirm password");
                     pwdRepeatCtrl.focus();
-                    $( "#dialog-message" ).dialog("open");
                     return;
                 }
 
                 if (pwdRepeatCtrl.val() != pwdCtrl.val()) {
+                    $(".logmod__create-error").text("Password confirmation is invalid");
                     pwdRepeatCtrl.focus();
-                    $( "#dialog-message" ).dialog("open");
                     return;
                 }
 
@@ -112,19 +119,24 @@ var LoginModalController = {
 
             }
             else {
-                var tabCtrl = $(".logmod .logmod__tab.lgm-2");
-                var emailCtrl = tabCtrl.find("#user-email");
-                var pwdCtrl = tabCtrl.find("#user-pw");
+                var emailCtrl = $("#user-email");
+                var pwdCtrl = $("#user-pw");
 
-                if (!emailCtrl.val() || !validateEmail(emailCtrl.val())) {
+                if (!emailCtrl.val()) {
+                    $(".logmod__error").text("Please fill your email, you must validate it");
                     emailCtrl.focus();
-                    $( "#dialog-message" ).dialog("open");
+                    return;
+                }
+
+                if ( !validateEmail(emailCtrl.val()) ) {
+                    $(".logmod__error").text("Please type a valid e-mail");
+                    emailCtrl.focus();
                     return;
                 }
 
                 if (!pwdCtrl.val()) {
+                    $(".logmod__error").text("Password could not be empty");
                     pwdCtrl.focus();
-                    $( "#dialog-message" ).dialog("open");
                     return;
                 }
 
@@ -136,24 +148,23 @@ var LoginModalController = {
                   success: function (data) {
                     if (data.result != "ok")
                     {
-                        $( "#dialog-message" ).dialog("open");
+                        console.log("data return error");
                     }
                     else {
                         window.location.href = "/trading"
                     }
                   },
                   error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    $( "#dialog-message" ).dialog("open");
+                    console.log("error send request");
                  }
                 });
-
             }
         });
 
         base.hidePassword.on("click", function (e) {
-            var $this = $(this).prev("input"),
+            var $this = $(this),
                 $pwInput = $this.prev("input");
-e
+
             if ($pwInput.attr("type") == "password") {
                 $pwInput.attr("type", "text");
                 $this.text("Hide");
@@ -201,16 +212,5 @@ e
 
 
 $(document).ready(function() {
-
-  $("#dialog-message").dialog({
-    autoOpen : false, modal : true, show : "blind", hide : "blind",
-      buttons: {
-        Ok: function() {
-          $( this ).dialog( "close" );
-        }
-      }
-  });
-
-
-    LoginModalController.initialize();
+  LoginModalController.initialize();
 });

@@ -115,6 +115,14 @@ html {
   color: #888;
   line-height: 48px;
 }
+.logmod__error {
+  text-align: center;
+  color: #e82110;
+}
+.logmod__create-error {
+  text-align: center;
+  color: #e82110;
+}
 .logmod__form {
   border-top: 1px solid #e5e5e5;
 }
@@ -605,3 +613,4 @@ html {
   z-index: 999999;
   background-image: url(http://basehold.it/i/24);
 }
+
